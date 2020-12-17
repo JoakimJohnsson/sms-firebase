@@ -23,7 +23,6 @@ class SignUpFormBase extends Component {
     constructor(props) {
         super(props);
         this.state = {...INITIAL_STATE};
-        this.props.history.push(ROUTES.HOME);
     }
 
     onSubmit = event => {
@@ -32,19 +31,19 @@ class SignUpFormBase extends Component {
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState({...INITIAL_STATE});
+                this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
                 this.setState({error});
             });
         event.preventDefault();
-    }
+    };
 
     onChange = event => {
         this.setState({[event.target.name]: event.target.value});
     };
 
     render() {
-
         const {
             username,
             email,
