@@ -1,9 +1,11 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 const config = {
     apiKey: "AIzaSyDG78X4YQLwQVFtTyudqh6LHJ2LiRlGSS4",
     authDomain: "svenska-marvelsamlare.firebaseapp.com",
+    databaseURL: "https://svenska-marvelsamlare-default-rtdb.firebaseio.com",
     projectId: "svenska-marvelsamlare",
     storageBucket: "svenska-marvelsamlare.appspot.com",
     messagingSenderId: "244092481021",
@@ -14,6 +16,7 @@ class Firebase {
     constructor() {
         app.initializeApp(config);
         this.auth = app.auth();
+        this.db = app.database();
     }
 
     // Let's define all the authentication functions as class methods step by step.
@@ -32,6 +35,12 @@ class Firebase {
 
     doPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password);
+
+    // *** User API ***
+
+    user = uid => this.db.ref(`users/${uid}`);
+
+    users = () => this.db.ref('users');
 
 }
 
