@@ -5,6 +5,7 @@ import React from 'react';
 // FirebaseContext.Consumer retrieves the Firebase instance if it is needed in the React component.
 const FirebaseContext = React.createContext(null);
 
+// instead of wrapping the entire component - use 'export withFirebase(component)'
 export const withFirebase = Component => props => (
     <FirebaseContext.Consumer>
         {firebase => <Component {...props} firebase={firebase} />}
