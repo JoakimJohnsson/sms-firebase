@@ -9,3 +9,6 @@ ReactDOM.render(
     </FirebaseContext.Provider>,
     document.getElementById('root')
 );
+
+// LINKS
+// https://www.robinwieruch.de/react-firebase-realtime-database
