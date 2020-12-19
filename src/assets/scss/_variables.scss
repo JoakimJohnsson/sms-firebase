@@ -1,0 +1,37 @@
+/* --------------- COLORS --------------- */
+
+/* ----- SMS colors ----- */
+$sms-primary: #fff8e1;
+$sms-primary__light: #fff;
+$sms-primary__dark: #ccc5af;
+$sms-secondary: #0277bd;
+$sms-secondary__light: #58a5f0;
+$sms-secondary__dark: #004c8c;
+$sms-red: #d50000;
+$sms-red__light: #ff5131;
+$sms-red__dark: #9b0000;
+$sms-green: #1b5e20;
+$sms-green__light: #4c8c4a;
+$sms-green__dark: #003300;
+$sms-black: #222;
+$sms-grey: #eee;
+
+/* ----- Bootstrap overrides ----- */
+$body-color: $sms-black;
+$body-bg: $sms-grey;
+//$primary:       $blue !default;
+//$secondary:     $gray-600 !default;
+//$success:       $green !default;
+//$info:          $cyan !default;
+//$warning:       $yellow !default;
+//$danger:        $red !default;
+//$light:         $gray-100 !default;
+//$dark:          $gray-800 !default;
+$primary:       $sms-secondary;
+$secondary:     $sms-primary;
+$success:       $sms-green;
+$info:          $sms-secondary__dark;
+$warning:       $sms-red__dark;
+$danger:        $sms-red;
+$light:         $sms-primary__light;
+$dark:          $sms-primary__dark;
