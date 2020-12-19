@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
+import logo from '../../assets/images/shield-black.svg'
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -10,6 +10,7 @@ import {PasswordForgetLink} from "../PasswordForget";
 const SignInPage = () => (
     <div>
         <h1>SignIn</h1>
+        <img src={logo} />
         <SignInForm />
         <PasswordForgetLink />
         <SignUpLink />
@@ -70,7 +71,7 @@ class SignInFormBase extends Component {
                     type="password"
                     placeholder="Password"
                 />
-                <button disabled={isInvalid} type="submit">
+                <button disabled={isInvalid} type="submit" className="btn btn btn-primary">
                     Sign In
                 </button>
 
