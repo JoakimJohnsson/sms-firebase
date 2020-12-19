@@ -72,7 +72,22 @@ class SignInFormBase extends Component {
                     placeholder="Password"
                 />
                 <button disabled={isInvalid} type="submit" className="btn btn btn-primary">
-                    Sign In
+                    Sign In prim
+                </button>
+                <button disabled={isInvalid} type="submit" className="btn btn btn-secondary">
+                    Sign In sec
+                </button>
+                <button disabled={isInvalid} type="submit" className="btn btn btn-info">
+                    Info
+                </button>
+                <button disabled={isInvalid} type="submit" className="btn btn btn-warning">
+                    warning
+                </button>
+                <button disabled={isInvalid} type="submit" className="btn btn btn-success">
+                    success
+                </button>
+                <button disabled={isInvalid} type="submit" className="btn btn btn-danger">
+                    danger
                 </button>
 
                 {error && <p>{error.message}</p>}
