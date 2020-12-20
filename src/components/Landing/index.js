@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Modal} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 
 
 function Landing() {
@@ -13,50 +13,56 @@ function Landing() {
     const handleShow2 = () => setShow2(true);
 
     return (
-        <div>
-            <h1>Svenska marvelsamlare</h1>
+        <div className="container">
+        <div className="row">
+        <div className="col-12">
+            <h1 className="text-center">Svenska marvelsamlare</h1>
 
-            <>
-                <Button variant="primary" onClick={handleShow}>
-                    Launch demo modal
-                </Button>
+
+            <div className="d-grid gap-2">
+                    <button className="btn btn-primary btn-lg" onClick={handleShow}>
+                    Sign in
+                </button>
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Sign in</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <button className="btn btn-secondary" onClick={handleClose}>
                             Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
+                        </button>
+                        <button className="btn btn-primary" onClick={handleClose}>
                             Save Changes
-                        </Button>
+                        </button>
                     </Modal.Footer>
                 </Modal>
 
-                <Button variant="primary" onClick={handleShow2}>
-                    Launch asdfasdf demo modal
-                </Button>
+                <button className="btn btn-outline-primary btn-lg" onClick={handleShow2}>
+                    Sign up
+                </button>
 
                 <Modal show={show2} onHide={handleClose2}>
                     <Modal.Header closeButton>
-                        <Modal.Title>asdfasdfasd Modal heading</Modal.Title>
+                        <Modal.Title>Sign up</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose2}>
+                        <button className="btn btn-secondary" onClick={handleClose2}>
                             Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose2}>
+                        </button>
+                        <button className="btn btn-primary" onClick={handleClose2}>
                             Save Changes
-                        </Button>
+                        </button>
                     </Modal.Footer>
                 </Modal>
-            </>
 
 
+
+        </div>
+        </div>
+        </div>
         </div>
     );
 }

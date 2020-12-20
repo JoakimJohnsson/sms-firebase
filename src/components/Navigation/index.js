@@ -36,7 +36,7 @@ const HeaderNonAuth = () => (
         <Navbar className="container d-flex justify-content-center" variant="light" expand="lg">
             <Navbar.Brand>
                 <Link to={ROUTES.LANDING}><img src={shieldBlack} /></Link>
-                <NavigationNonAuth />
+                {/*<NavigationNonAuth />*/}
             </Navbar.Brand>
         </Navbar>
 
@@ -58,12 +58,12 @@ const NavigationAuth = ({ authUser }) => (
     </Nav>
 );
 
-const NavigationNonAuth = () => (
-    <Nav className="">
-        <NavLinkComponent link={ROUTES.LANDING} text={"landing"}/>
-        <NavLinkComponent link={ROUTES.SIGN_IN} text={"signin"}/>
-    </Nav>
-);
+// const NavigationNonAuth = () => (
+//     <Nav className="">
+//         <NavLinkComponent link={ROUTES.LANDING} text={"landing"}/>
+//         <NavLinkComponent link={ROUTES.SIGN_IN} text={"signin"}/>
+//     </Nav>
+// );
 
 const NavLinkComponent = ({link, text}) => (
     <Link className="nav-link" to={link}>{text}</Link>
