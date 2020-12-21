@@ -34,8 +34,8 @@ const HeaderAuth = ({ authUser }) => (
 const HeaderNonAuth = () => (
     <header className="container-fluid bg-light">
         <Navbar className="container d-flex justify-content-center" variant="light" expand="lg">
-            <Navbar.Brand>
-                <Link to={ROUTES.LANDING}><img src={shieldBlack} /></Link>
+            <Navbar.Brand className="m-0">
+                <Link to={ROUTES.LANDING}><img src={shieldBlack} alt="Svenska marvelsamlare logo" /></Link>
                 {/*<NavigationNonAuth />*/}
             </Navbar.Brand>
         </Navbar>
@@ -57,13 +57,6 @@ const NavigationAuth = ({ authUser }) => (
         <SignOutButton/>
     </Nav>
 );
-
-// const NavigationNonAuth = () => (
-//     <Nav className="">
-//         <NavLinkComponent link={ROUTES.LANDING} text={"landing"}/>
-//         <NavLinkComponent link={ROUTES.SIGN_IN} text={"signin"}/>
-//     </Nav>
-// );
 
 const NavLinkComponent = ({link, text}) => (
     <Link className="nav-link" to={link}>{text}</Link>

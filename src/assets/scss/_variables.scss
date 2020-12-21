@@ -21,3 +21,7 @@ $warning:       darken($smsc-danger, 20%);
 $danger:        $smsc-danger;
 $light:         $smsc-white;
 $dark:          $smsc-black;
+
+$font-family-sans-serif:      "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$headings-font-weight:        600;
+$btn-font-weight:             300;
