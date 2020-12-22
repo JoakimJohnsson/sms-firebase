@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import {Modal} from "react-bootstrap";
 import * as Icon from 'react-bootstrap-icons';
+import {PasswordForgetLink} from "../PasswordForget";
+import {SignUpLink} from "../SignUp";
+import {SignInForm} from "../SignIn";
 
-function Landing() {
+function StartPage() {
 
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
@@ -18,18 +21,23 @@ function Landing() {
                 <div className="col-12 ">
                     <h1 className="text-uppercase mb-5">Svenska marvelsamlare</h1>
 
-                    <p>Please sign in to start your collection.</p>
-
                     <div className="d-flex flex-column align-items-center">
-                        <button className="btn btn-primary btn-lg mb-5 d-flex align-items-center" onClick={handleShow}>
+                        <button className="btn btn-primary btn-lg mb-2 d-flex align-items-center" onClick={handleShow}>
                             <Icon.DoorOpen className="fs-2 me-3"/>Sign in
                         </button>
+                        <PasswordForgetLink class={'mb-5'}/>
 
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
                                 <Modal.Title>Sign in</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                            <Modal.Body>
+
+                                <SignInForm />
+                                <PasswordForgetLink />
+                                <SignUpLink />
+
+                            </Modal.Body>
                             <Modal.Footer>
                                 <button className="btn btn-secondary" onClick={handleClose}>
                                     Close
@@ -39,8 +47,6 @@ function Landing() {
                                 </button>
                             </Modal.Footer>
                         </Modal>
-
-                        <p>Don't have an account?</p>
 
                         <button className="btn btn-outline-primary btn-lg mb-5 d-flex align-items-center" onClick={handleShow2}>
                             <Icon.HandThumbsUp className="fs-2 me-3"/>Sign up
@@ -75,4 +81,4 @@ function Landing() {
     );
 }
 
-export default Landing;
+export default StartPage;

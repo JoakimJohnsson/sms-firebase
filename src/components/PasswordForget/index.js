@@ -66,8 +66,8 @@ class PasswordForgetFormBase extends Component {
     }
 }
 
-const PasswordForgetLink = () => (
-    <p>
+const PasswordForgetLink = (props) => (
+    <p className={props.class}>
         <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
     </p>
 );
