@@ -1,0 +1,48 @@
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/variables";
+@import "variables";
+
+/* 1. Hamburger.............. */
+/* 2. Logo................... */
+
+/* --------------- 1. HAMBURGER --------------- */
+.navbar-toggler[aria-expanded="false"] {
+  .sms-burger-icon {
+    display: inline-block;
+  }
+  .sms-burger-icon__expanded {
+    display: none;
+  }
+}
+.navbar-toggler[aria-expanded="true"] {
+  .sms-burger-icon {
+    display: none;
+  }
+  .sms-burger-icon__expanded {
+    display: inline-block;
+  }
+}
+
+/* --------------- 1. LOGO --------------- */
+.sms-logo {
+  .sms-logo__image {
+    width: 30px;
+  }
+  .sms-logo__text {
+    font-weight: lighter;
+    font-size: .9rem;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  @include media-breakpoint-up(sm) {
+    .sms-logo__image {
+      width: 40px;
+    }
+    .sms-logo__text {
+      font-weight: lighter;
+      font-size: 1.1rem;
+    }
+  }
+}

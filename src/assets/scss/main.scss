@@ -1,8 +1,13 @@
+// Custom variables
 @import "variables";
+// Bootstrat
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap/scss/bootstrap-grid";
 @import "bootstrap/scss/bootstrap-reboot";
-@import "typography";
+// Custom css
 @import "helpers";
-
+@import "components";
+// Webfonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,900;1,400&display=swap');
+
+

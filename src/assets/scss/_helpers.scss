@@ -1,4 +1,27 @@
 @import "bootstrap/scss/mixins";
+@import "bootstrap/scss/variables";
+@import "variables";
+
+/* 1. Buttons................... */
+/* 2. Fonts..................... */
+/* 3. Text colors............... */
+
+/* --------------- 1. BUTTONS --------------- */
+.btn {
+  text-transform: uppercase;
+}
 
 
+/* --------------- 2. FONTS --------------- */
+p.small {
+  font-size: $font-size-sm;
+}
+
+/* --------------- 3. TEXT COLORS --------------- */
+.text-black {
+  color: $smsc-black !important;
+}
+.text-white {
+  color: $smsc-white!important;
+}
 

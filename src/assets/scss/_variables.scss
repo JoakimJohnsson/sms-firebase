@@ -9,6 +9,9 @@ $smsc-success: #286717;
 $smsc-black: #161c1b;
 $smsc-white: #fefefe;
 
+/* ----- Font size ----- */
+$sms-font-size__small: 90%;
+
 /* ----- Bootstrap overrides ----- */
 $body-color: $smsc-black;
 $body-bg: $smsc-white;
@@ -25,3 +28,10 @@ $dark:          $smsc-black;
 $font-family-sans-serif:      "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $headings-font-weight:        600;
 $btn-font-weight:             300;
+
+$navbar-dark-toggler-border-color: transparent;
+$navbar-light-toggler-border-color: transparent;
+$navbar-dark-color: $smsc-white;
+$navbar-light-color: $smsc-black;
+$navbar-light-active-color: $smsc-primary;
+$navbar-dark-active-color: lighten($smsc-primary, 30%);

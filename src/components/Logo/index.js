@@ -3,18 +3,15 @@ import shieldBlack from "../../assets/images/shield__black.svg";
 import shieldWhite from "../../assets/images/shield__white.svg";
 import {Link} from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
-import Navbar from "react-bootstrap/Navbar";
-
-
 
 const SmsLogo = (props) => (
 
-    <Navbar.Brand>
-        <Link to={ROUTES.START}>
-            <img src={props.showWhite ? shieldWhite : shieldBlack} alt={"Svenska Marvelsamlare Logo"} />
-            SVENSKA MARVELSAMLARE
+    <div className={"sms-logo navbar-brand " + (props.showWhite ? "text-white" : "text-black")}>
+        <Link to={ROUTES.START} className={"d-flex align-items-center"}>
+            <img className="sms-logo__image me-2" src={props.showWhite ? shieldWhite : shieldBlack} alt={"Svenska Marvelsamlare Logo"} />
+                <span className={"sms-logo__text"}>SVENSKA MARVELSAMLARE</span>
         </Link>
-    </Navbar.Brand>
+    </div>
 );
 
 export default SmsLogo;

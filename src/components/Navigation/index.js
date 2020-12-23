@@ -4,9 +4,8 @@ import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import {AuthUserContext} from '../Session';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import SmsLogo from "../Logo";
+import * as Icon from 'react-bootstrap-icons';
 
 const Navigation = () => (
     <AuthUserContext.Consumer>
@@ -16,44 +15,61 @@ const Navigation = () => (
 
 const HeaderAuth = ({authUser}) => (
     <header className="container-fluid bg-dark">
-        <Navbar className="container" variant="dark" expand="lg">
-            <SmsLogo showWhite={true}/>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-navbar-nav" className="d-lg-flex justify-content-end text-end">
-                <NavigationAuth authUser={authUser}/>
-            </Navbar.Collapse>
-        </Navbar>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <SmsLogo showWhite={true}/>
+                <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAuthToggler"
+                        aria-controls="navbarAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <Icon.List className="fs-1 sms-burger-icon"/>
+                    <Icon.X className="fs-1 sms-burger-icon__expanded"/>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarAuthToggler">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <NavigationAuth authUser={authUser}/>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 );
 
 const HeaderNonAuth = () => (
+
     <header className="container-fluid bg-light">
-        <Navbar className="container" variant="light" expand="lg">
-            <SmsLogo showWhite={false}/>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-navbar-nav" className="d-lg-flex justify-content-end text-end">
-                <NavigationNonAuth/>
-            </Navbar.Collapse>
-        </Navbar>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <SmsLogo showWhite={false}/>
+                <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNonAuthToggler"
+                        aria-controls="navbarNonAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <Icon.List className="fs-1 sms-burger-icon"/>
+                    <Icon.X className="fs-1 sms-burger-icon__expanded"/>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNonAuthToggler">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <NavigationNonAuth/>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 );
 
 const NavigationAuth = ({authUser}) => (
-    <Nav>
+ <>
         <NavLinkComponent link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true}/>
         <NavLinkComponent link={ROUTES.ACCOUNT} text={"account"}/>
         {!!authUser.roles[ROLES.ADMIN] && (
             <NavLinkComponent link={ROUTES.ADMIN} text={"admin"}/>
         )}
         <SignOutButton/>
-    </Nav>
+   </>
 );
 
 const NavigationNonAuth = () => (
-    <Nav className="">
+    <>
         <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true}/>
         <NavLinkComponent link={ROUTES.SIGN_IN} text={"Sign in"}/>
-    </Nav>
+    </>
 );
 
 const NavLinkComponent = ({link, text, isExact}) => (
