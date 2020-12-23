@@ -19,6 +19,7 @@ g
 .env.production.local
 .idea
 .eslintcache
+.sass-cache
 
 npm-debug.log*
 yarn-debug.log*
