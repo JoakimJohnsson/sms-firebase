@@ -12489,16 +12489,12 @@ p.small {
 .sms-logo .sms-logo__image {
   width: 30px; }
 .sms-logo .sms-logo__text {
-  font-weight: lighter;
-  font-size: .9rem; }
+  font-weight: lighter; }
 .sms-logo a {
   text-decoration: none;
   color: inherit; }
 @media (min-width: 576px) {
   .sms-logo .sms-logo__image {
-    width: 40px; }
-  .sms-logo .sms-logo__text {
-    font-weight: lighter;
-    font-size: 1.1rem; } }
+    width: 40px; } }
 
 /*# sourceMappingURL=main.css.map */

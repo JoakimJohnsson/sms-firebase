@@ -30,7 +30,6 @@
   }
   .sms-logo__text {
     font-weight: lighter;
-    font-size: .9rem;
   }
   a {
     text-decoration: none;
@@ -39,10 +38,6 @@
   @include media-breakpoint-up(sm) {
     .sms-logo__image {
       width: 40px;
-    }
-    .sms-logo__text {
-      font-weight: lighter;
-      font-size: 1.1rem;
     }
   }
 }
