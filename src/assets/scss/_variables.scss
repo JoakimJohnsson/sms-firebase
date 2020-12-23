@@ -2,8 +2,8 @@
 
 /* ----- SMS colors ----- */
 // smsc = sms-color
-$smsc-primary: #3a547e;
-$smsc-secondary: #ebf02b; // not allowed as btn-outline
+$smsc-primary: #DB006E;
+$smsc-secondary: #3a547e; // not allowed as btn-outline
 $smsc-danger: #cb1e12;
 $smsc-success: #286717;
 $smsc-black: #161c1b;
@@ -21,3 +21,7 @@ $warning:       darken($smsc-danger, 20%);
 $danger:        $smsc-danger;
 $light:         $smsc-white;
 $dark:          $smsc-black;
+
+$font-family-sans-serif:      "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$headings-font-weight:        600;
+$btn-font-weight:             300;

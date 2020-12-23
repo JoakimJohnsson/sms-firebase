@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import logo from '../../assets/images/shield-black.svg'
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -10,7 +9,6 @@ import {PasswordForgetLink} from "../PasswordForget";
 const SignInPage = () => (
     <div>
         <h1>SignIn</h1>
-        <img src={logo} />
         <SignInForm />
         <PasswordForgetLink />
         <SignUpLink />
@@ -37,7 +35,7 @@ class SignInFormBase extends Component {
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
                 this.setState({ ...INITIAL_STATE });
-                this.props.history.push(ROUTES.HOME);
+                this.props.history.push(ROUTES.DASHBOARD);
             })
             .catch(error => {
                 this.setState({ error });
@@ -73,21 +71,6 @@ class SignInFormBase extends Component {
                 />
                 <button disabled={isInvalid} type="submit" className="btn btn btn-primary">
                     Sign In prim
-                </button>
-                <button disabled={isInvalid} type="submit" className="btn btn btn-secondary">
-                    Sign In sec
-                </button>
-                <button disabled={isInvalid} type="submit" className="btn btn btn-info">
-                    Info
-                </button>
-                <button disabled={isInvalid} type="submit" className="btn btn btn-warning">
-                    warning
-                </button>
-                <button disabled={isInvalid} type="submit" className="btn btn btn-success">
-                    success
-                </button>
-                <button disabled={isInvalid} type="submit" className="btn btn btn-danger">
-                    danger
                 </button>
 
                 {error && <p>{error.message}</p>}
