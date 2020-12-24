@@ -7,7 +7,7 @@ import {AuthUserContext} from '../Session';
 import SmsLogo from "../Logo";
 import * as Icon from 'react-bootstrap-icons';
 
-const Navigation = () => (
+const HeaderNavigation = () => (
     <AuthUserContext.Consumer>
         {authUser => authUser ? <HeaderAuth authUser={authUser}/> : <HeaderNonAuth/>}
     </AuthUserContext.Consumer>
@@ -34,7 +34,6 @@ const HeaderAuth = ({authUser}) => (
 );
 
 const HeaderNonAuth = () => (
-
     <header className="container-fluid bg-light">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -76,4 +75,4 @@ const NavLinkComponent = ({link, text, isExact}) => (
     <NavLink className="nav-link" to={link} exact={isExact}>{text}</NavLink>
 );
 
-export default Navigation;
+export default HeaderNavigation;

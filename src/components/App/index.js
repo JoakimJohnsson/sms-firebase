@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/scss/main.scss';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Navigation from '../Navigation';
+import HeaderNavigation from '../Navigation';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
@@ -15,7 +15,7 @@ import StartPage from "../Start";
 const App = () => (
     <Router>
         <div>
-            <Navigation/>
+            <HeaderNavigation/>
             <Route exact path={ROUTES.START} component={StartPage}/>
             <Route path={ROUTES.SIGN_UP} component={SignUpPage}/>
             <Route path={ROUTES.SIGN_IN} component={SignInPage}/>
