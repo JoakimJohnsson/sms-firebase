@@ -68,6 +68,7 @@ const NavigationNonAuth = () => (
     <>
         <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true}/>
         <NavLinkComponent link={ROUTES.SIGN_IN} text={"Sign in"}/>
+        <NavLinkComponent link={ROUTES.SIGN_UP} text={"Sign up"}/>
     </>
 );
 
