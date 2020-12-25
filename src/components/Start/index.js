@@ -1,5 +1,5 @@
 import React from 'react';
-import {ModalSignUp} from "../Modal";
+import {ModalCreateAccount} from "../Modal";
 import ModalSignIn from "../Modal";
 
 const StartPage = () => (
@@ -9,7 +9,7 @@ const StartPage = () => (
             <div className="col-12 ">
                 <h1 className="text-uppercase mb-5">Svenska marvelsamlare</h1>
                 <ModalSignIn/>
-                <ModalSignUp/>
+                <ModalCreateAccount/>
                 <footer className="d-flex justify-content-center">
                     <div className="col-12 col-lg-8 pt-5">
                         <p className="small">

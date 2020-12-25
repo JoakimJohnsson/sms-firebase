@@ -21,7 +21,7 @@ const HeaderAuth = ({authUser}) => (
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAuthToggler"
                         aria-controls="navbarAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <Icon.List className="fs-1 sms-burger-icon"/>
-                    <Icon.X className="fs-1 sms-burger-icon__expanded sms-button__transition"/>
+                    <Icon.X className="fs-1 sms-burger-icon__expanded"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarAuthToggler">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -41,7 +41,7 @@ const HeaderNonAuth = () => (
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNonAuthToggler"
                         aria-controls="navbarNonAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <Icon.List className="fs-1 sms-burger-icon"/>
-                    <Icon.X className="fs-1 sms-burger-icon__expanded sms-button__transition"/>
+                    <Icon.X className="fs-1 sms-burger-icon__expanded"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNonAuthToggler">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

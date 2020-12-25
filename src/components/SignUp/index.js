@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
-import { compose } from 'recompose';
-import { withFirebase } from '../Firebase';
+import {withRouter} from 'react-router-dom';
+import {compose} from 'recompose';
+import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 
@@ -21,7 +21,7 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, passwordOne, isAdmin } = this.state;
+        const {username, email, passwordOne, isAdmin} = this.state;
         const roles = {};
 
         if (isAdmin) {
@@ -54,7 +54,7 @@ class SignUpFormBase extends Component {
     };
 
     onChangeCheckbox = event => {
-        this.setState({ [event.target.name]: event.target.checked });
+        this.setState({[event.target.name]: event.target.checked});
     };
 
     render() {
@@ -75,44 +75,61 @@ class SignUpFormBase extends Component {
 
         return (
             <form onSubmit={this.onSubmit}>
-                <input
-                    name="username"
-                    value={username}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Full Name"
-                />
-                <input
-                    name="email"
-                    value={email}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
+                <div className="mb-3">
+                    <label htmlFor="user-create-input-full-name" className="form-label">User name</label>
+                    <input
+                        name="username"
+                        value={username}
+                        onChange={this.onChange}
+                        type="text"
+                        id="user-create-input-full-name"
+                        className="form-control"
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="user-create-input-email" className="form-label">Email address</label>
+                    <input
+                        name="email"
+                        value={email}
+                        onChange={this.onChange}
+                        type="email"
+                        id="user-create-input-email"
+                        className="form-control"
+                    />
+                    <div className="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="user-create-input-password-one" className="form-label">Password</label>
                 <input
                     name="passwordOne"
                     value={passwordOne}
                     onChange={this.onChange}
                     type="password"
-                    placeholder="Password"
+                    id="user-create-input-password-one"
+                    className="form-control"
                 />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="user-create-input-password-two" className="form-label">Confirm password</label>
                 <input
                     name="passwordTwo"
                     value={passwordTwo}
                     onChange={this.onChange}
                     type="password"
-                    placeholder="Confirm Password"
+                    id="user-create-input-password-two"
+                    className="form-control"
                 />
-                <label>
-                    Admin:
-                    <input
-                        name="isAdmin"
-                        type="checkbox"
-                        checked={isAdmin}
-                        onChange={this.onChangeCheckbox}
-                    />
-                </label>
-                <button disabled={isInvalid} type="submit">
+                </div>
+                {/*<label>*/}
+                {/*    Admin:*/}
+                {/*    <input*/}
+                {/*        name="isAdmin"*/}
+                {/*        type="checkbox"*/}
+                {/*        checked={isAdmin}*/}
+                {/*        onChange={this.onChangeCheckbox}*/}
+                {/*    />*/}
+                {/*</label>*/}
+                <button disabled={isInvalid} type="submit" className="btn btn btn-primary mb-3">
                     Sign Up
                 </button>
 

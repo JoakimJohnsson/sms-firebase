@@ -25,12 +25,12 @@
 }
 
 /* --------------- 2. BUTTONS --------------- */
-.sms-button__transition {
-  transition: all .3s linear .3s;
-  &:hover,
-  &:focus {
-    transform: scale(1.5);
-  }
+.sms-button__cta {
+  @extend .btn-lg;
+  width: 80%;
+  max-width: 25rem;
+  min-height: 4rem;
+  padding: 1rem;
 }
 
 /* --------------- 3. LOGO --------------- */
