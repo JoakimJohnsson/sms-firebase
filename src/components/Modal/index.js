@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import * as Icon from "react-bootstrap-icons";
 import {PasswordForgetLink} from "../PasswordForget";
 import {Modal} from "react-bootstrap";
-import {SignInForm} from "../SignIn";
-import {SignUpLink} from "../SignUp";
+import SignInForm from "../SignIn";
 
 const ModalSignIn = () => {
     const [show, setShow] = useState(false);
@@ -16,13 +15,21 @@ const ModalSignIn = () => {
             </button>
             <PasswordForgetLink class={'mb-5'}/>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Sign in</Modal.Title>
-                </Modal.Header>
+
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Sign in</h5>
+                    <button type="button"
+                            className="btn sms-button__transition"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            onClick={handleClose}>
+                        <Icon.X className="fs-1"/>
+                    </button>
+                </div>
+
                 <Modal.Body>
                     <SignInForm/>
                     <PasswordForgetLink/>
-                    <SignUpLink/>
                 </Modal.Body>
                 <Modal.Footer>
                     <button className="btn btn-secondary" onClick={handleClose}>
@@ -38,25 +45,34 @@ const ModalSignIn = () => {
 }
 
 const ModalSignUp = () => {
-    const [show2, setShow2] = useState(false);
-    const handleClose2 = () => setShow2(false);
-    const handleShow2 = () => setShow2(true);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <div className="d-flex flex-column align-items-center">
-            <button className="btn btn-outline-primary btn-lg mb-5 d-flex align-items-center" onClick={handleShow2}>
+            <button className="btn btn-outline-primary btn-lg mb-5 d-flex align-items-center" onClick={handleShow}>
                 <Icon.HandThumbsUp className="fs-2 me-3"/>Sign up
             </button>
 
-            <Modal show={show2} onHide={handleClose2}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Sign up</Modal.Title>
-                </Modal.Header>
+            <Modal show={show} onHide={handleClose}>
+
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Sign up</h5>
+                    <button type="button"
+                            className="btn sms-button__transition"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            onClick={handleClose}>
+                        <Icon.X className="fs-1"/>
+                    </button>
+                </div>
+
                 <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                 <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={handleClose2}>
+                    <button className="btn btn-secondary" onClick={handleClose}>
                         Close
                     </button>
-                    <button className="btn btn-primary" onClick={handleClose2}>
+                    <button className="btn btn-primary" onClick={handleClose}>
                         Save Changes
                     </button>
                 </Modal.Footer>

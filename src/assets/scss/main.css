@@ -12473,7 +12473,8 @@ p.small {
 /* ----- Font size ----- */
 /* ----- Bootstrap overrides ----- */
 /* 1. Hamburger.............. */
-/* 2. Logo................... */
+/* 2. Buttons................... */
+/* 3. Logo................... */
 /* --------------- 1. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] .sms-burger-icon {
   display: inline-block; }
@@ -12485,7 +12486,13 @@ p.small {
 .navbar-toggler[aria-expanded="true"] .sms-burger-icon__expanded {
   display: inline-block; }
 
-/* --------------- 1. LOGO --------------- */
+/* --------------- 2. BUTTONS --------------- */
+.sms-button__transition {
+  transition: all .3s linear .3s; }
+  .sms-button__transition:hover, .sms-button__transition:focus {
+    transform: scale(1.5); }
+
+/* --------------- 3. LOGO --------------- */
 .sms-logo .sms-logo__image {
   width: 30px; }
 .sms-logo .sms-logo__text {

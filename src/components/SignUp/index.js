@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
-
-const SignUpPage = () => (
-    <div>
-        <h1>SignUp</h1>
-        <SignUpForm />
-    </div>
-);
 
 const INITIAL_STATE = {
     username: '',
@@ -130,12 +123,6 @@ class SignUpFormBase extends Component {
     }
 }
 
-const SignUpLink = () => (
-    <p>
-        Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-    </p>
-);
-
 // const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 // Use compose, so we don't have to nest higher order components as above.
 const SignUpForm = compose(
@@ -143,6 +130,4 @@ const SignUpForm = compose(
     withFirebase,
 )(SignUpFormBase);
 
-export default SignUpPage;
-
-export {SignUpForm, SignUpLink};
+export default SignUpForm;
