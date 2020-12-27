@@ -49,7 +49,7 @@ const ModalCreateAccount = () => {
     const handleShow = () => setShow(true);
     return (
         <div className="d-flex flex-column align-items-center">
-            <button className="btn btn-outline-primary sms-button__cta mb-5" onClick={handleShow}>
+            <button className="btn btn-outline-secondary sms-button__cta mb-5" onClick={handleShow}>
                 <Icon.HandThumbsUp className="fs-2 me-3"/>
                 <span>Create account</span>
             </button>

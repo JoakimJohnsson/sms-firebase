@@ -14,9 +14,8 @@ const HeaderNavigation = () => (
 );
 
 const HeaderAuth = ({authUser}) => (
-    <header className="container-fluid bg-dark">
+    <header className="container-fluid bg-dark p-3">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid">
                 <SmsLogo showWhite={true}/>
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAuthToggler"
                         aria-controls="navbarAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +23,17 @@ const HeaderAuth = ({authUser}) => (
                     <Icon.X className="fs-1 sms-burger-icon__expanded"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarAuthToggler">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav">
                         <NavigationAuth authUser={authUser}/>
                     </ul>
                 </div>
-            </div>
         </nav>
     </header>
 );
 
 const HeaderNonAuth = () => (
-    <header className="container-fluid bg-light">
+    <header className="container-fluid bg-light p-3">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
                 <SmsLogo showWhite={false}/>
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNonAuthToggler"
                         aria-controls="navbarNonAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,11 +41,10 @@ const HeaderNonAuth = () => (
                     <Icon.X className="fs-1 sms-burger-icon__expanded"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNonAuthToggler">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav">
                         <NavigationNonAuth/>
                     </ul>
                 </div>
-            </div>
         </nav>
     </header>
 );

@@ -3,8 +3,9 @@
 @import "variables";
 
 /* 1. Hamburger.............. */
-/* 2. Buttons................... */
-/* 3. Logo................... */
+/* 2. Buttons................ */
+/* 3. Header................. */
+/* 4. Logo................... */
 
 /* --------------- 1. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] {
@@ -33,7 +34,32 @@
   padding: 1rem;
 }
 
-/* --------------- 3. LOGO --------------- */
+/* --------------- 2. HEADER --------------- */
+.navbar {
+  .navbar-nav {
+    margin-bottom: .5rem;
+    padding: 1rem;
+    button {
+      margin: 1.5rem 1.5rem 0;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .navbar-nav {
+      margin-bottom: 0;
+      margin-left: auto;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .navbar-nav {
+      button {
+        margin: 0;
+
+      }
+    }
+  }
+}
+
+/* --------------- 4. LOGO --------------- */
 .sms-logo {
   .sms-logo__image {
     width: 30px;

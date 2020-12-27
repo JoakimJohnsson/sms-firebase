@@ -2,8 +2,9 @@
 
 /* ----- SMS colors ----- */
 // smsc = sms-color
-$smsc-primary: #DB006E;
-$smsc-secondary: #3a547e; // not allowed as btn-outline
+$smsc-primary: #fbc02d;
+$smsc-secondary: #0277bd;
+$smsc-ternary: #3a547e;
 $smsc-danger: #cb1e12;
 $smsc-success: #286717;
 $smsc-black: #161c1b;
@@ -15,6 +16,8 @@ $sms-font-size__small: 90%;
 /* ----- Bootstrap overrides ----- */
 $body-color: $smsc-black;
 $body-bg: $smsc-white;
+$link-color: $smsc-secondary;
+$nav-link-color: $smsc-secondary;
 
 $primary:       $smsc-primary;
 $secondary:     $smsc-secondary;
@@ -32,5 +35,5 @@ $navbar-dark-toggler-border-color: transparent;
 $navbar-light-toggler-border-color: transparent;
 $navbar-dark-color: $smsc-white;
 $navbar-light-color: $smsc-black;
-$navbar-light-active-color: $smsc-primary;
-$navbar-dark-active-color: lighten($smsc-primary, 30%);
+$navbar-light-active-color: $smsc-secondary;
+$navbar-dark-active-color: lighten($smsc-secondary, 30%);

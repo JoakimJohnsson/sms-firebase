@@ -6,7 +6,7 @@ const StartPage = () => (
 
     <div className="container text-center pt-5">
         <div className="row">
-            <div className="col-12 ">
+            <div className="col-12">
                 <h1 className="text-uppercase mb-5">Svenska marvelsamlare</h1>
                 <ModalSignIn/>
                 <ModalCreateAccount/>
