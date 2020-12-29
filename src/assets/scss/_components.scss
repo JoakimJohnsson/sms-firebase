@@ -2,12 +2,30 @@
 @import "bootstrap/scss/variables";
 @import "variables";
 
-/* 1. Hamburger.............. */
+/* 1. Boxes................ */
 /* 2. Buttons................ */
-/* 3. Header................. */
-/* 4. Logo................... */
+/* 3. Hamburger.............. */
+/* 4. Header................. */
+/* 5. Logo................... */
 
-/* --------------- 1. HAMBURGER --------------- */
+
+
+/* --------------- 1. BOXES --------------- */
+.sms-form-box {
+  background-color: $gray-100;
+  padding: 1rem;
+}
+
+/* --------------- 2. BUTTONS --------------- */
+.sms-button__cta {
+  @extend .btn-lg;
+  width: 80%;
+  max-width: 25rem;
+  min-height: 4rem;
+  padding: 1rem;
+}
+
+/* --------------- 3. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] {
   .sms-burger-icon {
     display: inline-block;
@@ -25,16 +43,7 @@
   }
 }
 
-/* --------------- 2. BUTTONS --------------- */
-.sms-button__cta {
-  @extend .btn-lg;
-  width: 80%;
-  max-width: 25rem;
-  min-height: 4rem;
-  padding: 1rem;
-}
-
-/* --------------- 2. HEADER --------------- */
+/* --------------- 4. HEADER --------------- */
 .navbar {
   .navbar-nav {
     margin-bottom: .5rem;
@@ -59,7 +68,7 @@
   }
 }
 
-/* --------------- 4. LOGO --------------- */
+/* --------------- 5. LOGO --------------- */
 .sms-logo {
   .sms-logo__image {
     width: 30px;
