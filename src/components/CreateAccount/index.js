@@ -8,10 +8,9 @@ const CreateAccountPage = () => (
         <div className="row">
             <div className="col-12 col-lg-8">
                 <h1>Create account</h1>
-                <p className="lead">
+                <p className="lead mb-5">
                     This is the lead text. Here is information about this site. To make this longer I put more text here. And even more text.
                 </p>
-                <p>Hello friend!</p>
             </div>
             <div className="container-fluid">
             <div className="row mb-5">

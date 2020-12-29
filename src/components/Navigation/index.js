@@ -14,7 +14,7 @@ const HeaderNavigation = () => (
 );
 
 const HeaderAuth = ({authUser}) => (
-    <header className="container-fluid bg-dark p-3">
+    <header className="container-fluid bg-dark px-3">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <SmsLogo showWhite={true}/>
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAuthToggler"
@@ -32,7 +32,7 @@ const HeaderAuth = ({authUser}) => (
 );
 
 const HeaderNonAuth = () => (
-    <header className="container-fluid bg-light p-3">
+    <header className="container-fluid bg-light px-3">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <SmsLogo showWhite={false}/>
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNonAuthToggler"
@@ -52,9 +52,9 @@ const HeaderNonAuth = () => (
 const NavigationAuth = ({authUser}) => (
  <>
         <NavLinkComponent link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true}/>
-        <NavLinkComponent link={ROUTES.ACCOUNT} text={"account"}/>
+        <NavLinkComponent link={ROUTES.ACCOUNT} text={"Account"}/>
         {!!authUser.roles[ROLES.ADMIN] && (
-            <NavLinkComponent link={ROUTES.ADMIN} text={"admin"}/>
+            <NavLinkComponent link={ROUTES.ADMIN} text={"Admin"}/>
         )}
         <SignOutButton/>
    </>
