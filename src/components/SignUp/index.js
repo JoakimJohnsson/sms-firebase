@@ -129,7 +129,7 @@ class SignUpFormBase extends Component {
                 {/*        onChange={this.onChangeCheckbox}*/}
                 {/*    />*/}
                 {/*</label>*/}
-                <button disabled={isInvalid} type="submit" className="btn btn btn-primary mb-3">
+                <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
                     Sign Up
                 </button>
 

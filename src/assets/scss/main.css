@@ -12462,7 +12462,9 @@ progress {
 /* --------------- 1. BUTTONS --------------- */
 .btn {
   text-transform: uppercase;
-  border-radius: 10px;
+  border-radius: 45px; }
+
+.btn.btn__neu {
   box-shadow: 9px 9px 18px #e4e4d9, -9px -9px 18px #fffff5;
   border: none; }
 
@@ -12496,7 +12498,9 @@ p.small {
 /* --------------- 1. BUTTONS --------------- */
 .btn {
   text-transform: uppercase;
-  border-radius: 10px;
+  border-radius: 45px; }
+
+.btn.btn__neu {
   box-shadow: 9px 9px 18px #e4e4d9, -9px -9px 18px #fffff5;
   border: none; }
 
@@ -12513,10 +12517,11 @@ p.small {
 
 /* 1. Boxes.................. */
 /* 2. Buttons................ */
-/* 3. Hamburger.............. */
-/* 4. Header................. */
-/* 5. Logo................... */
-/* 6. Modals................. */
+/* 3. Forms.................. */
+/* 4. Hamburger.............. */
+/* 5. Header................. */
+/* 6. Logo................... */
+/* 7. Modals................. */
 /* --------------- 1. BOXES --------------- */
 .sms-form-box, .sms-form-box__neu, .modal-content {
   background-color: #fafaf4;
@@ -12534,7 +12539,12 @@ p.small {
   min-height: 4rem;
   padding: 1rem; }
 
-/* --------------- 3. HAMBURGER --------------- */
+/* --------------- 3. FORMS --------------- */
+.form-control {
+  border-radius: 45px;
+  padding: 1rem; }
+
+/* --------------- 4. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] .sms-burger-icon {
   display: inline-block; }
 .navbar-toggler[aria-expanded="false"] .sms-burger-icon__expanded {
@@ -12545,7 +12555,7 @@ p.small {
 .navbar-toggler[aria-expanded="true"] .sms-burger-icon__expanded {
   display: inline-block; }
 
-/* --------------- 4. HEADER --------------- */
+/* --------------- 5. HEADER --------------- */
 .navbar .navbar-nav {
   margin-bottom: .5rem;
   padding: 1rem; }
@@ -12559,7 +12569,7 @@ p.small {
   .navbar .navbar-nav button {
     margin: 0; } }
 
-/* --------------- 5. LOGO --------------- */
+/* --------------- 6. LOGO --------------- */
 .sms-logo .sms-logo__image {
   width: 30px; }
 .sms-logo .sms-logo__text {
@@ -12571,7 +12581,7 @@ p.small {
   .sms-logo .sms-logo__image {
     width: 40px; } }
 
-/* --------------- 6. MODALS --------------- */
+/* --------------- 7. MODALS --------------- */
 .modal-dialog {
   max-width: 730px; }
   @media (max-width: 767.98px) {

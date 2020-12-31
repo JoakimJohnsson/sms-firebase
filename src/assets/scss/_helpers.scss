@@ -10,6 +10,9 @@
 /* --------------- 1. BUTTONS --------------- */
 .btn {
   text-transform: uppercase;
+  border-radius: 45px;
+}
+.btn.btn__neu {
   @include neu__button();
 }
 

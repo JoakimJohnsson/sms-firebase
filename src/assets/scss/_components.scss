@@ -5,10 +5,11 @@
 
 /* 1. Boxes.................. */
 /* 2. Buttons................ */
-/* 3. Hamburger.............. */
-/* 4. Header................. */
-/* 5. Logo................... */
-/* 6. Modals................. */
+/* 3. Forms.................. */
+/* 4. Hamburger.............. */
+/* 5. Header................. */
+/* 6. Logo................... */
+/* 7. Modals................. */
 
 /* --------------- 1. BOXES --------------- */
 .sms-form-box {
@@ -29,7 +30,13 @@
   padding: 1rem;
 }
 
-/* --------------- 3. HAMBURGER --------------- */
+/* --------------- 3. FORMS --------------- */
+.form-control {
+  border-radius: 45px;
+  padding: 1rem;
+}
+
+/* --------------- 4. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] {
   .sms-burger-icon {
     display: inline-block;
@@ -47,7 +54,7 @@
   }
 }
 
-/* --------------- 4. HEADER --------------- */
+/* --------------- 5. HEADER --------------- */
 .navbar {
   .navbar-nav {
     margin-bottom: .5rem;
@@ -72,7 +79,7 @@
   }
 }
 
-/* --------------- 5. LOGO --------------- */
+/* --------------- 6. LOGO --------------- */
 .sms-logo {
   .sms-logo__image {
     width: 30px;
@@ -91,7 +98,7 @@
   }
 }
 
-/* --------------- 6. MODALS --------------- */
+/* --------------- 7. MODALS --------------- */
 .modal-dialog {
   max-width: 730px;
   @include media-breakpoint-down(md) {

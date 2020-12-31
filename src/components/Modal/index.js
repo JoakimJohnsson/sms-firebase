@@ -11,7 +11,7 @@ const ModalSignIn = () => {
     const handleShow = () => setShow(true);
     return (
         <div className="d-flex flex-column align-items-center">
-            <button className="btn btn-primary sms-button__cta mb-2" onClick={handleShow}>
+            <button className="btn btn-primary btn__neu sms-button__cta mb-2" onClick={handleShow}>
                 <Icon.DoorOpen className="fs-2 me-3"/>
                 <span>Sign in</span>
             </button>
@@ -34,7 +34,7 @@ const ModalSignIn = () => {
                     <PasswordForgetLink/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={handleClose}>
+                    <button className="btn btn__neu btn-secondary" onClick={handleClose}>
                         Close
                     </button>
                 </Modal.Footer>
@@ -49,7 +49,7 @@ const ModalCreateAccount = () => {
     const handleShow = () => setShow(true);
     return (
         <div className="d-flex flex-column align-items-center">
-            <button className="btn btn-outline-secondary sms-button__cta mb-5" onClick={handleShow}>
+            <button className="btn btn__neu btn-outline-secondary sms-button__cta mb-5" onClick={handleShow}>
                 <Icon.HandThumbsUp className="fs-2 me-3"/>
                 <span>Create account</span>
             </button>
@@ -71,7 +71,7 @@ const ModalCreateAccount = () => {
                     <SignUpForm/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={handleClose}>
+                    <button className="btn btn__neu btn-secondary" onClick={handleClose}>
                         Close
                     </button>
                 </Modal.Footer>
