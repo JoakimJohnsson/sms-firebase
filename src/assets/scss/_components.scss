@@ -1,19 +1,23 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/variables";
 @import "variables";
+@import "helpers";
 
-/* 1. Boxes................ */
+/* 1. Boxes.................. */
 /* 2. Buttons................ */
 /* 3. Hamburger.............. */
 /* 4. Header................. */
 /* 5. Logo................... */
-
-
+/* 6. Modals................. */
 
 /* --------------- 1. BOXES --------------- */
 .sms-form-box {
   background-color: $gray-100;
-  padding: 1rem;
+  padding: 2rem;
+}
+.sms-form-box__neu {
+  @extend .sms-form-box;
+  @include neu__box($gray-100)
 }
 
 /* --------------- 2. BUTTONS --------------- */
@@ -86,3 +90,16 @@
     }
   }
 }
+
+/* --------------- 6. MODALS --------------- */
+.modal-dialog {
+  max-width: 730px;
+  @include media-breakpoint-down(md) {
+    margin: 1rem;
+  }
+}
+.modal-content {
+  @extend .sms-form-box;
+  border-radius: 10px;
+}
+

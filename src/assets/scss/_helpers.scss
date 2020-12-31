@@ -1,6 +1,7 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/variables";
 @import "variables";
+@import "mixins";
 
 /* 1. Buttons................... */
 /* 2. Fonts..................... */
@@ -9,8 +10,8 @@
 /* --------------- 1. BUTTONS --------------- */
 .btn {
   text-transform: uppercase;
+  @include neu__button();
 }
-
 
 /* --------------- 2. FONTS --------------- */
 p.small {
@@ -24,4 +25,3 @@ p.small {
 .text-white {
   color: $smsc-white!important;
 }
-
