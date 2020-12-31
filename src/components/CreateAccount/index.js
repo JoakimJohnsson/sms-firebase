@@ -14,7 +14,7 @@ const CreateAccountPage = () => (
             </div>
             <div className="container-fluid">
             <div className="row mb-5">
-                <div className="col-12 col-md-8 mb-3 mb-md-0">
+                <div className="col-12 col-md-8 mb-5 mb-md-0">
                     <div className="me-0 me-md-3 sms-form-box__neu">
                         <h2>Sign up</h2>
                         <SignUpForm/>
