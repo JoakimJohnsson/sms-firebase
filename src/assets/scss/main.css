@@ -12517,6 +12517,7 @@ p.small {
 
 /* 1. Boxes.................. */
 /* 2. Buttons................ */
+/* 3. Cards.................. */
 /* 3. Forms.................. */
 /* 4. Hamburger.............. */
 /* 5. Header................. */
@@ -12538,6 +12539,13 @@ p.small {
   max-width: 25rem;
   min-height: 4rem;
   padding: 1rem; }
+
+/* --------------- 3. CARDS --------------- */
+.card {
+  border-radius: 10px;
+  background: #f7fcff;
+  box-shadow: 11px 11px 22px #e4e4d9, -11px -11px 22px #fffff5;
+  border: none; }
 
 /* --------------- 3. FORMS --------------- */
 .form-control {

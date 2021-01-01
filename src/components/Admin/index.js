@@ -41,13 +41,12 @@ class AdminPage extends Component {
                 <div className="row">
                     <div className="col-12 col-lg-8">
                         <h1>Admin</h1>
-                        <p>
+                        <p className="lead mb-5">
                             The Admin Page is accessible by every signed in admin user.
                         </p>
                         {loading && <div>Loading ...</div>}
-
-                        <UserList users={users}/>
                     </div>
+                    <UserList users={users}/>
                 </div>
             </div>
         );
@@ -55,21 +54,23 @@ class AdminPage extends Component {
 }
 
 const UserList = ({users}) => (
-    <ul>
-        {users.map(user => (
-            <li key={user.uid}>
-        <span>
-          <strong>ID:</strong> {user.uid}
-        </span>
-                <span>
-          <strong>E-Mail:</strong> {user.email}
-        </span>
-                <span>
-          <strong>Username:</strong> {user.username}
-        </span>
-            </li>
-        ))}
-    </ul>
+    <div className="col-12">
+        <h2>Users</h2>
+        <ul className="list-unstyled">
+            {users.map(user => (
+                <li key={user.uid}>
+                    <div className="card col-12 col-md-6 col-lg-4">
+                        <div className="card-body">
+                            <h3 className="card-title text-capitalize">{user.username}</h3>
+                            <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
+                            <p className="card-text">{user.email}</p>
+                            <a href="#" className="card-link">Link to user page</a>
+                        </div>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    </div>
 );
 
 const condition = authUser =>
