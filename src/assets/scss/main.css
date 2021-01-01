@@ -1719,7 +1719,7 @@ progress {
   color: #161c1b;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #f6f8f8;
+  border: 1px solid #f0f3f3;
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
@@ -1857,7 +1857,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 1px solid #f6f8f8;
+  border: 1px solid #f0f3f3;
   border-radius: 0.25rem;
   appearance: none; }
   .form-select:focus {
@@ -2101,7 +2101,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: #f6f6ed;
-  border: 1px solid #f6f8f8;
+  border: 1px solid #f0f3f3;
   border-radius: 0.25rem; }
 
 .input-group-lg > .form-control,
