@@ -1719,7 +1719,7 @@ progress {
   color: #161c1b;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #f7fcff;
+  border: 1px solid #f6f8f8;
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
@@ -1857,7 +1857,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 1px solid #f7fcff;
+  border: 1px solid #f6f8f8;
   border-radius: 0.25rem;
   appearance: none; }
   .form-select:focus {
@@ -2101,7 +2101,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: #f6f6ed;
-  border: 1px solid #f7fcff;
+  border: 1px solid #f6f8f8;
   border-radius: 0.25rem; }
 
 .input-group-lg > .form-control,
@@ -12543,16 +12543,16 @@ p.small {
 /* --------------- 3. CARDS --------------- */
 .card {
   border-radius: 10px;
-  background: #f7fcff;
+  background: #fafaf4;
   box-shadow: 11px 11px 22px #e4e4d9, -11px -11px 22px #fffff5;
   border: none; }
 
-/* --------------- 3. FORMS --------------- */
+/* --------------- 4. FORMS --------------- */
 .form-control {
   border-radius: 45px;
   padding: 1rem; }
 
-/* --------------- 4. HAMBURGER --------------- */
+/* --------------- 5. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] .sms-burger-icon {
   display: inline-block; }
 .navbar-toggler[aria-expanded="false"] .sms-burger-icon__expanded {
@@ -12563,7 +12563,7 @@ p.small {
 .navbar-toggler[aria-expanded="true"] .sms-burger-icon__expanded {
   display: inline-block; }
 
-/* --------------- 5. HEADER --------------- */
+/* --------------- 6. HEADER --------------- */
 .navbar .navbar-nav {
   margin-bottom: .5rem;
   padding: 1rem; }
@@ -12577,7 +12577,7 @@ p.small {
   .navbar .navbar-nav button {
     margin: 0; } }
 
-/* --------------- 6. LOGO --------------- */
+/* --------------- 7. LOGO --------------- */
 .sms-logo .sms-logo__image {
   width: 30px; }
 .sms-logo .sms-logo__text {
@@ -12589,7 +12589,7 @@ p.small {
   .sms-logo .sms-logo__image {
     width: 40px; } }
 
-/* --------------- 7. MODALS --------------- */
+/* --------------- 8. MODALS --------------- */
 .modal-dialog {
   max-width: 730px; }
   @media (max-width: 767.98px) {

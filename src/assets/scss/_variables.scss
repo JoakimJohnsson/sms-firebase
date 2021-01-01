@@ -2,21 +2,23 @@
 
 /* ----- SMS colors ----- */
 // smsc = sms-color
-$smsc-primary: #f9f764;
-$smsc-secondary: #086298;
-$smsc-danger: #cb1e12;
-$smsc-success: #286717;
-$smsc-black: #161c1b;
-$smsc-white: #fdfdfb;
+$smsc-primary:    #f9f764;
+$smsc-secondary:  #086298;
+$smsc-danger:     #cb1e12;
+$smsc-success:    #286717;
+$smsc-black:      #161c1b;
+$smsc-white:      #fdfdfb;
+$smsc-grey:       lighten($smsc-black, 87%);
 
 /* ----- Font size ----- */
 $sms-font-size__small: 90%;
 
 /* ----- Bootstrap overrides ----- */
-$body-color: $smsc-black;
-$body-bg: $smsc-white;
-$link-color: $smsc-secondary;
-$nav-link-color: $smsc-secondary;
+$body-color:          $smsc-black;
+$body-bg:             $smsc-white;
+$link-color:          $smsc-secondary;
+$nav-link-color:      $smsc-secondary;
+$input-border-color:  $smsc-grey;
 
 $primary:       $smsc-primary;
 $secondary:     $smsc-secondary;
@@ -27,8 +29,8 @@ $danger:        $smsc-danger;
 $light:         $smsc-white;
 $dark:          $smsc-black;
 
-$font-family-sans-serif:      "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$headings-font-weight:        600;
+$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$headings-font-weight: 600;
 
 $navbar-dark-toggler-border-color: transparent;
 $navbar-light-toggler-border-color: transparent;

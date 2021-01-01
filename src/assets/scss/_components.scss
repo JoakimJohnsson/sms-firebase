@@ -33,17 +33,17 @@
 
 /* --------------- 3. CARDS --------------- */
 .card {
-  @include neu__box($gray-400);
+  @include neu__box($gray-100);
   border: none;
 }
 
-/* --------------- 3. FORMS --------------- */
+/* --------------- 4. FORMS --------------- */
 .form-control {
   border-radius: 45px;
   padding: 1rem;
 }
 
-/* --------------- 4. HAMBURGER --------------- */
+/* --------------- 5. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] {
   .sms-burger-icon {
     display: inline-block;
@@ -61,7 +61,7 @@
   }
 }
 
-/* --------------- 5. HEADER --------------- */
+/* --------------- 6. HEADER --------------- */
 .navbar {
   .navbar-nav {
     margin-bottom: .5rem;
@@ -86,7 +86,7 @@
   }
 }
 
-/* --------------- 6. LOGO --------------- */
+/* --------------- 7. LOGO --------------- */
 .sms-logo {
   .sms-logo__image {
     width: 30px;
@@ -105,7 +105,7 @@
   }
 }
 
-/* --------------- 7. MODALS --------------- */
+/* --------------- 8. MODALS --------------- */
 .modal-dialog {
   max-width: 730px;
   @include media-breakpoint-down(md) {
