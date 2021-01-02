@@ -2,12 +2,12 @@
 
 /* ----- SMS colors ----- */
 // smsc = sms-color
-$smsc-primary:    #f9f764;
-$smsc-secondary:  #086298;
+$smsc-primary:    #A13502;
+$smsc-secondary:  darken($smsc-primary, 15%);
 $smsc-danger:     #cb1e12;
 $smsc-success:    #286717;
 $smsc-black:      #161c1b;
-$smsc-white:      #fdfdfb;
+$smsc-white:      #ffffff;
 $smsc-grey:       lighten($smsc-black, 85%);
 
 /* ----- Font size ----- */
