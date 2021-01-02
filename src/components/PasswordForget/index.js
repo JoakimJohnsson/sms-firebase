@@ -5,9 +5,19 @@ import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 const PasswordForgetPage = () => (
-    <div>
-        <h1>PasswordForget</h1>
-        <PasswordForgetForm/>
+    <div className="container pt-5">
+        <div className="row">
+            <div className="col-12 col-lg-8">
+                <h1>Forgot password?</h1>
+                <p className="lead mb-5">
+                    This is the lead text. Here is information about this site. To make this longer I put more text here. And even more text.
+                </p>
+                <div className="sms-form-box__neu">
+                    <h2>Fix my password</h2>
+                    <PasswordForgetForm/>
+                </div>
+            </div>
+        </div>
     </div>
 );
 

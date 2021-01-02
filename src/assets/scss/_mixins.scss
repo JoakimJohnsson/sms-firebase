@@ -7,12 +7,12 @@
 @mixin neu__box($background-color) {
   border-radius: 10px;
   background: $background-color;
-  box-shadow:  11px 11px 22px #e4e4d9,
-  -11px -11px 22px #fffff5;
+  box-shadow:  11px 11px 22px #d7d7d5,
+  -11px -11px 22px #fff;
 }
 
 @mixin neu__button() {
-  box-shadow:  9px 9px 18px #e4e4d9,
-  -9px -9px 18px #fffff5;
+  box-shadow:  9px 9px 18px #d7d7d5,
+  -9px -9px 18px #fff;
   border: none;
 }
