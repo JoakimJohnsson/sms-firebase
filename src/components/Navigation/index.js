@@ -54,7 +54,7 @@ const NavigationAuth = ({authUser}) => (
         <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true} icon={<Icon.Tools className="fs-5 me-1"/>}/>
         <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}/>
         {!!authUser.roles[ROLES.ADMIN] && (
-            <NavLinkComponent link={ROUTES.ADMIN} text={"Admin"}/>
+            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Admin"} icon={<Icon.Bug className="fs-5 me-1"/>}/>
         )}
         <SignOutButton/>
    </>
