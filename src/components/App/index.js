@@ -3,7 +3,7 @@ import '../../assets/scss/main.scss';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import HeaderNavigation from '../Navigation';
 import PasswordForgetPage from '../PasswordForget';
-import AccountPage from '../Account';
+import SettingsPage from '../Settings';
 import AdminPage from '../Admin';
 import DashboardPage from "../Dashboard";
 import StartPage from "../Start";
@@ -19,7 +19,7 @@ const App = () => (
             <Route path={ROUTES.CREATE_ACCOUNT} component={CreateAccountPage}/>
             <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/>
             <Route path={ROUTES.DASHBOARD} component={DashboardPage}/>
-            <Route path={ROUTES.ACCOUNT} component={AccountPage}/>
+            <Route path={ROUTES.SETTINGS} component={SettingsPage}/>
             <Route path={ROUTES.ADMIN} component={AdminPage}/>
         </>
     </Router>

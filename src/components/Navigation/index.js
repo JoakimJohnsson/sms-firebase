@@ -51,8 +51,8 @@ const HeaderNonAuth = () => (
 
 const NavigationAuth = ({authUser}) => (
  <>
-        <NavLinkComponent link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true}/>
-        <NavLinkComponent link={ROUTES.ACCOUNT} text={"Account"}/>
+        <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true} icon={<Icon.Tools className="fs-5 me-1"/>}/>
+        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}/>
         {!!authUser.roles[ROLES.ADMIN] && (
             <NavLinkComponent link={ROUTES.ADMIN} text={"Admin"}/>
         )}
@@ -69,6 +69,10 @@ const NavigationNonAuth = () => (
 
 const NavLinkComponent = ({link, text, isExact}) => (
     <NavLink className="nav-link" to={link} exact={isExact}>{text}</NavLink>
+);
+
+const NavLinkComponentWithIcon = ({link, text, isExact, icon}) => (
+    <NavLink className="nav-link" to={link} exact={isExact}>{icon} {text}</NavLink>
 );
 
 export default HeaderNavigation;

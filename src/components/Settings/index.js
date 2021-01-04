@@ -3,14 +3,14 @@ import {AuthUserContext, withAuthorization} from '../Session';
 import {PasswordForgetForm} from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 
-const AccountPage = () => {
+const SettingsPage = () => {
     return (
         <AuthUserContext.Consumer>
             {authUser => (
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-12 col-lg-8">
-                            <h1>Account: {authUser.email}</h1>
+                            <h1>Settings: {authUser.email}</h1>
                             <p className="lead mb-5">
                                 This is the lead text. Here is information about this site. To make this longer I put more text here. And even more
                                 text.
@@ -41,4 +41,4 @@ const AccountPage = () => {
 };
 
 const condition = authUser => !!authUser;
-export default withAuthorization(condition)(AccountPage);
+export default withAuthorization(condition)(SettingsPage);
