@@ -15,7 +15,7 @@ const HeaderNavigation = () => (
 
 const HeaderAuth = ({authUser}) => (
     <header className="container-fluid bg-dark px-3">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <SmsLogo showWhite={true}/>
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAuthToggler"
                         aria-controls="navbarAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@ const HeaderAuth = ({authUser}) => (
 
 const HeaderNonAuth = () => (
     <header className="container-fluid bg-light px-3">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <SmsLogo showWhite={false}/>
                 <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNonAuthToggler"
                         aria-controls="navbarNonAuthToggler" aria-expanded="false" aria-label="Toggle navigation">

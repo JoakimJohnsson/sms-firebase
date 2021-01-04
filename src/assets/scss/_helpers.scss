@@ -6,6 +6,7 @@
 /* 1. Buttons................... */
 /* 2. Fonts..................... */
 /* 3. Text colors............... */
+/* 4. Misc...................... */
 
 /* --------------- 1. BUTTONS --------------- */
 .btn {
@@ -27,4 +28,15 @@ p.small {
 }
 .text-white {
   color: $smsc-white!important;
+}
+
+/* --------------- 4. MISC. --------------- */
+.top-spacer {
+  height: 58px;
+  @include media-breakpoint-up(sm) {
+    height: 68px;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 90px;
+  }
 }

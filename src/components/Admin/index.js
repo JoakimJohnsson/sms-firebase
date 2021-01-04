@@ -65,7 +65,7 @@ const UserList = ({users}) => (
                             <h3 className="card-title text-capitalize">{user.username}</h3>
                             <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
                             <p className="card-text">{user.email}</p>
-                            <a href="#" className="card-link"><Icon.Person className="fs-5 me-1"/> Link to user page</a>
+                            <a href="www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> Link to user page</a>
                         </div>
                     </div>
                 </li>

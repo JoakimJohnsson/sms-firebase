@@ -14,6 +14,7 @@ import * as ROUTES from '../../constants/routes';
 const App = () => (
     <Router>
         <>
+            <div className="top-spacer"> </div>
             <HeaderNavigation/>
             <Route exact path={ROUTES.START} component={StartPage}/>
             <Route path={ROUTES.CREATE_ACCOUNT} component={CreateAccountPage}/>
