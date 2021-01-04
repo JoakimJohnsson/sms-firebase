@@ -12,8 +12,8 @@ const PasswordForgetPage = () => (
                 <p className="lead mb-5">
                     This is the lead text. Here is information about this site. To make this longer I put more text here. And even more text.
                 </p>
-                <div className="sms-form-box__neu">
-                    <h2>Fix my password</h2>
+                <div className="sms-form-box__neu mb-5">
+                    <h2 className="form-header">Fix my password</h2>
                     <PasswordForgetForm/>
                 </div>
             </div>
