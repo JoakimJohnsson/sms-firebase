@@ -1719,7 +1719,7 @@ progress {
   color: #161c1b;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #f0f3f3;
+  border: 1px solid #f0f0f0;
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
@@ -1857,7 +1857,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 1px solid #f0f3f3;
+  border: 1px solid #f0f0f0;
   border-radius: 0.25rem;
   appearance: none; }
   .form-select:focus {
@@ -2101,7 +2101,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: whitesmoke;
-  border: 1px solid #f0f3f3;
+  border: 1px solid #f0f0f0;
   border-radius: 0.25rem; }
 
 .input-group-lg > .form-control,
@@ -12523,12 +12523,16 @@ p.small {
 /* --------------- 1. BOXES --------------- */
 .sms-form-box, .sms-form-box__neu, .modal-content {
   background-color: #fafafa;
-  padding: 2rem; }
+  padding: 1rem; }
+  @media (min-width: 576px) {
+    .sms-form-box, .sms-form-box__neu, .modal-content {
+      padding: 2rem; } }
 
 .sms-form-box__neu {
   border-radius: 10px;
   background: #fafafa;
-  box-shadow: 11px 11px 22px #d7d7d5, -11px -11px 22px #fff; }
+  box-shadow: 11px 11px 22px #d7d7d5, -11px -11px 22px #fff;
+  border: 1px solid #f0f0f0; }
 
 /* --------------- 2. BUTTONS --------------- */
 .sms-button__cta {
@@ -12542,12 +12546,17 @@ p.small {
   border-radius: 10px;
   background: #fafafa;
   box-shadow: 11px 11px 22px #d7d7d5, -11px -11px 22px #fff;
-  border: none; }
+  border: 1px solid #f0f0f0; }
 
 /* --------------- 4. FORMS --------------- */
 .form-control {
   border-radius: 10px;
   padding: .5rem; }
+
+.form-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem; }
 
 /* --------------- 5. HAMBURGER --------------- */
 .navbar-toggler[aria-expanded="false"] .sms-burger-icon {

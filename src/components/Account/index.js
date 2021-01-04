@@ -18,15 +18,15 @@ const AccountPage = () => {
                         </div>
                         <div className="container-fluid">
                             <div className="row mb-5">
-                                <div className="col-12 col-md-8 mb-5 ">
+                                <div className="col-12 col-lg-8 mb-5 ">
                                     <div className="sms-form-box__neu">
-                                        <h2>Reset password</h2>
+                                        <h2 className="form-header">Reset password</h2>
                                         <PasswordForgetForm/>
                                     </div>
                                 </div>
-                                <div className="col-12 col-md-8">
+                                <div className="col-12 col-lg-8">
                                     <div className="sms-form-box__neu">
-                                        <h2>Change my password</h2>
+                                        <h2 className="form-header">Change my password</h2>
                                         <PasswordChangeForm/>
                                     </div>
                                 </div>

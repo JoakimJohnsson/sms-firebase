@@ -8,7 +8,13 @@ $smsc-danger:     #cb1e12;
 $smsc-success:    #286717;
 $smsc-black:      #161c1b;
 $smsc-white:      #ffffff;
-$smsc-grey:       lighten($smsc-black, 85%);
+
+$gray-100: darken($smsc-white, 2%);
+$gray-200: darken($smsc-white, 4%);
+$gray-300: darken($smsc-white, 6%); // used as border-color
+$gray-400: lighten($smsc-secondary, 67%);
+$gray-500: lighten($smsc-secondary, 65%);
+$gray-600: darken($smsc-white, 65%);
 
 /* ----- Font size ----- */
 $sms-font-size__small: 90%;
@@ -18,7 +24,7 @@ $body-color:          $smsc-black;
 $body-bg:             $smsc-white;
 $link-color:          $smsc-secondary;
 $nav-link-color:      $smsc-secondary;
-$input-border-color:  $smsc-grey;
+$input-border-color:  $gray-300;
 
 $primary:       $smsc-primary;
 $secondary:     $smsc-secondary;
@@ -39,11 +45,6 @@ $navbar-light-color: $smsc-black;
 $navbar-light-active-color: $smsc-secondary;
 $navbar-dark-active-color: lighten($smsc-secondary, 30%);
 
-$gray-100: darken($smsc-white, 2%);
-$gray-200: darken($smsc-white, 4%);
-$gray-300: darken($smsc-white, 6%);
-$gray-400: lighten($smsc-secondary, 67%);
-$gray-500: lighten($smsc-secondary, 65%);
-$gray-600: darken($smsc-white, 65%);
+
 
 

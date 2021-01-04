@@ -131,9 +131,11 @@ class SignUpFormBase extends Component {
                 {/*</label>*/}
                 {/*<button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">*/}
                 {/*Signup and admin function is disabled for now*/}
-                <button disabled={true} type="submit" className="btn btn__neu btn-primary mb-3">
-                    Sign Up
-                </button>
+                <div className="text-end">
+                    <button disabled={true} type="submit" className="btn btn__neu btn-primary mb-3">
+                        Sign Up
+                    </button>
+                </div>
 
                 {error && <p>{error.message}</p>}
 

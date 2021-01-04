@@ -15,7 +15,10 @@
 /* --------------- 1. BOXES --------------- */
 .sms-form-box {
   background-color: $gray-100;
-  padding: 2rem;
+  padding: 1rem;
+  @include media-breakpoint-up(sm) {
+    padding: 2rem;
+  }
 }
 .sms-form-box__neu {
   @extend .sms-form-box;
@@ -34,13 +37,17 @@
 /* --------------- 3. CARDS --------------- */
 .card {
   @include neu__box($gray-100);
-  border: none;
 }
 
 /* --------------- 4. FORMS --------------- */
 .form-control {
   border-radius: 10px;
   padding: .5rem;
+}
+.form-header {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* --------------- 5. HAMBURGER --------------- */
