@@ -24,7 +24,7 @@ const CreateAccountPage = () => (
                     <div className="sms-form-box__neu">
                         <h2 className="form-header">Already a member?</h2>
                         <SignInForm/>
-                        <PasswordForgetLink/>
+                        <PasswordForgetLink class={"text-end"}/>
                     </div>
                 </div>
             </div>
