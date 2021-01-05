@@ -6,6 +6,7 @@ import * as ROLES from '../../constants/roles';
 import {AuthUserContext} from '../Session';
 import SmsLogo from "../Logo";
 import * as Icon from 'react-bootstrap-icons';
+import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 
 const HeaderNavigation = () => (
     <AuthUserContext.Consumer>
@@ -15,62 +16,41 @@ const HeaderNavigation = () => (
 
 const HeaderAuth = ({authUser}) => (
     <header className="container-fluid bg-dark px-3">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <SmsLogo isLoggedIn={true}/>
-                <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAuthToggler"
-                        aria-controls="navbarAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
-                    <Icon.List className="fs-1 sms-burger-icon"/>
-                    <Icon.X className="fs-1 sms-burger-icon__expanded"/>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarAuthToggler">
-                    <ul className="navbar-nav">
-                        <NavigationAuth authUser={authUser}/>
-                    </ul>
-                </div>
-        </nav>
+        <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top">
+            <Navbar.Brand><SmsLogo isLoggedIn={true}/></Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarAuthToggler"/>
+            <Navbar.Collapse id="navbarAuthToggler">
+                <Nav className="mr-auto">
+                    <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true} icon={<Icon.Tools className="fs-5 me-1"/>}/>
+                    <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}/>
+                    {!!authUser.roles[ROLES.ADMIN] && (
+                        <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Admin"} icon={<Icon.Bug className="fs-5 me-1"/>}/>
+                    )}
+                    <SignOutButton/>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     </header>
 );
 
 const HeaderNonAuth = () => (
     <header className="container-fluid bg-light px-3">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <SmsLogo isLoggedIn={false}/>
-                <button className="navbar-toggler pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNonAuthToggler"
-                        aria-controls="navbarNonAuthToggler" aria-expanded="false" aria-label="Toggle navigation">
-                    <Icon.List className="fs-1 sms-burger-icon"/>
-                    <Icon.X className="fs-1 sms-burger-icon__expanded"/>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNonAuthToggler">
-                    <ul className="navbar-nav">
-                        <NavigationNonAuth/>
-                    </ul>
-                </div>
-        </nav>
+        <Navbar bg="light" expand="lg" className="fixed-top">
+            <Navbar.Brand><SmsLogo isLoggedIn={false}/></Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarNonAuthToggler"/>
+            <Navbar.Collapse id="navbarNonAuthToggler">
+                <Nav className="mr-auto">
+                    <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true}/>
+                    <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={"Create account"}/>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     </header>
-);
-
-const NavigationAuth = ({authUser}) => (
- <>
-        <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true} icon={<Icon.Tools className="fs-5 me-1"/>}/>
-        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}/>
-        {!!authUser.roles[ROLES.ADMIN] && (
-            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Admin"} icon={<Icon.Bug className="fs-5 me-1"/>}/>
-        )}
-        <SignOutButton/>
-   </>
-);
-
-const NavigationNonAuth = () => (
-    <>
-        <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true}/>
-        <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={"Create account"}/>
-    </>
 );
 
 const NavLinkComponent = ({link, text, isExact}) => (
     <NavLink className="nav-link" to={link} exact={isExact}>{text}</NavLink>
 );
-
 const NavLinkComponentWithIcon = ({link, text, isExact, icon}) => (
     <NavLink className="nav-link" to={link} exact={isExact}>{icon} {text}</NavLink>
 );
