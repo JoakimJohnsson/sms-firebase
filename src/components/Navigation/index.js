@@ -95,7 +95,6 @@ const changeLanguage = () => {
         } else {
             i18n.changeLanguage("en");
         }
-        console.log("current lang " + i18n.language)
     }
 }
 
