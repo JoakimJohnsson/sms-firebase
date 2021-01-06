@@ -3,14 +3,13 @@ import {withRouter} from 'react-router-dom';
 import {compose} from 'recompose';
 import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import * as ROLES from '../../constants/roles';
 
 const INITIAL_STATE = {
     username: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
-    isAdmin: false,
+    wantAdminPrivileges: false,
     error: null,
 };
 
@@ -21,14 +20,11 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const {username, email, passwordOne, isAdmin} = this.state;
+        const {username, email, passwordOne, wantAdminPrivileges} = this.state;
         const roles = {};
 
-        if (isAdmin) {
-            roles[ROLES.ADMIN] = ROLES.ADMIN;
-        }
         this.props.firebase
-            .doCreateUserWithEmailAndPassword(email, passwordOne)
+            .doCreateUserWithEmailAndPassword(email, passwordOne, wantAdminPrivileges)
             .then(authUser => {
                 // Create a user in your Firebase realtime database
                 return this.props.firebase
@@ -36,6 +32,7 @@ class SignUpFormBase extends Component {
                     .set({
                         username,
                         email,
+                        wantAdminPrivileges,
                         roles
                     });
             })
@@ -63,7 +60,7 @@ class SignUpFormBase extends Component {
             email,
             passwordOne,
             passwordTwo,
-            // isAdmin,
+            wantAdminPrivileges,
             error,
         } = this.state;
 
@@ -120,25 +117,22 @@ class SignUpFormBase extends Component {
                     className="form-control"
                 />
                 </div>
-                {/*<label>*/}
-                {/*    Admin:*/}
-                {/*    <input*/}
-                {/*        name="isAdmin"*/}
-                {/*        type="checkbox"*/}
-                {/*        checked={isAdmin}*/}
-                {/*        onChange={this.onChangeCheckbox}*/}
-                {/*    />*/}
-                {/*</label>*/}
-                {/*<button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">*/}
-                {/*Signup and admin function is disabled for now*/}
+                <label>
+                    I'm interested in Admin privileges:
+                    <input
+                        className="ms-2"
+                        name="wantAdminPrivileges"
+                        type="checkbox"
+                        checked={wantAdminPrivileges}
+                        onChange={this.onChangeCheckbox}
+                    />
+                </label>
                 <div className="text-end">
-                    <button disabled={true} type="submit" className="btn btn__neu btn-primary mb-3">
-                        Sign Up
+                    <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
+                        Create
                     </button>
                 </div>
-
                 {error && <p>{error.message}</p>}
-
             </form>
         );
     }

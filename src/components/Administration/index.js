@@ -50,7 +50,7 @@ class AdministrationPage extends Component {
                         {loading && <div>Loading ...</div>}
                     </div>
                     <UserList users={users}/>
-                    <AddContentComponent />
+                    <AddContentComponent/>
                 </div>
             </div>
         );
@@ -60,12 +60,14 @@ class AdministrationPage extends Component {
 const UserList = ({users}) => (
     <div className="col-12">
         <h2>Users</h2>
-        <ul className="list-unstyled">
+        <ul className="list-unstyled row">
             {users.map(user => (
-                <li key={user.uid}>
-                    <div className="card col-12 col-md-6 col-lg-4 mb-5">
-                        <div className="card-header text-capitalize fs-5">
+                <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">
+                    <div className="card mb-5">
+                        <div className="card-header text-capitalize fs-5 d-flex align-items-center">
                             {user.username}
+                            {user.wantAdminPrivileges ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
+                            {user.roles ? <Icon.AwardFill className="fs-5 ms-2 text-success"/> : ""}
                         </div>
                         <div className="card-body">
                             <p className="card-subtitle mb-2 text-muted">{user.uid}</p>

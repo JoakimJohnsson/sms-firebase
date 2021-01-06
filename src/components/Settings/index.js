@@ -2,6 +2,7 @@ import React from 'react';
 import {AuthUserContext, withAuthorization} from '../Session';
 import {PasswordForgetForm} from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
+import * as ROLES from "../../constants/roles";
 
 const SettingsPage = () => {
     return (
@@ -21,6 +22,18 @@ const SettingsPage = () => {
                                 <li>
                                     Username: {authUser.username}
                                 </li>
+                                {/* If user is admin - no need to show this */}
+                                {!authUser.roles[ROLES.ADMIN] && (
+                                    <li>
+                                        {authUser.wantAdminPrivileges ? "Admin privileges pending" : "I don't want Admin privileges"}
+                                    </li>
+                                )
+                                }
+                                {!!authUser.roles[ROLES.ADMIN] && (
+                                    <li>
+                                        <p>Admin privileges granted</p>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                         <div className="container-fluid">

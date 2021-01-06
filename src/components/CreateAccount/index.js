@@ -16,7 +16,7 @@ const CreateAccountPage = () => (
             <div className="row mb-5">
                 <div className="col-12 col-lg-8 mb-5 mb-lg-0">
                     <div className="me-0 me-lg-3 sms-form-box__neu">
-                        <h2 className="form-header">Sign up</h2>
+                        <h2 className="form-header">Create account</h2>
                         <SignUpForm/>
                     </div>
                 </div>
