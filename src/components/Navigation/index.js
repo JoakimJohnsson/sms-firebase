@@ -7,6 +7,7 @@ import {AuthUserContext} from '../Session';
 import SmsLogo from "../Logo";
 import * as Icon from 'react-bootstrap-icons';
 import {Nav, Navbar} from "react-bootstrap";
+import i18n from "../../i18n";
 
 const HeaderNavigation = () => {
 
@@ -64,10 +65,7 @@ const HeaderAuth = ({authUser}) => {
 const HeaderNonAuth = ({onTop}) => {
 
     const [expanded, setExpanded] = useState(false);
-
     let navbarClass = onTop ? "fixed-top" : "fixed-top border-bottom";
-
-
 
     return (
         <header className="container-fluid bg-light px-3">
@@ -78,12 +76,23 @@ const HeaderNonAuth = ({onTop}) => {
                     <Nav className="mr-auto">
                         <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true} setExpanded={setExpanded}/>
                         <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={"Create account"} setExpanded={setExpanded}/>
+
+                        <button onClick={changeLanguage("en")}>en</button>
+                        <button onClick={changeLanguage("sv")}>sv</button>
+
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
         </header>
     )
 };
+
+const changeLanguage = (lang) => {
+    return () => {
+        i18n.changeLanguage(lang);
+        console.log(`language changed to ${lang}`)
+    }
+}
 
 const NavLinkComponent = ({link, text, isExact, setExpanded}) => (
     <NavLink className="nav-link" to={link} exact={isExact} onClick={() => setExpanded(false)}>{text}</NavLink>
