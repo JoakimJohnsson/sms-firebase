@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavLink} from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -8,11 +8,31 @@ import SmsLogo from "../Logo";
 import * as Icon from 'react-bootstrap-icons';
 import {Nav, Navbar} from "react-bootstrap";
 
-const HeaderNavigation = () => (
-    <AuthUserContext.Consumer>
-        {authUser => authUser ? <HeaderAuth authUser={authUser}/> : <HeaderNonAuth/>}
-    </AuthUserContext.Consumer>
-);
+const HeaderNavigation = () => {
+
+    // Scroll listener hook to check if we're on top
+    const [onTop, setOnTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 0 && onTop) {
+                setOnTop(false);
+            }
+            if (currentScrollY === 0 && !onTop) {
+                setOnTop(true);
+            }
+        };
+        window.addEventListener("scroll", handleScroll, {passive: true});
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [onTop]);
+
+    return (
+        <AuthUserContext.Consumer>
+            {authUser => authUser ? <HeaderAuth authUser={authUser} onTop={onTop}/> : <HeaderNonAuth onTop={onTop}/>}
+        </AuthUserContext.Consumer>
+    )
+};
 
 const HeaderAuth = ({authUser}) => {
 
@@ -27,9 +47,11 @@ const HeaderAuth = ({authUser}) => {
                     <Nav className="mr-auto">
                         <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true}
                                                   icon={<Icon.Tools className="fs-5 me-1"/>} setExpanded={setExpanded}/>
-                        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>} setExpanded={setExpanded}/>
+                        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}
+                                                  setExpanded={setExpanded}/>
                         {!!authUser.roles[ROLES.ADMIN] && (
-                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Admin"} icon={<Icon.Bug className="fs-5 me-1"/>} setExpanded={setExpanded}/>
+                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Admin"} icon={<Icon.Bug className="fs-5 me-1"/>}
+                                                      setExpanded={setExpanded}/>
                         )}
                         <SignOutButton/>
                     </Nav>
@@ -39,13 +61,17 @@ const HeaderAuth = ({authUser}) => {
     )
 };
 
-const HeaderNonAuth = () => {
+const HeaderNonAuth = ({onTop}) => {
 
     const [expanded, setExpanded] = useState(false);
 
+    let navbarClass = onTop ? "fixed-top" : "fixed-top border-bottom";
+
+
+
     return (
         <header className="container-fluid bg-light px-3">
-            <Navbar bg="light" expand="lg" className="fixed-top" expanded={expanded}>
+            <Navbar bg="light" expand="lg" className={navbarClass} expanded={expanded}>
                 <Navbar.Brand><SmsLogo isLoggedIn={false}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarNonAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarNonAuthToggler">

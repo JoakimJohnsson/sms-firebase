@@ -12456,14 +12456,14 @@ progress {
 /* 1. Buttons................... */
 /* 2. Fonts..................... */
 /* 3. Text colors............... */
+/* 4. Misc...................... */
 /* --------------- 1. BUTTONS --------------- */
 .btn {
-  text-transform: uppercase;
-  border-radius: 45px; }
+  text-transform: uppercase; }
 
 .btn.btn__neu {
   box-shadow: 9px 9px 18px #d7d7d5, -9px -9px 18px #fff;
-  border: none; }
+  border: 1px solid #f0f0f0; }
 
 /* --------------- 2. FONTS --------------- */
 p.small {
@@ -12475,6 +12475,16 @@ p.small {
 
 .text-white {
   color: #ffffff !important; }
+
+/* --------------- 4. MISC. --------------- */
+.top-spacer {
+  height: 58px; }
+  @media (min-width: 576px) {
+    .top-spacer {
+      height: 68px; } }
+  @media (min-width: 992px) {
+    .top-spacer {
+      height: 90px; } }
 
 /* --------------- COLORS --------------- */
 /* ----- SMS colors ----- */
@@ -12492,14 +12502,14 @@ p.small {
 /* 1. Buttons................... */
 /* 2. Fonts..................... */
 /* 3. Text colors............... */
+/* 4. Misc...................... */
 /* --------------- 1. BUTTONS --------------- */
 .btn {
-  text-transform: uppercase;
-  border-radius: 45px; }
+  text-transform: uppercase; }
 
 .btn.btn__neu {
   box-shadow: 9px 9px 18px #d7d7d5, -9px -9px 18px #fff;
-  border: none; }
+  border: 1px solid #f0f0f0; }
 
 /* --------------- 2. FONTS --------------- */
 p.small {
@@ -12512,14 +12522,24 @@ p.small {
 .text-white {
   color: #ffffff !important; }
 
+/* --------------- 4. MISC. --------------- */
+.top-spacer {
+  height: 58px; }
+  @media (min-width: 576px) {
+    .top-spacer {
+      height: 68px; } }
+  @media (min-width: 992px) {
+    .top-spacer {
+      height: 90px; } }
+
 /* 1. Boxes.................. */
 /* 2. Buttons................ */
 /* 3. Cards.................. */
-/* 3. Forms.................. */
-/* 4. Hamburger.............. */
-/* 5. Header................. */
-/* 6. Logo................... */
-/* 7. Modals................. */
+/* 4. Forms.................. */
+/* 5. Hamburger.............. */
+/* 6. Header................. */
+/* 7. Logo................... */
+/* 8. Modals................. */
 /* --------------- 1. BOXES --------------- */
 .sms-form-box, .sms-form-box__neu, .modal-content {
   background-color: #fafafa;
@@ -12539,7 +12559,8 @@ p.small {
   width: 80%;
   max-width: 25rem;
   min-height: 4rem;
-  padding: 1rem; }
+  padding: 1rem;
+  border-radius: 45px; }
 
 /* --------------- 3. CARDS --------------- */
 .card {
@@ -12570,18 +12591,23 @@ p.small {
   display: inline-block; }
 
 /* --------------- 6. HEADER --------------- */
-.navbar .navbar-nav {
-  margin-bottom: .5rem;
-  padding: 1rem; }
-  .navbar .navbar-nav button {
-    margin: 1.5rem 1.5rem 0; }
-@media (min-width: 992px) {
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem; }
   .navbar .navbar-nav {
-    margin-bottom: 0;
-    margin-left: auto; } }
-@media (min-width: 992px) {
-  .navbar .navbar-nav button {
-    margin: 0; } }
+    margin-bottom: .5rem;
+    padding: 1rem; }
+    .navbar .navbar-nav button {
+      margin: 1.5rem 1.5rem 0; }
+  .navbar.border-bottom {
+    box-shadow: 2px 2px 6px #f0f0f0; }
+  @media (min-width: 992px) {
+    .navbar .navbar-nav {
+      margin-bottom: 0;
+      margin-left: auto; } }
+  @media (min-width: 992px) {
+    .navbar .navbar-nav button {
+      margin: 0; } }
 
 /* --------------- 7. LOGO --------------- */
 .sms-logo .sms-logo__image {
