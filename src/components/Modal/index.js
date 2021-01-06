@@ -18,7 +18,7 @@ const ModalSignIn = () => {
             <PasswordForgetLink class={'mb-5'}/>
             <Modal show={show} onHide={handleClose}>
 
-                <div className="modal-header">
+                <div className="modal-header px-0">
                     <h2 className="modal-title" id="exampleModalLabel">Sign in</h2>
                     <button type="button"
                             className="btn"
@@ -29,7 +29,7 @@ const ModalSignIn = () => {
                     </button>
                 </div>
 
-                <Modal.Body>
+                <Modal.Body className="px-0">
                     <SignInForm/>
                     <PasswordForgetLink class={"text-end"}/>
                 </Modal.Body>
@@ -51,7 +51,7 @@ const ModalCreateAccount = () => {
 
             <Modal show={show} onHide={handleClose}>
 
-                <div className="modal-header">
+                <div className="modal-header px-0">
                     <h2 className="modal-title" id="exampleModalLabel">Sign up</h2>
                     <button type="button"
                             className="btn"
@@ -62,7 +62,7 @@ const ModalCreateAccount = () => {
                     </button>
                 </div>
 
-                <Modal.Body>
+                <Modal.Body className="px-0">
                     <SignUpForm/>
                 </Modal.Body>
             </Modal>
