@@ -1,3 +1,5 @@
 {
-  "sms-greeting": "Welcome to Svenska Marvelsamlare"
+  "header_welcome": "Welcome to Svenska Marvelsamlare",
+  "header_create_account": "Create account",
+  "btn_txt_change_language": "Change language"
 }

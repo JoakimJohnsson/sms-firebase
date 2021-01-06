@@ -8,6 +8,7 @@ import SmsLogo from "../Logo";
 import * as Icon from 'react-bootstrap-icons';
 import {Nav, Navbar} from "react-bootstrap";
 import i18n from "../../i18n";
+import {useTranslation} from "react-i18next";
 
 const HeaderNavigation = () => {
 
@@ -64,6 +65,7 @@ const HeaderAuth = ({authUser}) => {
 
 const HeaderNonAuth = ({onTop}) => {
 
+    const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
     let navbarClass = onTop ? "fixed-top" : "fixed-top border-bottom";
 
@@ -77,8 +79,8 @@ const HeaderNonAuth = ({onTop}) => {
                         <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true} setExpanded={setExpanded}/>
                         <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={"Create account"} setExpanded={setExpanded}/>
 
-                        <button onClick={changeLanguage("en")}>en</button>
-                        <button onClick={changeLanguage("sv")}>sv</button>
+                        <button onClick={changeLanguage()}> {t('btn_txt_change_language')} </button>
+
 
                     </Nav>
                 </Navbar.Collapse>
@@ -87,10 +89,14 @@ const HeaderNonAuth = ({onTop}) => {
     )
 };
 
-const changeLanguage = (lang) => {
+const changeLanguage = () => {
     return () => {
-        i18n.changeLanguage(lang);
-        console.log(`language changed to ${lang}`)
+        if (i18n.language === "en") {
+            i18n.changeLanguage("sv");
+        } else {
+            i18n.changeLanguage("en");
+        }
+        console.log("current lang " + i18n.language)
     }
 }
 

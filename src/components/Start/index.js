@@ -5,13 +5,13 @@ import {useTranslation} from "react-i18next";
 
 const StartPage = () => {
 
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <div className="container text-center pt-5">
             <div className="row">
                 <div className="col-12">
-                    <h1 className="text-uppercase mb-5">{t('sms-greeting')}</h1>
+                    <h1 className="text-uppercase mb-5">{t('header_welcome')}</h1>
                     <ModalSignIn/>
                     <ModalCreateAccount/>
                     <footer className="d-flex justify-content-center">
