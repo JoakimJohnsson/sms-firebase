@@ -38,6 +38,7 @@ const HeaderNavigation = () => {
 
 const HeaderAuth = ({authUser}) => {
 
+    const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -55,6 +56,13 @@ const HeaderAuth = ({authUser}) => {
                             <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Administration"} icon={<Icon.Bug className="fs-5 me-1"/>}
                                                       setExpanded={setExpanded}/>
                         )}
+                        <button aria-label={t('btn_txt_change_language')}
+                                className="btn btn-secondary ms-lg-3"
+                                title={t('btn_txt_change_language')}
+                                onClick={changeLanguage()}>
+                            <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>
+                            <span className="d-lg-none">{t('btn_txt_change_language')}</span>
+                        </button>
                         <SignOutButton/>
                     </Nav>
                 </Navbar.Collapse>
@@ -78,10 +86,13 @@ const HeaderNonAuth = ({onTop}) => {
                     <Nav className="mr-auto">
                         <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true} setExpanded={setExpanded}/>
                         <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={"Create account"} setExpanded={setExpanded}/>
-
-                        <button onClick={changeLanguage()}> {t('btn_txt_change_language')} </button>
-
-
+                        <button aria-label={t('btn_txt_change_language')}
+                                className="btn btn-secondary ms-lg-3"
+                                title={t('btn_txt_change_language')}
+                                onClick={changeLanguage()}>
+                            <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>
+                            <span className="d-lg-none">{t('btn_txt_change_language')}</span>
+                        </button>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import {initReactI18next} from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
 import translationSV from './locales/sv/translationSV.json'
 import translationEN from './locales/en/translationEN.json'
 
@@ -12,12 +13,22 @@ const resources = {
     }
 };
 
-i18n.use(initReactI18next).init({
+i18n.use(LanguageDetector).use(initReactI18next).init({
     resources,
-    lng: 'en',
+    fallbackLng: 'en',
+    detection: {
+        order: ['querystring', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+        lookupQuerystring: 'lng',
+        lookupCookie: 'i18next',
+        lookupLocalStorage: 'i18nextLng',
+        lookupSessionStorage: 'i18nextLng',
+        lookupFromPathIndex: 0,
+        lookupFromSubdomainIndex: 0,
+        caches: ['localStorage', 'cookie']
+    },
     keySeparator: false,
     interpolation: {
-        escapeValue: true
+        escapeValue: false
     }
 });
 
