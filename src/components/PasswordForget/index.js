@@ -10,7 +10,7 @@ const PasswordForgetPage = () => (
             <div className="col-12 col-lg-8">
                 <h1>Forgot password?</h1>
                 <p className="lead mb-5">
-                    This is the lead text. Here is information about this site. To make this longer I put more text here. And even more text.
+                    Enter your submitted email address in this form, and we'll send you information on how to reset your password.
                 </p>
                 <div className="sms-form-box__neu mb-5">
                     <h2 className="form-header">Fix my password</h2>
@@ -71,7 +71,7 @@ class PasswordForgetFormBase extends Component {
                     />
                 </div>
                 <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                    Reset my password
+                    Send information
                 </button>
 
                 {error && <p>{error.message}</p>}
