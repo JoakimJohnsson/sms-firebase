@@ -10,11 +10,18 @@ const SettingsPage = () => {
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-12 col-lg-8">
-                            <h1>Settings: {authUser.email}</h1>
-                            <p className="lead mb-5">
-                                This is the lead text. Here is information about this site. To make this longer I put more text here. And even more
-                                text.
+                            <h1>Settings</h1>
+                            <p className="lead">
+                                Review and change your provided information.
                             </p>
+                            <ul className="mb-5">
+                                <li>
+                                    Email: {authUser.email}
+                                </li>
+                                <li>
+                                    Username: {authUser.username}
+                                </li>
+                            </ul>
                         </div>
                         <div className="container-fluid">
                             <div className="row mb-5">

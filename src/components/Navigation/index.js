@@ -50,7 +50,7 @@ const HeaderAuth = ({authUser}) => {
                         <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}
                                                   setExpanded={setExpanded}/>
                         {!!authUser.roles[ROLES.ADMIN] && (
-                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Admin"} icon={<Icon.Bug className="fs-5 me-1"/>}
+                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Administration"} icon={<Icon.Bug className="fs-5 me-1"/>}
                                                       setExpanded={setExpanded}/>
                         )}
                         <SignOutButton/>

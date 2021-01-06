@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import HeaderNavigation from '../Navigation';
 import PasswordForgetPage from '../PasswordForget';
 import SettingsPage from '../Settings';
-import AdminPage from '../Admin';
+import AdministrationPage from '../Administration';
 import DashboardPage from "../Dashboard";
 import StartPage from "../Start";
 import CreateAccountPage from "../CreateAccount";
@@ -21,7 +21,7 @@ const App = () => (
             <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/>
             <Route path={ROUTES.DASHBOARD} component={DashboardPage}/>
             <Route path={ROUTES.SETTINGS} component={SettingsPage}/>
-            <Route path={ROUTES.ADMIN} component={AdminPage}/>
+            <Route path={ROUTES.ADMIN} component={AdministrationPage}/>
         </>
     </Router>
 );

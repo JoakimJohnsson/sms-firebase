@@ -5,7 +5,7 @@ import {withAuthorization} from '../Session';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
 
-class AdminPage extends Component {
+class AdministrationPage extends Component {
     constructor(props) {
         super(props);
 
@@ -40,14 +40,17 @@ class AdminPage extends Component {
         return (
             <div className="container pt-5">
                 <div className="row">
-                    <div className="col-12 col-lg-8">
-                        <h1>Admin</h1>
+                    <div className="col-12 col-lg-8 mb-5">
+                        <h1>Administration</h1>
                         <p className="lead mb-5">
-                            The Admin Page is accessible by every signed in admin user.
+                            The Admin Page is accessible by every signed in admin user. Use it to add content to the database and keep track of users.
                         </p>
+                        <h2>Guides</h2>
+                        <p>TBA - guides to help Admins add content to database.</p>
                         {loading && <div>Loading ...</div>}
                     </div>
                     <UserList users={users}/>
+                    <AddContentComponent />
                 </div>
             </div>
         );
@@ -60,17 +63,26 @@ const UserList = ({users}) => (
         <ul className="list-unstyled">
             {users.map(user => (
                 <li key={user.uid}>
-                    <div className="card col-12 col-md-6 col-lg-4">
+                    <div className="card col-12 col-md-6 col-lg-4 mb-5">
+                        <div className="card-header text-capitalize fs-5">
+                            {user.username}
+                        </div>
                         <div className="card-body">
-                            <h3 className="card-title text-capitalize">{user.username}</h3>
                             <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
                             <p className="card-text">{user.email}</p>
-                            <a href="www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> Link to user page</a>
+                            <a href="www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
                         </div>
                     </div>
                 </li>
             ))}
         </ul>
+    </div>
+);
+
+const AddContentComponent = () => (
+    <div className="col-12">
+        <h2>Add content</h2>
+        <p>TBA - Forms to add content to database.</p>
     </div>
 );
 
@@ -80,4 +92,4 @@ const condition = authUser =>
 export default compose(
     withAuthorization(condition),
     withFirebase,
-)(AdminPage);
+)(AdministrationPage);
