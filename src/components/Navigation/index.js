@@ -99,13 +99,13 @@ const changeLanguage = () => {
 }
 
 const ChangeLanguageButton = ({t}) => (
-    <button aria-label={t('btn_txt_change_language')}
+    <button aria-label={t('btn_change_language')}
             className="btn btn-secondary ms-lg-3 d-flex align-items-center justify-content-center"
-            title={t('btn_txt_change_language')}
+            title={t('btn_change_language')}
             onClick={changeLanguage()}>
         <Icon.Globe2 className="fs-4 me-2 me-lg-0 me-xl-2"/>
-        <span className="d-inline d-lg-none">{t('btn_txt_change_language')}</span>
-        <span className="d-none d-xl-inline">{t('btn_txt_change_language_short')}</span>
+        <span className="d-inline d-lg-none">{t('btn_change_language')}</span>
+        <span className="d-none d-xl-inline">{t('btn_change_language_short')}</span>
     </button>
 );
 

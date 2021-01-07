@@ -4,26 +4,28 @@ import {PasswordForgetLink} from "../PasswordForget";
 import {Modal} from "react-bootstrap";
 import SignInForm from "../SignIn";
 import SignUpForm from "../SignUp";
+import {useTranslation} from "react-i18next";
 
 const ModalSignIn = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const {t} = useTranslation();
     return (
         <div className="d-flex flex-column align-items-center">
             <button className="btn btn-primary btn__neu sms-button__cta mb-2" onClick={handleShow}>
                 <Icon.DoorOpen className="fs-2 me-3"/>
-                <span>Sign in</span>
+                <span>{t("btn_sign_in")}</span>
             </button>
             <PasswordForgetLink class={'mb-5'}/>
             <Modal show={show} onHide={handleClose}>
 
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">Sign in</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t("header_sign_in")}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
-                            aria-label="Close"
+                            aria-label={t("aria_label_close")}
                             onClick={handleClose}>
                         <Icon.X className="fs-1"/>
                     </button>
@@ -42,11 +44,12 @@ const ModalCreateAccount = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const {t} = useTranslation();
     return (
         <div className="d-flex flex-column align-items-center">
             <button className="btn btn__neu btn-outline-secondary sms-button__cta mb-5" onClick={handleShow}>
                 <Icon.HandThumbsUp className="fs-2 me-3"/>
-                <span>Create account</span>
+                <span>{t("btn_create_account")}</span>
             </button>
 
             <Modal show={show} onHide={handleClose}>
@@ -56,7 +59,7 @@ const ModalCreateAccount = () => {
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
-                            aria-label="Close"
+                            aria-label={t("aria_label_close")}
                             onClick={handleClose}>
                         <Icon.X className="fs-1"/>
                     </button>

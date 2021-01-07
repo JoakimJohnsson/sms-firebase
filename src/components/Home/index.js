@@ -17,9 +17,9 @@ const HomePage = () => {
                     <footer className="d-flex justify-content-center">
                         <div className="col-12 col-lg-8 pt-5">
                             <p className="small">
-                                This webb application contains images and information which is owned and
-                                copyrighted by <a href="http://www.marvel.com">MARVEL Entertainment</a> and is
-                                used without permission according to the Fair use doctrin of the United States.
+                                {t("disclaimer_part_1")}
+                                <a href="http://www.marvel.com">MARVEL Entertainment</a>
+                                {t("disclaimer_part_2")}
                             </p>
                         </div>
                     </footer>

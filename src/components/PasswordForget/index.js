@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import {useTranslation} from "react-i18next";
 
 const PasswordForgetPage = () => (
     <div className="container pt-5">
@@ -80,11 +81,16 @@ class PasswordForgetFormBase extends Component {
     }
 }
 
-const PasswordForgetLink = (props) => (
+const PasswordForgetLink = (props) => {
+
+    const {t} = useTranslation();
+
+    return (
+
     <p className={props.class}>
-        <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
+        <Link to={ROUTES.PASSWORD_FORGET}>{t("link_forgot_password")}</Link>
     </p>
-);
+)};
 
 export default PasswordForgetPage;
 
