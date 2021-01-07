@@ -1,17 +1,25 @@
 {
+  "administration_header_administration": "Administration",
+  "administration_header_guides": "Guides",
+  "administration_lead_administration": "The Admin Page is accessible by every signed in admin user. Use it to add content to the database and keep track of users.",
+  "administration_p_guides": "TBA - guides to help Admins add content to database.",
+  "administration_add_content_component_header_add_content": "Add content",
+  "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
+  "administration_user-list_component_header_users": "Users",
+
+  "create_account_h1_header_create_account": "Create account",
+  "create_account_h2_header_create_account": "Create account",
+
+  "modal_create_account_h2_header_create_account": "Create account",
+
   "header_welcome": "Welcome to Svenska Marvelsamlare",
-  "header_create_account": "Create account",
+
   "header_sign_in": "Sign in",
   "header_already_member": "Already a member?",
   "header_dashboard": "Dashboard",
   "header_settings": "Settings",
   "header_reset_password": "Reset password",
   "header_change_password": "Change my password",
-  "header_administration": "Administration",
-  "header_guides": "Guides",
-  "header_users": "Users",
-
-  "p_guides": "TBA - guides to help Admins add content to database.",
 
   "navigation_home": "Home",
   "navigation_create_account": "Create account",
@@ -47,7 +55,6 @@
   "lead_create_account": "To be able to use our services, you need to create an account.",
   "lead_dashboard": "The Dashboard is accessible by every signed in user.",
   "lead_settings": "Review and change your provided information.",
-  "lead_administration": "The Admin Page is accessible by every signed in admin user. Use it to add content to the database and keep track of users.",
 
   "list_email": "Email: ",
   "list_username": "User name: ",

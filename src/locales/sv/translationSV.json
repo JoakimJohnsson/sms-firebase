@@ -1,17 +1,28 @@
 {
+  "administration_header_administration": "Administration",
+  "administration_header_guides": "Guider",
+  "administration_lead_administration": "Admin-sidan är tillgänglig för alla inloggade Administratörer. Används för att lägga till innehåll i databasen och hålla koll på användare.",
+  "administration_p_guides": "TBA - guider för att hjälpa administratörer lägga till information i databasen.",
+  "administration_add_content_component_header_add_content": "Lägg till innehåll",
+  "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
+  "administration_user-list_component_header_users": "Användare",
+
+  "create_account_h1_header_create_account": "Skapa konto",
+  "create_account_h2_header_create_account": "Skapa konto",
+
+  "modal_create_account_h2_header_create_account": "Skapa konto",
+
   "header_welcome": "Välkommen till Svenska Marvelsamlare",
-  "header_create_account": "Skapa konto",
+
+
   "header_sign_in": "Logga in",
   "header_already_member": "Redan medlem?",
   "header_dashboard": "Kontrollpanel",
   "header_settings": "Inställningar",
   "header_reset_password": "Återställ lösenord",
   "header_change_password": "Ändra mitt lösenord",
-  "header_administration": "Administration",
-  "header_guides": "Guider",
-  "header_users": "Användare",
 
-  "p_guides": "TBA - guider för att hjälpa administratörer lägga till information i databasen.",
+
 
   "navigation_home": "Hem",
   "navigation_create_account": "Skapa konto",
@@ -47,7 +58,6 @@
   "lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
   "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
   "lead_settings": "Kontrollera och ändra din information.",
-  "lead_administration": "Admin-sidan är tillgänglig för alla inloggade Administratörer. Används för att lägga till innehåll i databasen och hålla koll på användare.",
 
   "list_email": "E-post: ",
   "list_username": "Användarnamn: ",

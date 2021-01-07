@@ -43,12 +43,12 @@ class AdministrationPage extends Component {
             <div className="container pt-5">
                 <div className="row">
                     <div className="col-12 col-lg-8 mb-5">
-                        <h1>{t('header_administration')}</h1>
+                        <h1>{t('administration_header_administration')}</h1>
                         <p className="lead mb-5">
-                            {t('lead_administration')}
+                            {t('administration_lead_administration')}
                         </p>
-                        <h2>{t('header_guides')}</h2>
-                        <p>{t('p_guides')}</p>
+                        <h2>{t('administration_header_guides')}</h2>
+                        <p>{t('administration_p_guides')}</p>
                         {loading && <div>Loading ...</div>}
                     </div>
                     <UserList users={users}/>
@@ -63,7 +63,7 @@ const UserList = ({users}) => {
     const {t} = useTranslation();
     return (
     <div className="col-12">
-        <h2>{t('header_users')}</h2>
+        <h2>{t('administration_user-list_component_header_users')}</h2>
         <ul className="list-unstyled row">
             {users.map(user => (
                 <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">
@@ -85,12 +85,14 @@ const UserList = ({users}) => {
     </div>
 )};
 
-const AddContentComponent = () => (
+const AddContentComponent = () => {
+    const {t} = useTranslation();
+    return (
     <div className="col-12">
-        <h2>Add content</h2>
-        <p>TBA - Forms to add content to database.</p>
+        <h2>{t('administration_add_content_component_header_add_content')}</h2>
+        <p>{t('administration_add_content_component_p_forms')}</p>
     </div>
-);
+)};
 
 const condition = authUser =>
     authUser && !!authUser.roles[ROLES.ADMIN];

@@ -12,7 +12,7 @@ const CreateAccountPage = () => {
         <div className="container pt-5">
             <div className="row">
                 <div className="col-12 col-lg-8">
-                    <h1>{t('header_create_account')}</h1>
+                    <h1>{t('create_account_h1_header_create_account')}</h1>
                     <p className="lead mb-5">
                         {t('lead_create_account')}
                     </p>
@@ -21,7 +21,7 @@ const CreateAccountPage = () => {
                     <div className="row mb-5">
                         <div className="col-12 col-lg-8 mb-5 mb-lg-0">
                             <div className="me-0 me-lg-3 sms-form-box__neu">
-                                <h2 className="form-header">{t('header_create_account')}</h2>
+                                <h2 className="form-header">{t('create_account_h2_header_create_account')}</h2>
                                 <SignUpForm/>
                             </div>
                         </div>

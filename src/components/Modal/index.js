@@ -55,7 +55,7 @@ const ModalCreateAccount = () => {
             <Modal show={show} onHide={handleClose}>
 
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">{t('header_create_account')}</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t('modal_create_account_h2_header_create_account')}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
