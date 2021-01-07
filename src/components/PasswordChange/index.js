@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import {withFirebase} from '../Firebase';
+import {withTranslation} from 'react-i18next';
+import {compose} from "recompose";
 
 const INITIAL_STATE = {
     passwordOne: '',
@@ -36,14 +38,14 @@ class PasswordChangeForm extends Component {
 
     render() {
         const {passwordOne, passwordTwo, error} = this.state;
-
+        const {t} = this.props;
         const isInvalid =
             passwordOne !== passwordTwo || passwordOne === '';
 
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="user-input-new-password" className="form-label">New password</label>
+                    <label htmlFor="user-input-new-password" className="form-label">{t('label_new_password')}</label>
                     <input
                         name="passwordOne"
                         value={passwordOne}
@@ -54,7 +56,7 @@ class PasswordChangeForm extends Component {
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="user-input-confirm-new-password" className="form-label">Confirm new password</label>
+                    <label htmlFor="user-input-confirm-new-password" className="form-label">{t('label_confirm_new_password')}</label>
                     <input
                         name="passwordTwo"
                         value={passwordTwo}
@@ -65,7 +67,7 @@ class PasswordChangeForm extends Component {
                     />
                 </div>
                 <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                    Change my password
+                    {t('btn_change_password')}
                 </button>
 
                 {error && <p>{error.message}</p>}
@@ -74,4 +76,4 @@ class PasswordChangeForm extends Component {
     }
 }
 
-export default withFirebase(PasswordChangeForm);
+export default compose(withFirebase, withTranslation())(PasswordChangeForm);

@@ -4,6 +4,9 @@
   "header_sign_in": "Logga in",
   "header_already_member": "Redan medlem?",
   "header_dashboard": "Kontrollpanel",
+  "header_settings": "Inställningar",
+  "header_reset_password": "Återställ lösenord",
+  "header_change_password": "Ändra mitt lösenord",
 
   "navigation_home": "Hem",
   "navigation_create_account": "Skapa konto",
@@ -16,14 +19,18 @@
   "btn_sign_in": "Logga in",
   "btn_create_account": "Skapa konto",
   "btn_create": "Skapa",
+  "btn_send": "Skicka",
+  "btn_change_password": "Byt mitt lösenord",
 
   "aria_label_close": "Stäng",
 
   "label_email": "E-post adress",
   "label_password": "Lösenord",
+  "label_new_password": "Nytt lösenord",
   "label_username": "Användarnamn",
   "label_confirm_password": "Bekräfta lösenord",
-  "label_admin_privileges": "Jag vill hjälpa till genom att bli Administrator",
+  "label_confirm_new_password": "Bekräfta nytt lösenord",
+  "label_admin_privileges": "Jag vill hjälpa till genom att bli Administratör",
   "form_email_disclaimer": "Vi kommer aldrig dela din e-post adress med någon annan",
 
   "link_forgot_password": "Glömt lösenord?",
@@ -32,5 +39,12 @@
   "disclaimer_part_2": " och används utan tillstånd enligt USA's Fair use-doktrin.",
 
   "lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
-  "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare."
+  "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
+  "lead_settings": "Kontrollera och ändra din information.",
+
+  "list_email": "E-post: ",
+  "list_username": "Användarnamn: ",
+  "list_admin_pending": "Administratör-status: Väntar",
+  "list_admin_unwanted": "Jag vill inte bli administratör",
+  "list_admin_granted": "Administratör-privilegier: Beviljade"
 }

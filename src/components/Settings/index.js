@@ -3,35 +3,39 @@ import {AuthUserContext, withAuthorization} from '../Session';
 import {PasswordForgetForm} from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import * as ROLES from "../../constants/roles";
+import {useTranslation} from "react-i18next";
 
 const SettingsPage = () => {
+
+    const {t} = useTranslation();
+
     return (
         <AuthUserContext.Consumer>
             {authUser => (
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-12 col-lg-8">
-                            <h1>Settings</h1>
+                            <h1>{t('header_settings')}</h1>
                             <p className="lead">
-                                Review and change your provided information.
+                                {t('lead_settings')}
                             </p>
                             <ul className="mb-5">
                                 <li>
-                                    Email: {authUser.email}
+                                    {t('list_email')}{authUser.email}
                                 </li>
                                 <li>
-                                    Username: {authUser.username}
+                                    {t('list_username')}<span className="text-capitalize">{authUser.username}</span>
                                 </li>
                                 {/* If user is admin - no need to show this */}
                                 {!authUser.roles[ROLES.ADMIN] && (
                                     <li>
-                                        {authUser.wantAdminPrivileges ? "Admin privileges pending" : "I don't want Admin privileges"}
+                                        {authUser.wantAdminPrivileges ? t('list_admin_pending') : t('list_admin_unwanted')}
                                     </li>
                                 )
                                 }
                                 {!!authUser.roles[ROLES.ADMIN] && (
                                     <li>
-                                        <p>Admin privileges granted</p>
+                                        <p>{t('list_admin_granted')}</p>
                                     </li>
                                 )}
                             </ul>
@@ -40,13 +44,13 @@ const SettingsPage = () => {
                             <div className="row mb-5">
                                 <div className="col-12 col-lg-8 mb-5 ">
                                     <div className="sms-form-box__neu">
-                                        <h2 className="form-header">Reset password</h2>
+                                        <h2 className="form-header">{t('header_reset_password')}</h2>
                                         <PasswordForgetForm/>
                                     </div>
                                 </div>
                                 <div className="col-12 col-lg-8">
                                     <div className="sms-form-box__neu">
-                                        <h2 className="form-header">Change my password</h2>
+                                        <h2 className="form-header">{t('header_change_password')}</h2>
                                         <PasswordChangeForm/>
                                     </div>
                                 </div>

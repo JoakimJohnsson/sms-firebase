@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import {useTranslation} from "react-i18next";
+import {withTranslation} from 'react-i18next';
+import {compose} from "recompose";
 
 const PasswordForgetPage = () => (
     <div className="container pt-5">
@@ -55,13 +57,13 @@ class PasswordForgetFormBase extends Component {
 
     render() {
         const {email, error} = this.state;
-
+        const {t} = this.props;
         const isInvalid = email === '';
 
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="user-change-pass-input-email" className="form-label">Email address</label>
+                    <label htmlFor="user-change-pass-input-email" className="form-label">{t('label_email')}</label>
                     <input
                         name="email"
                         value={this.state.email}
@@ -72,7 +74,7 @@ class PasswordForgetFormBase extends Component {
                     />
                 </div>
                 <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                    Send information
+                    {t('btn_send')}
                 </button>
 
                 {error && <p>{error.message}</p>}
@@ -94,6 +96,6 @@ const PasswordForgetLink = (props) => {
 
 export default PasswordForgetPage;
 
-const PasswordForgetForm = withFirebase(PasswordForgetFormBase);
+const PasswordForgetForm = compose(withFirebase, withTranslation())(PasswordForgetFormBase);
 
 export {PasswordForgetForm, PasswordForgetLink};
