@@ -6,7 +6,7 @@ import PasswordForgetPage from '../PasswordForget';
 import SettingsPage from '../Settings';
 import AdministrationPage from '../Administration';
 import DashboardPage from "../Dashboard";
-import StartPage from "../Start";
+import HomePage from "../Home";
 import CreateAccountPage from "../CreateAccount";
 import {withAuthentication} from '../Session';
 import * as ROUTES from '../../constants/routes';
@@ -16,7 +16,7 @@ const App = () => (
         <>
             <div className="top-spacer"> </div>
             <HeaderNavigation/>
-            <Route exact path={ROUTES.START} component={StartPage}/>
+            <Route exact path={ROUTES.HOME} component={HomePage}/>
             <Route path={ROUTES.CREATE_ACCOUNT} component={CreateAccountPage}/>
             <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/>
             <Route path={ROUTES.DASHBOARD} component={DashboardPage}/>

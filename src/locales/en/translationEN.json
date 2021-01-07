@@ -1,6 +1,10 @@
 {
   "header_welcome": "Welcome to Svenska Marvelsamlare",
   "header_create_account": "Create account",
+
+  "navigation_home": "Home",
+  "navigation_create_account": "Create account",
+
   "btn_txt_change_language": "På svenska",
   "btn_txt_change_language_short": "SV"
 }

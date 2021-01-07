@@ -67,7 +67,7 @@ const UserList = ({users}) => (
                         <div className="card-header text-capitalize fs-5 d-flex align-items-center">
                             {user.username}
                             {user.wantAdminPrivileges ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
-                            {user.roles ? <Icon.AwardFill className="fs-5 ms-2 text-success"/> : ""}
+                            {user.roles ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
                         </div>
                         <div className="card-body">
                             <p className="card-subtitle mb-2 text-muted">{user.uid}</p>

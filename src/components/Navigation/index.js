@@ -43,7 +43,7 @@ const HeaderAuth = ({authUser}) => {
 
     return (
         <header className="container-fluid bg-dark px-3">
-            <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top" expanded={expanded}>
+            <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top border-bottom" expanded={expanded}>
                 <Navbar.Brand><SmsLogo isLoggedIn={true}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarAuthToggler">
@@ -78,8 +78,8 @@ const HeaderNonAuth = ({onTop}) => {
                 <Navbar.Toggle aria-controls="navbarNonAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarNonAuthToggler">
                     <Nav className="mr-auto">
-                        <NavLinkComponent link={ROUTES.START} text={"Start"} isExact={true} setExpanded={setExpanded}/>
-                        <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={"Create account"} setExpanded={setExpanded}/>
+                        <NavLinkComponent link={ROUTES.HOME} text={t('navigation_home')} isExact={true} setExpanded={setExpanded}/>
+                        <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={t('navigation_create_account')} setExpanded={setExpanded}/>
                         <ChangeLanguageButton t={t}/>
                     </Nav>
                 </Navbar.Collapse>

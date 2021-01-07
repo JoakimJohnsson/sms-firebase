@@ -3,7 +3,7 @@ import {ModalCreateAccount} from "../Modal";
 import ModalSignIn from "../Modal";
 import {useTranslation} from "react-i18next";
 
-const StartPage = () => {
+const HomePage = () => {
 
     const {t} = useTranslation();
 
@@ -29,4 +29,4 @@ const StartPage = () => {
     )
 };
 
-export default StartPage;
+export default HomePage;
