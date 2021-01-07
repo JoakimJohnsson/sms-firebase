@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {compose} from 'recompose';
 import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import {withTranslation} from 'react-i18next';
 
 const INITIAL_STATE = {
     username: '',
@@ -70,10 +71,12 @@ class SignUpFormBase extends Component {
             email === '' ||
             username === '';
 
+        const {t} = this.props;
+
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="user-create-input-full-name" className="form-label">User name</label>
+                    <label htmlFor="user-create-input-full-name" className="form-label">{t('label_username')}</label>
                     <input
                         name="username"
                         value={username}
@@ -84,7 +87,7 @@ class SignUpFormBase extends Component {
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="user-create-input-email" className="form-label">Email address</label>
+                    <label htmlFor="user-create-input-email" className="form-label">{t('label_email')}</label>
                     <input
                         name="email"
                         value={email}
@@ -93,10 +96,10 @@ class SignUpFormBase extends Component {
                         id="user-create-input-email"
                         className="form-control"
                     />
-                    <div className="form-text">We'll never share your email with anyone else.</div>
+                    <div className="form-text">{t('form_email_disclaimer')}</div>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="user-create-input-password-one" className="form-label">Password</label>
+                    <label htmlFor="user-create-input-password-one" className="form-label">{t('label_password')}</label>
                 <input
                     name="passwordOne"
                     value={passwordOne}
@@ -107,7 +110,7 @@ class SignUpFormBase extends Component {
                 />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="user-create-input-password-two" className="form-label">Confirm password</label>
+                    <label htmlFor="user-create-input-password-two" className="form-label">{t('label_confirm_password')}</label>
                 <input
                     name="passwordTwo"
                     value={passwordTwo}
@@ -118,7 +121,7 @@ class SignUpFormBase extends Component {
                 />
                 </div>
                 <label>
-                    I'm interested in Admin privileges:
+                    {t('label_admin_privileges')}
                     <input
                         className="ms-2"
                         name="wantAdminPrivileges"
@@ -129,7 +132,7 @@ class SignUpFormBase extends Component {
                 </label>
                 <div className="text-end">
                     <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                        Create
+                        {t('btn_create')}
                     </button>
                 </div>
                 {error && <p>{error.message}</p>}
@@ -143,6 +146,7 @@ class SignUpFormBase extends Component {
 const SignUpForm = compose(
     withRouter,
     withFirebase,
+    withTranslation()
 )(SignUpFormBase);
 
 export default SignUpForm;

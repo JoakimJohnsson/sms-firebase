@@ -48,12 +48,12 @@ const HeaderAuth = ({authUser}) => {
                 <Navbar.Toggle aria-controls="navbarAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarAuthToggler">
                     <Nav className="mr-auto">
-                        <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={"Dashboard"} isExact={true}
+                        <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={t('navigation_dashboard')} isExact={true}
                                                   icon={<Icon.Tools className="fs-5 me-1"/>} setExpanded={setExpanded}/>
-                        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={" Settings"} icon={<Icon.Gear className="fs-5 me-1"/>}
+                        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={t('navigation_settings')} icon={<Icon.Gear className="fs-5 me-1"/>}
                                                   setExpanded={setExpanded}/>
                         {!!authUser.roles[ROLES.ADMIN] && (
-                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={"Administration"} icon={<Icon.Bug className="fs-5 me-1"/>}
+                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={t('navigation_administration')} icon={<Icon.Bug className="fs-5 me-1"/>}
                                                       setExpanded={setExpanded}/>
                         )}
                         <ChangeLanguageButton t={t}/>

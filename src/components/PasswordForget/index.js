@@ -88,7 +88,7 @@ const PasswordForgetLink = (props) => {
     return (
 
     <p className={props.class}>
-        <Link to={ROUTES.PASSWORD_FORGET}>{t("link_forgot_password")}</Link>
+        <Link to={ROUTES.PASSWORD_FORGET}>{t('link_forgot_password')}</Link>
     </p>
 )};
 

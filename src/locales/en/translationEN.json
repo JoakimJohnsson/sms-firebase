@@ -2,23 +2,35 @@
   "header_welcome": "Welcome to Svenska Marvelsamlare",
   "header_create_account": "Create account",
   "header_sign_in": "Sign in",
+  "header_already_member": "Already a member?",
+  "header_dashboard": "Dashboard",
 
   "navigation_home": "Home",
   "navigation_create_account": "Create account",
+  "navigation_dashboard": "Dashboard",
+  "navigation_settings": "Settings",
+  "navigation_administration": "Administration",
 
   "btn_change_language": "På svenska",
   "btn_change_language_short": "SV",
   "btn_sign_in": "Sign in",
   "btn_create_account": "Create account",
+  "btn_create": "Create",
 
   "aria_label_close": "close",
 
   "label_email": "Email address",
   "label_password": "Password",
+  "label_username": "User name",
+  "label_confirm_password": "Confirm password",
+  "label_admin_privileges": "I want to help out by becoming an Administrator",
+  "form_email_disclaimer": "We'll never share your email with anyone else",
 
   "link_forgot_password": "Forgot password?",
 
   "disclaimer_part_1": "This webb application contains images and information which is owned and copyrighted by ",
-  "disclaimer_part_2": " and is used without permission according to the Fair use doctrin of the United States."
+  "disclaimer_part_2": " and is used without permission according to the Fair use doctrin of the United States.",
 
+  "lead_create_account": "To be able to use our services, you need to create an account.",
+  "lead_dashboard": "The Dashboard is accessible by every signed in user."
 }

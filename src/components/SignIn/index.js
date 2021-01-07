@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {compose} from 'recompose';
 import {withFirebase} from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import { withTranslation } from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 
 const INITIAL_STATE = {
     email: '',
@@ -46,7 +46,7 @@ class SignInFormBase extends Component {
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="user-sign-in-input-email" className="form-label">{t("label_email")}</label>
+                    <label htmlFor="user-sign-in-input-email" className="form-label">{t('label_email')}</label>
                     <input
                         name="email"
                         value={email}
@@ -57,7 +57,7 @@ class SignInFormBase extends Component {
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="user-sign-in-input-password" className="form-label">{t("label_password")}</label>
+                    <label htmlFor="user-sign-in-input-password" className="form-label">{t('label_password')}</label>
                     <input
                         name="password"
                         value={password}
@@ -69,7 +69,7 @@ class SignInFormBase extends Component {
                 </div>
                 <div className="text-end">
                     <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                        {t("btn_sign_in")}
+                        {t('btn_sign_in')}
                     </button>
                 </div>
 

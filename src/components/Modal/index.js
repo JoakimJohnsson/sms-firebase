@@ -15,17 +15,17 @@ const ModalSignIn = () => {
         <div className="d-flex flex-column align-items-center">
             <button className="btn btn-primary btn__neu sms-button__cta mb-2" onClick={handleShow}>
                 <Icon.DoorOpen className="fs-2 me-3"/>
-                <span>{t("btn_sign_in")}</span>
+                <span>{t('btn_sign_in')}</span>
             </button>
             <PasswordForgetLink class={'mb-5'}/>
             <Modal show={show} onHide={handleClose}>
 
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">{t("header_sign_in")}</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t('header_sign_in')}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
-                            aria-label={t("aria_label_close")}
+                            aria-label={t('aria_label_close')}
                             onClick={handleClose}>
                         <Icon.X className="fs-1"/>
                     </button>
@@ -49,17 +49,17 @@ const ModalCreateAccount = () => {
         <div className="d-flex flex-column align-items-center">
             <button className="btn btn__neu btn-outline-secondary sms-button__cta mb-5" onClick={handleShow}>
                 <Icon.HandThumbsUp className="fs-2 me-3"/>
-                <span>{t("btn_create_account")}</span>
+                <span>{t('btn_create_account')}</span>
             </button>
 
             <Modal show={show} onHide={handleClose}>
 
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">Create account</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t('header_create_account')}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
-                            aria-label={t("aria_label_close")}
+                            aria-label={t('aria_label_close')}
                             onClick={handleClose}>
                         <Icon.X className="fs-1"/>
                     </button>

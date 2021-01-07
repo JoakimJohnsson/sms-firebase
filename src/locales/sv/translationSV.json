@@ -2,22 +2,35 @@
   "header_welcome": "Välkommen till Svenska Marvelsamlare",
   "header_create_account": "Skapa konto",
   "header_sign_in": "Logga in",
+  "header_already_member": "Redan medlem?",
+  "header_dashboard": "Kontrollpanel",
 
   "navigation_home": "Hem",
   "navigation_create_account": "Skapa konto",
+  "navigation_dashboard": "Kontrollpanel",
+  "navigation_settings": "Inställningar",
+  "navigation_administration": "Administration",
 
   "btn_change_language": "In english",
   "btn_change_language_short": "EN",
   "btn_sign_in": "Logga in",
   "btn_create_account": "Skapa konto",
+  "btn_create": "Skapa",
 
   "aria_label_close": "Stäng",
 
   "label_email": "E-post adress",
   "label_password": "Lösenord",
+  "label_username": "Användarnamn",
+  "label_confirm_password": "Bekräfta lösenord",
+  "label_admin_privileges": "Jag vill hjälpa till genom att bli Administrator",
+  "form_email_disclaimer": "Vi kommer aldrig dela din e-post adress med någon annan",
 
   "link_forgot_password": "Glömt lösenord?",
 
   "disclaimer_part_1": "Den här webbappen kan innehålla bilder och information vars copyright ägs av ",
-  "disclaimer_part_2": " och används utan tillstånd enligt USA's Fair use-doktrin."
+  "disclaimer_part_2": " och används utan tillstånd enligt USA's Fair use-doktrin.",
+
+  "lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
+  "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare."
 }
