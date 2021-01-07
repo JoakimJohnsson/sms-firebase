@@ -7,6 +7,11 @@
   "header_settings": "Inställningar",
   "header_reset_password": "Återställ lösenord",
   "header_change_password": "Ändra mitt lösenord",
+  "header_administration": "Administration",
+  "header_guides": "Guider",
+  "header_users": "Användare",
+
+  "p_guides": "TBA - guider för att hjälpa administratörer lägga till information i databasen.",
 
   "navigation_home": "Hem",
   "navigation_create_account": "Skapa konto",
@@ -17,6 +22,7 @@
   "btn_change_language": "In english",
   "btn_change_language_short": "EN",
   "btn_sign_in": "Logga in",
+  "btn_sign_out": "Logga ut",
   "btn_create_account": "Skapa konto",
   "btn_create": "Skapa",
   "btn_send": "Skicka",
@@ -41,6 +47,7 @@
   "lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
   "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
   "lead_settings": "Kontrollera och ändra din information.",
+  "lead_administration": "Admin-sidan är tillgänglig för alla inloggade Administratörer. Används för att lägga till innehåll i databasen och hålla koll på användare.",
 
   "list_email": "E-post: ",
   "list_username": "Användarnamn: ",

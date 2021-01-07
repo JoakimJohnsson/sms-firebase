@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {compose} from 'recompose';
 import {withFirebase} from '../Firebase';
 import {withAuthorization} from '../Session';
+import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
 
@@ -37,16 +38,17 @@ class AdministrationPage extends Component {
 
     render() {
         const {users, loading} = this.state;
+        const {t} = this.props;
         return (
             <div className="container pt-5">
                 <div className="row">
                     <div className="col-12 col-lg-8 mb-5">
-                        <h1>Administration</h1>
+                        <h1>{t('header_administration')}</h1>
                         <p className="lead mb-5">
-                            The Admin Page is accessible by every signed in admin user. Use it to add content to the database and keep track of users.
+                            {t('lead_administration')}
                         </p>
-                        <h2>Guides</h2>
-                        <p>TBA - guides to help Admins add content to database.</p>
+                        <h2>{t('header_guides')}</h2>
+                        <p>{t('p_guides')}</p>
                         {loading && <div>Loading ...</div>}
                     </div>
                     <UserList users={users}/>
@@ -57,9 +59,11 @@ class AdministrationPage extends Component {
     }
 }
 
-const UserList = ({users}) => (
+const UserList = ({users}) => {
+    const {t} = useTranslation();
+    return (
     <div className="col-12">
-        <h2>Users</h2>
+        <h2>{t('header_users')}</h2>
         <ul className="list-unstyled row">
             {users.map(user => (
                 <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">
@@ -79,7 +83,7 @@ const UserList = ({users}) => (
             ))}
         </ul>
     </div>
-);
+)};
 
 const AddContentComponent = () => (
     <div className="col-12">
@@ -94,4 +98,5 @@ const condition = authUser =>
 export default compose(
     withAuthorization(condition),
     withFirebase,
+    withTranslation()
 )(AdministrationPage);
