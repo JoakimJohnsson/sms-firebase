@@ -40,8 +40,8 @@ const HeaderAuth = ({authUser}) => {
 
     const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
-    const initials = authUser.firstname.charAt(0).toUpperCase() + authUser.lastname.charAt(0).toUpperCase();
-    const name = authUser.firstname + " " + authUser.lastname;
+    const initials = authUser.firstname ? authUser.firstname.charAt(0).toUpperCase() + authUser.lastname.charAt(0).toUpperCase() : false;
+    const name = authUser.firstname ? authUser.firstname + " " + authUser.lastname : false;
 
     return (
         <header className="container-fluid bg-dark px-3">
@@ -52,14 +52,20 @@ const HeaderAuth = ({authUser}) => {
                 <Navbar.Toggle aria-controls="navbarAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarAuthToggler">
                     <Nav className="mr-auto">
-                        <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-1">{initials}</p>
-                        <p className="d-block d-lg-none text-white fs-5 pb-3 border-bottom">{name}</p>
+                        {initials && (
+                            <>
+                                <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-1">{initials}</p>
+                                <p className="d-block d-lg-none text-white fs-5 pb-3 border-bottom">{name}</p>
+                            </>
+                        )}
+
                         <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={t('navigation_dashboard')} isExact={true}
                                                   icon={<Icon.Tools className="fs-5 me-1"/>} setExpanded={setExpanded}/>
                         <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={t('navigation_settings')} icon={<Icon.Gear className="fs-5 me-1"/>}
                                                   setExpanded={setExpanded}/>
                         {!!authUser.roles[ROLES.ADMIN] && (
-                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={t('navigation_administration')} icon={<Icon.Bug className="fs-5 me-1"/>}
+                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={t('navigation_administration')}
+                                                      icon={<Icon.Bug className="fs-5 me-1"/>}
                                                       setExpanded={setExpanded}/>
                         )}
                         <div><ChangeLanguageButton t={t}/></div>
@@ -86,7 +92,7 @@ const HeaderNonAuth = ({onTop}) => {
                     <Nav className="mr-auto">
                         <NavLinkComponent link={ROUTES.HOME} text={t('navigation_home')} isExact={true} setExpanded={setExpanded}/>
                         <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={t('navigation_create_account')} setExpanded={setExpanded}/>
-                        <ChangeLanguageButton t={t}/>
+                        <div><ChangeLanguageButton t={t}/></div>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -122,9 +128,6 @@ const ChangeLanguageButton = ({t}) => (
             <span className="d-inline d-lg-none">{t('btn_change_language')}</span>
         </button>
     </OverlayTrigger>
-
-
-
 
 
 );
