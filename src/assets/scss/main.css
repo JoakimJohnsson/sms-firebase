@@ -12595,6 +12595,8 @@ p.small {
   padding-left: 1rem;
   padding-right: 1rem; }
   .navbar .navbar-nav {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
     margin-bottom: .5rem;
     padding: 1rem; }
     .navbar .navbar-nav button {
