@@ -30,8 +30,7 @@
   "navigation_settings": "Inställningar",
   "navigation_administration": "Administration",
 
-  "btn_change_language": "In english",
-  "btn_change_language_short": "EN",
+  "btn_change_language": "Change language to english",
   "btn_sign_in": "Logga in",
   "btn_sign_out": "Logga ut",
   "btn_create_account": "Skapa konto",

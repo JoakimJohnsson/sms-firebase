@@ -12459,7 +12459,7 @@ progress {
 /* 4. Misc...................... */
 /* --------------- 1. BUTTONS --------------- */
 .btn {
-  text-transform: uppercase; }
+  font-weight: lighter; }
 
 .btn.btn__neu {
   box-shadow: 9px 9px 18px #d7d7d5, -9px -9px 18px #fff;
@@ -12505,7 +12505,7 @@ p.small {
 /* 4. Misc...................... */
 /* --------------- 1. BUTTONS --------------- */
 .btn {
-  text-transform: uppercase; }
+  font-weight: lighter; }
 
 .btn.btn__neu {
   box-shadow: 9px 9px 18px #d7d7d5, -9px -9px 18px #fff;
@@ -12598,16 +12598,16 @@ p.small {
     margin-bottom: .5rem;
     padding: 1rem; }
     .navbar .navbar-nav button {
-      margin: 1.5rem 1.5rem 0; }
+      margin: .5rem 0; }
+      @media (min-width: 992px) {
+        .navbar .navbar-nav button {
+          margin: auto; } }
   .navbar.border-bottom {
     box-shadow: 2px 2px 6px #f0f0f0; }
   @media (min-width: 992px) {
     .navbar .navbar-nav {
       margin-bottom: 0;
       margin-left: auto; } }
-  @media (min-width: 992px) {
-    .navbar .navbar-nav button {
-      margin: 0; } }
 
 /* --------------- 7. LOGO --------------- */
 .sms-logo .sms-logo__image {

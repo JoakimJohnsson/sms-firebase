@@ -27,8 +27,7 @@
   "navigation_settings": "Settings",
   "navigation_administration": "Administration",
 
-  "btn_change_language": "På svenska",
-  "btn_change_language_short": "SV",
+  "btn_change_language": "Byt språk till svenska",
   "btn_sign_in": "Sign in",
   "btn_sign_out": "Sign out",
   "btn_create_account": "Create account",

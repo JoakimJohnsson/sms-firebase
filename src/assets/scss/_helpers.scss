@@ -10,7 +10,7 @@
 
 /* --------------- 1. BUTTONS --------------- */
 .btn {
-  text-transform: uppercase;
+  font-weight: lighter;
 }
 .btn.btn__neu {
   @include neu__button();

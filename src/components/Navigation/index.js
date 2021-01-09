@@ -56,8 +56,8 @@ const HeaderAuth = ({authUser}) => {
                             <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={t('navigation_administration')} icon={<Icon.Bug className="fs-5 me-1"/>}
                                                       setExpanded={setExpanded}/>
                         )}
-                        <ChangeLanguageButton t={t}/>
-                        <SignOutButton/>
+                        <div><ChangeLanguageButton t={t}/></div>
+                        <div><SignOutButton/></div>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -103,9 +103,8 @@ const ChangeLanguageButton = ({t}) => (
             className="btn btn-secondary ms-lg-3 d-flex align-items-center justify-content-center"
             title={t('btn_change_language')}
             onClick={changeLanguage()}>
-        <Icon.Globe2 className="fs-4 me-2 me-lg-0 me-xl-2"/>
+        <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>
         <span className="d-inline d-lg-none">{t('btn_change_language')}</span>
-        <span className="d-none d-xl-inline">{t('btn_change_language_short')}</span>
     </button>
 );
 
