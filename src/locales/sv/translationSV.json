@@ -47,7 +47,8 @@
   "label_email": "E-post",
   "label_password": "Lösenord",
   "label_new_password": "Nytt lösenord",
-  "label_username": "Användarnamn",
+  "label_firstname": "Förnamn",
+  "label_lastname": "Efternamn",
   "label_confirm_password": "Bekräfta lösenord",
   "label_confirm_new_password": "Bekräfta nytt lösenord",
   "label_admin_privileges": "Jag vill hjälpa till genom att bli Administratör",
@@ -60,7 +61,8 @@
   "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
 
   "list_email": "E-post: ",
-  "list_username": "Användarnamn: ",
+  "list_firstname": "Förnamn: ",
+  "list_lastname": "Efternamn: ",
   "list_admin_pending": "Administratör-status: Väntar",
   "list_admin_unwanted": "Jag vill inte bli administratör",
   "list_admin_granted": "Administratör-privilegier: Beviljade"

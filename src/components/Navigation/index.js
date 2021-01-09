@@ -40,14 +40,20 @@ const HeaderAuth = ({authUser}) => {
 
     const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
+    const initials = authUser.firstname.charAt(0).toUpperCase() + authUser.lastname.charAt(0).toUpperCase();
+    const name = authUser.firstname + " " + authUser.lastname;
 
     return (
         <header className="container-fluid bg-dark px-3">
             <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top border-bottom" expanded={expanded}>
-                <Navbar.Brand><SmsLogo isLoggedIn={true}/></Navbar.Brand>
+                <Navbar.Brand>
+                    <SmsLogo isLoggedIn={true}/>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarAuthToggler">
                     <Nav className="mr-auto">
+                        <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-1">{initials}</p>
+                        <p className="d-block d-lg-none text-white fs-5 pb-3 border-bottom">{name}</p>
                         <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={t('navigation_dashboard')} isExact={true}
                                                   icon={<Icon.Tools className="fs-5 me-1"/>} setExpanded={setExpanded}/>
                         <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={t('navigation_settings')} icon={<Icon.Gear className="fs-5 me-1"/>}

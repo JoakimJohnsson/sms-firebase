@@ -47,7 +47,8 @@
   "label_email": "Email",
   "label_password": "Password",
   "label_new_password": "New password",
-  "label_username": "User name",
+  "label_firstname": "First name",
+  "label_lastname": "Last name",
   "label_confirm_password": "Confirm password",
   "label_confirm_new_password": "Confirm new password",
   "label_admin_privileges": "I want to help out by becoming an Administrator",
@@ -60,7 +61,8 @@
   "lead_dashboard": "The Dashboard is accessible by every signed in user.",
 
   "list_email": "Email: ",
-  "list_username": "User name: ",
+  "list_firstname": "First name: ",
+  "list_lastname": "Last name: ",
   "list_admin_pending": "Admin privileges: Pending",
   "list_admin_unwanted": "I don't want Admin privileges",
   "list_admin_granted": "Admin privileges: Granted"

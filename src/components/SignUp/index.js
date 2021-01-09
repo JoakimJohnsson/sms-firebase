@@ -6,7 +6,8 @@ import * as ROUTES from '../../constants/routes';
 import {withTranslation} from 'react-i18next';
 
 const INITIAL_STATE = {
-    username: '',
+    firstname: '',
+    lastname: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
@@ -21,7 +22,7 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const {username, email, passwordOne, wantAdminPrivileges} = this.state;
+        const {firstname, lastname, email, passwordOne, wantAdminPrivileges} = this.state;
         const roles = {};
 
         this.props.firebase
@@ -31,7 +32,8 @@ class SignUpFormBase extends Component {
                 return this.props.firebase
                     .user(authUser.user.uid)
                     .set({
-                        username,
+                        firstname,
+                        lastname,
                         email,
                         wantAdminPrivileges,
                         roles
@@ -57,7 +59,8 @@ class SignUpFormBase extends Component {
 
     render() {
         const {
-            username,
+            firstname,
+            lastname,
             email,
             passwordOne,
             passwordTwo,
@@ -69,20 +72,32 @@ class SignUpFormBase extends Component {
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
             email === '' ||
-            username === '';
+            firstname === '' ||
+            lastname === '';
 
         const {t} = this.props;
 
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="user-create-input-full-name" className="form-label">{t('label_username')}</label>
+                    <label htmlFor="user-create-input-first-name" className="form-label">{t('label_firstname')}</label>
                     <input
-                        name="username"
-                        value={username}
+                        name="firstname"
+                        value={firstname}
                         onChange={this.onChange}
                         type="text"
-                        id="user-create-input-full-name"
+                        id="user-create-input-first-name"
+                        className="form-control"
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="user-create-input-last-name" className="form-label">{t('label_lastname')}</label>
+                    <input
+                        name="lastname"
+                        value={lastname}
+                        onChange={this.onChange}
+                        type="text"
+                        id="user-create-input-last-name"
                         className="form-control"
                     />
                 </div>
