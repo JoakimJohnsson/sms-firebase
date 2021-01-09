@@ -5,6 +5,7 @@ import {withAuthorization} from '../Session';
 import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
+import LoadingComponent from "../Loading";
 
 class AdministrationPage extends Component {
     constructor(props) {
@@ -49,8 +50,8 @@ class AdministrationPage extends Component {
                         </p>
                         <h2>{t('administration_header_guides')}</h2>
                         <p>{t('administration_p_guides')}</p>
-                        {loading && <div>Loading ...</div>}
                     </div>
+                    {loading && <LoadingComponent/>}
                     <UserList users={users}/>
                     <AddContentComponent/>
                 </div>
@@ -62,37 +63,39 @@ class AdministrationPage extends Component {
 const UserList = ({users}) => {
     const {t} = useTranslation();
     return (
-    <div className="col-12">
-        <h2>{t('administration_user-list_component_header_users')}</h2>
-        <ul className="list-unstyled row">
-            {users.map(user => (
-                <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">
-                    <div className="card mb-5">
-                        <div className="card-header text-capitalize fs-5 d-flex align-items-center">
-                            {user.username}
-                            {user.wantAdminPrivileges ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
-                            {user.roles ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
+        <div className="col-12">
+            <h2>{t('administration_user-list_component_header_users')}</h2>
+            <ul className="list-unstyled row">
+                {users.map(user => (
+                    <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">
+                        <div className="card mb-5">
+                            <div className="card-header text-capitalize fs-5 d-flex align-items-center">
+                                {user.username}
+                                {user.wantAdminPrivileges ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
+                                {user.roles ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
+                            </div>
+                            <div className="card-body">
+                                <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
+                                <p className="card-text">{user.email}</p>
+                                <a href="www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
+                            </div>
                         </div>
-                        <div className="card-body">
-                            <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
-                            <p className="card-text">{user.email}</p>
-                            <a href="www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
-                        </div>
-                    </div>
-                </li>
-            ))}
-        </ul>
-    </div>
-)};
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+};
 
 const AddContentComponent = () => {
     const {t} = useTranslation();
     return (
-    <div className="col-12">
-        <h2>{t('administration_add_content_component_header_add_content')}</h2>
-        <p>{t('administration_add_content_component_p_forms')}</p>
-    </div>
-)};
+        <div className="col-12">
+            <h2>{t('administration_add_content_component_header_add_content')}</h2>
+            <p>{t('administration_add_content_component_p_forms')}</p>
+        </div>
+    )
+};
 
 const condition = authUser =>
     authUser && !!authUser.roles[ROLES.ADMIN];
