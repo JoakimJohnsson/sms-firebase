@@ -15,9 +15,9 @@ const SettingsPage = () => {
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-12 col-lg-8">
-                            <h1>{t('header_settings')}</h1>
+                            <h1>{t('settings_header_settings')}</h1>
                             <p className="lead">
-                                {t('lead_settings')}
+                                {t('settings_lead_settings')}
                             </p>
                             <ul className="mb-5">
                                 <li>
