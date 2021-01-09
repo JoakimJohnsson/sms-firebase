@@ -6,7 +6,7 @@ import * as ROLES from '../../constants/roles';
 import {AuthUserContext} from '../Session';
 import SmsLogo from "../Logo";
 import * as Icon from 'react-bootstrap-icons';
-import {Nav, Navbar} from "react-bootstrap";
+import {Nav, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import i18n from "../../i18n";
 import {useTranslation} from "react-i18next";
 
@@ -99,13 +99,28 @@ const changeLanguage = () => {
 }
 
 const ChangeLanguageButton = ({t}) => (
-    <button aria-label={t('btn_change_language')}
-            className="btn btn-secondary ms-lg-3 d-flex align-items-center justify-content-center"
-            title={t('btn_change_language')}
-            onClick={changeLanguage()}>
-        <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>
-        <span className="d-inline d-lg-none">{t('btn_change_language')}</span>
-    </button>
+
+    <OverlayTrigger
+        key={"bottom"}
+        placement={"bottom"}
+        overlay={
+            <Tooltip id={"tooltip-change-lang"} className="d-none d-lg-block">
+                {t('tooltip_change_language')}
+            </Tooltip>
+        }>
+        <button aria-label={t('btn_change_language')}
+                className="btn btn-secondary ms-lg-3 d-flex align-items-center justify-content-center"
+                title={t('btn_change_language')}
+                onClick={changeLanguage()}>
+            <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>
+            <span className="d-inline d-lg-none">{t('btn_change_language')}</span>
+        </button>
+    </OverlayTrigger>
+
+
+
+
+
 );
 
 const NavLinkComponent = ({link, text, isExact, setExpanded}) => (

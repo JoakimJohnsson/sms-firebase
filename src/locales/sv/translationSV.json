@@ -38,6 +38,9 @@
   "btn_send": "Skicka",
   "btn_change_password": "Byt mitt lösenord",
 
+  "tooltip_sign_out": "Logga ut",
+  "tooltip_change_language": "Change language",
+
   "aria_label_close": "Stäng",
 
   "label_email": "E-post",

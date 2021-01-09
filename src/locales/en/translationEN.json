@@ -35,6 +35,9 @@
   "btn_send": "Send",
   "btn_change_password": "Change my password",
 
+  "tooltip_sign_out": "Sign out",
+  "tooltip_change_language": "Byt språk",
+
   "aria_label_close": "close",
 
   "label_email": "Email",
