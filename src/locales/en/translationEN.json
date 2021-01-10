@@ -1,8 +1,10 @@
 {
   "administration_header_administration": "Administration",
   "administration_header_guides": "Guides",
+  "administration_header_statistics": "Statistics",
   "administration_lead_administration": "The Admin Page is accessible by every signed in admin user. Use it to add content to the database and keep track of users.",
   "administration_p_guides": "TBA - guides to help Admins add content to database.",
+  "administration_p_statistics": "TBA - some statistics.",
   "administration_add_content_component_header_add_content": "Add content",
   "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
   "administration_user-list_component_header_users": "Users",

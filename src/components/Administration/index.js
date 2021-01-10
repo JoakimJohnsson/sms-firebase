@@ -48,6 +48,9 @@ class AdministrationPage extends Component {
                         <p className="lead mb-5">
                             {t('administration_lead_administration')}
                         </p>
+                        <h2>{t('administration_header_statistics')}</h2>
+                        <p>{t('administration_p_statistics')}</p>
+                        <p>Number of users: {users.length}</p>
                         <h2>{t('administration_header_guides')}</h2>
                         <p>{t('administration_p_guides')}</p>
                     </div>
@@ -70,8 +73,8 @@ const UserList = ({users}) => {
                     <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">
                         <div className="card mb-5">
                             <div className="card-header text-capitalize fs-5 d-flex align-items-center">
-                                {user.username}
-                                {user.wantAdminPrivileges ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
+                                {user.firstname} {user.lastname}
+                                {user.wantAdminPrivileges && !user.roles ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
                                 {user.roles ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
                             </div>
                             <div className="card-body">
