@@ -15,6 +15,7 @@ class AdministrationPage extends Component {
         this.state = {
             loading: false,
             users: [],
+            titles: []
         };
     }
 
@@ -32,18 +33,31 @@ class AdministrationPage extends Component {
                 loading: false,
             });
         });
+
+        this.props.firebase.titles().on('value', snapshot => {
+            const titlesObject = snapshot.val();
+            const titlesList = Object.keys(titlesObject).map(key => ({
+                ...titlesObject[key],
+                uid: key,
+            }));
+            this.setState({
+                titles: titlesList,
+                loading: false,
+            });
+        });
     }
 
     componentWillUnmount() {
         this.props.firebase.users().off();
+        this.props.firebase.titles().off();
     }
 
     render() {
-        const {users, loading} = this.state;
+        const {users, loading, titles} = this.state;
         const {t} = this.props;
         return (
             <div className="container pt-5">
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-12 col-lg-8 mb-5">
                         <h1>{t('administration_header_administration')}</h1>
                         <p className="lead mb-5">
@@ -51,13 +65,20 @@ class AdministrationPage extends Component {
                         </p>
                         <h2>{t('administration_header_statistics')}</h2>
                         <p>{t('administration_p_statistics')}</p>
-                        <p>Number of users: {users.length}</p>
+                        <ul className="list-group list-group-flush list-group__neu mb-5">
+                            <li className="list-group-item">{t('administration_p_statistics_list_users')}{users.length}</li>
+                            <li className="list-group-item">{t('administration_p_statistics_list_titles')}{titles.length}</li>
+                        </ul>
                         <h2>{t('administration_header_guides')}</h2>
                         <p>{t('administration_p_guides')}</p>
                     </div>
                     {loading && <LoadingComponent/>}
                     <UserList users={users}/>
-                    <AddContentComponent/>
+                    <div className="col-12">
+                        <h2>{t('administration_add_content_component_header_add_content')}</h2>
+                        <p>{t('administration_add_content_component_p_forms')}</p>
+                        <Titles />
+                    </div>
                 </div>
             </div>
         );
@@ -87,17 +108,6 @@ const UserList = ({users}) => {
                     </li>
                 ))}
             </ul>
-        </div>
-    )
-};
-
-const AddContentComponent = () => {
-    const {t} = useTranslation();
-    return (
-        <div className="col-12">
-            <h2>{t('administration_add_content_component_header_add_content')}</h2>
-            <p>{t('administration_add_content_component_p_forms')}</p>
-            <Titles />
         </div>
     )
 };

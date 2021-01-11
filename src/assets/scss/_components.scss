@@ -9,8 +9,9 @@
 /* 4. Forms.................. */
 /* 5. Hamburger.............. */
 /* 6. Header................. */
-/* 7. Logo................... */
-/* 8. Modals................. */
+/* 7. Lists.................. */
+/* 8. Logo................... */
+/* 9. Modals................. */
 
 /* --------------- 1. BOXES --------------- */
 .sms-form-box {
@@ -101,7 +102,18 @@
   }
 }
 
-/* --------------- 7. LOGO --------------- */
+/* --------------- 7. LISTS --------------- */
+.list-group__editable {
+  @extend .list-group;
+  .list-group-item {
+    min-height: 4rem;
+  }
+}
+.list-group__neu {
+  @include neu__box($gray-100)
+}
+
+/* --------------- 8. LOGO --------------- */
 .sms-logo {
   .sms-logo__image {
     width: 30px;
@@ -120,7 +132,7 @@
   }
 }
 
-/* --------------- 8. MODALS --------------- */
+/* --------------- 9. MODALS --------------- */
 .modal-dialog {
   max-width: 730px;
   @include media-breakpoint-down(md) {

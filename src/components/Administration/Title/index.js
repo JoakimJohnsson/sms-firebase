@@ -134,7 +134,7 @@ const AdminModalTitle = () => {
 )};
 
 const TitleListUl = ({ titlesList, onEditTitleName, onRemoveTitle }) => (
-    <ul className="list-group list-group-flush">
+    <ul className="list-group-flush list-group__editable">
         {titlesList.map(title => (
             <TitleListLi
                 key={title.uid}

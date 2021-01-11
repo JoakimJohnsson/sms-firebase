@@ -3276,19 +3276,20 @@ textarea.form-control-lg {
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
-  .card > .list-group {
+  .card > .list-group, .card > .list-group__editable {
     border-top: inherit;
     border-bottom: inherit; }
-    .card > .list-group:first-child {
+    .card > .list-group:first-child, .card > .list-group__editable:first-child {
       border-top-width: 0;
       border-top-left-radius: calc(0.25rem - 1px);
       border-top-right-radius: calc(0.25rem - 1px); }
-    .card > .list-group:last-child {
+    .card > .list-group:last-child, .card > .list-group__editable:last-child {
       border-bottom-width: 0;
       border-bottom-right-radius: calc(0.25rem - 1px);
       border-bottom-left-radius: calc(0.25rem - 1px); }
-  .card > .card-header + .list-group,
-  .card > .list-group + .card-footer {
+  .card > .card-header + .list-group, .card > .card-header + .list-group__editable,
+  .card > .list-group + .card-footer,
+  .card > .list-group__editable + .card-footer {
     border-top: 0; }
 
 .card-body {
@@ -3691,7 +3692,7 @@ textarea.form-control-lg {
     .progress-bar-animated {
       animation: none; } }
 
-.list-group {
+.list-group, .list-group__editable {
   display: flex;
   flex-direction: column;
   padding-left: 0;
@@ -12486,9 +12487,6 @@ p.small {
     .top-spacer {
       height: 90px; } }
 
-.list-group-item {
-  min-height: 4rem; }
-
 /* --------------- COLORS --------------- */
 /* ----- SMS colors ----- */
 /* ----- Font size ----- */
@@ -12535,17 +12533,15 @@ p.small {
     .top-spacer {
       height: 90px; } }
 
-.list-group-item {
-  min-height: 4rem; }
-
 /* 1. Boxes.................. */
 /* 2. Buttons................ */
 /* 3. Cards.................. */
 /* 4. Forms.................. */
 /* 5. Hamburger.............. */
 /* 6. Header................. */
-/* 7. Logo................... */
-/* 8. Modals................. */
+/* 7. Lists.................. */
+/* 8. Logo................... */
+/* 9. Modals................. */
 /* --------------- 1. BOXES --------------- */
 .sms-form-box, .sms-form-box__neu, .modal-content {
   background-color: #fafafa;
@@ -12622,7 +12618,17 @@ p.small {
       margin-bottom: 0;
       margin-left: auto; } }
 
-/* --------------- 7. LOGO --------------- */
+/* --------------- 7. LISTS --------------- */
+.list-group__editable .list-group-item {
+  min-height: 4rem; }
+
+.list-group__neu {
+  border-radius: 10px;
+  background: #fafafa;
+  box-shadow: 11px 11px 22px #d7d7d5, -11px -11px 22px #fff;
+  border: 1px solid #f0f0f0; }
+
+/* --------------- 8. LOGO --------------- */
 .sms-logo .sms-logo__image {
   width: 30px; }
 .sms-logo .sms-logo__text {
@@ -12634,7 +12640,7 @@ p.small {
   .sms-logo .sms-logo__image {
     width: 40px; } }
 
-/* --------------- 8. MODALS --------------- */
+/* --------------- 9. MODALS --------------- */
 .modal-dialog {
   max-width: 730px; }
   @media (max-width: 767.98px) {

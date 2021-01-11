@@ -19,26 +19,26 @@ const SettingsPage = () => {
                             <p className="lead">
                                 {t('settings_lead_settings')}
                             </p>
-                            <ul className="mb-5">
-                                <li>
+                            <ul className="list-group list-group-flush list-group__neu mb-5">
+                                <li className="list-group-item">
                                     {t('list_email')}{authUser.email}
                                 </li>
-                                <li>
+                                <li className="list-group-item">
                                     {t('list_firstname')}<span className="text-capitalize">{authUser.firstname}</span>
                                 </li>
-                                <li>
+                                <li className="list-group-item">
                                     {t('list_lastname')}<span className="text-capitalize">{authUser.lastname}</span>
                                 </li>
                                 {/* If user is admin - no need to show this */}
                                 {!authUser.roles[ROLES.ADMIN] && (
-                                    <li>
+                                    <li className="list-group-item">
                                         {authUser.wantAdminPrivileges ? t('list_admin_pending') : t('list_admin_unwanted')}
                                     </li>
                                 )
                                 }
                                 {!!authUser.roles[ROLES.ADMIN] && (
-                                    <li>
-                                        <p>{t('list_admin_granted')}</p>
+                                    <li className="list-group-item">
+                                        {t('list_admin_granted')}
                                     </li>
                                 )}
                             </ul>
