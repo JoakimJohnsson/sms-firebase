@@ -102,6 +102,7 @@ const UserList = ({users}) => {
                             <div className="card-body">
                                 <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
                                 <p className="card-text">{user.email}</p>
+                                <p className="card-text">{user.roles ? "Has admin privileges" : ""}</p>
                                 <a href="https://www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
                             </div>
                         </div>
