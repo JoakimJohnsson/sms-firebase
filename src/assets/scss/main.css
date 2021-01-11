@@ -3716,7 +3716,7 @@ textarea.form-control-lg {
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #fafafa;
   border: 1px solid rgba(0, 0, 0, 0.125); }
   .list-group-item:first-child {
     border-top-left-radius: inherit;
@@ -3727,7 +3727,7 @@ textarea.form-control-lg {
   .list-group-item.disabled, .list-group-item:disabled {
     color: #595959;
     pointer-events: none;
-    background-color: #fff; }
+    background-color: #fafafa; }
   .list-group-item.active {
     z-index: 2;
     color: #fff;
@@ -12486,6 +12486,9 @@ p.small {
     .top-spacer {
       height: 90px; } }
 
+.list-group-item {
+  min-height: 4rem; }
+
 /* --------------- COLORS --------------- */
 /* ----- SMS colors ----- */
 /* ----- Font size ----- */
@@ -12532,6 +12535,9 @@ p.small {
     .top-spacer {
       height: 90px; } }
 
+.list-group-item {
+  min-height: 4rem; }
+
 /* 1. Boxes.................. */
 /* 2. Buttons................ */
 /* 3. Cards.................. */
@@ -12561,6 +12567,11 @@ p.small {
   min-height: 4rem;
   padding: 1rem;
   border-radius: 45px; }
+
+.sms-button__list-group-icon {
+  padding: .5rem;
+  min-width: 46px;
+  min-height: 46px; }
 
 /* --------------- 3. CARDS --------------- */
 .card {

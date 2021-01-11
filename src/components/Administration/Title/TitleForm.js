@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {compose} from 'recompose';
 import {withFirebase} from "../../Firebase";
-import {Alert} from "react-bootstrap";
 import * as ROUTES from "../../../constants/routes";
 
 const INITIAL_STATE = {
@@ -25,7 +24,7 @@ class AddTitleForm extends Component {
         })
             .then(() => {
                 this.setState({...INITIAL_STATE});
-                this.props.history.push(ROUTES.DASHBOARD);
+                this.props.history.push(ROUTES.ADMIN);
             })
             .catch(error => {
                 this.setState({error})
@@ -47,22 +46,23 @@ class AddTitleForm extends Component {
             name === '';
         return (
             <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                    <label htmlFor="addTitleName">Name</label>
+                <div className="mb-3">
+                    <label htmlFor="add-title-name" className="form-label">Name</label>
                     <input
                         name="name"
-                        id="addTitleName"
+                        id="add-title-name"
                         value={name}
                         onChange={this.onChange}
                         type="text"
-                        placeholder="Title name"
                         className="form-control"
                     />
                 </div>
-                <button className="btn btn-secondary btn-lg d-block mb-4" disabled={isInvalid} type="submit">
+                <div className="text-end">
+                <button className="btn btn__neu btn-primary mb-3" disabled={isInvalid} type="submit">
                     Add
                 </button>
-                {error && <Alert variant="danger"><span>{error.message}</span></Alert>}
+                </div>
+                {error && <p>{error.message}</p>}
             </form>
         );
     }

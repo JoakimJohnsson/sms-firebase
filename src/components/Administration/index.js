@@ -6,6 +6,7 @@ import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
 import LoadingComponent from "../Loading";
+import Titles from "./Title";
 
 class AdministrationPage extends Component {
     constructor(props) {
@@ -80,7 +81,7 @@ const UserList = ({users}) => {
                             <div className="card-body">
                                 <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
                                 <p className="card-text">{user.email}</p>
-                                <a href="www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
+                                <a href="https://www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
                             </div>
                         </div>
                     </li>
@@ -96,6 +97,7 @@ const AddContentComponent = () => {
         <div className="col-12">
             <h2>{t('administration_add_content_component_header_add_content')}</h2>
             <p>{t('administration_add_content_component_p_forms')}</p>
+            <Titles />
         </div>
     )
 };

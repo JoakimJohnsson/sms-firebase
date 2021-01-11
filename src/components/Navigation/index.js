@@ -54,7 +54,7 @@ const HeaderAuth = ({authUser}) => {
                     <Nav className="mr-auto">
                         {initials && (
                             <>
-                                <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-1">{initials}</p>
+                                <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-2">{initials}</p>
                                 <p className="d-block d-lg-none text-white fs-5 pb-3 border-bottom">{name}</p>
                             </>
                         )}
