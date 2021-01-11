@@ -188,7 +188,7 @@ class TitleListLi extends Component {
                         onChange={this.onChangeEditTitleName}
                     />
                 ) : (
-                    <div><span className="font-weight-bold">{title.name}</span> {title.editedAt && <span>(Edited)</span>}</div>
+                    <div><span className="font-weight-bold">{title.name}</span> {title.editedAt && <span>(Edited by {})</span>}</div>
                 )}
 
                 <div>

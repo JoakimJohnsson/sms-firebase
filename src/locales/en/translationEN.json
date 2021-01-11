@@ -69,6 +69,9 @@
   "list_lastname": "Last name: ",
   "list_admin_pending": "Admin privileges: Pending",
   "list_admin_unwanted": "I don't want Admin privileges",
-  "list_admin_granted": "Admin privileges: Granted"
+  "list_admin_granted": "Admin privileges: Granted",
+  "list_role": "Role: ",
+  "list_role_admin": "Administrator",
+  "list_role_not_admin": "User"
 
 }

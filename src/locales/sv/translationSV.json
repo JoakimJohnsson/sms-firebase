@@ -69,5 +69,8 @@
   "list_lastname": "Efternamn: ",
   "list_admin_pending": "Administratör-status: Väntar",
   "list_admin_unwanted": "Jag vill inte bli administratör",
-  "list_admin_granted": "Administratör-privilegier: Beviljade"
+  "list_admin_granted": "Administratör-privilegier: Beviljade",
+  "list_role": "Roll: ",
+  "list_role_admin": "Administratör",
+  "list_role_not_admin": "Användare"
 }

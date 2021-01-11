@@ -6,7 +6,7 @@ import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
 import LoadingComponent from "../Loading";
-import Titles from "./Title";
+import AdminCardTitle from "./Title";
 
 class AdministrationPage extends Component {
     constructor(props) {
@@ -77,7 +77,7 @@ class AdministrationPage extends Component {
                     <div className="col-12">
                         <h2>{t('administration_add_content_component_header_add_content')}</h2>
                         <p>{t('administration_add_content_component_p_forms')}</p>
-                        <Titles />
+                        <AdminCardTitle />
                     </div>
                 </div>
             </div>
@@ -97,12 +97,12 @@ const UserList = ({users}) => {
                             <div className="card-header text-capitalize fs-5 d-flex align-items-center">
                                 {user.firstname} {user.lastname}
                                 {user.wantAdminPrivileges && !user.roles ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
-                                {user.roles ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
+                                {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
                             </div>
                             <div className="card-body">
                                 <p className="card-subtitle mb-2 text-muted">{user.uid}</p>
                                 <p className="card-text">{user.email}</p>
-                                <p className="card-text">{user.roles ? "Has admin privileges" : ""}</p>
+                                <p className="card-text">{user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ? "Has admin privileges" : ""}</p>
                                 <a href="https://www.sn.se" className="card-link"><Icon.Person className="fs-5 me-1"/> TBA Link to user page</a>
                             </div>
                         </div>

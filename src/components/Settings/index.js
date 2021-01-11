@@ -29,6 +29,9 @@ const SettingsPage = () => {
                                 <li className="list-group-item">
                                     {t('list_lastname')}<span className="text-capitalize">{authUser.lastname}</span>
                                 </li>
+                                <li className="list-group-item">
+                                    {t('list_role')}<span className="text-capitalize">{!authUser.roles[ROLES.ADMIN] ? t('list_role_not_admin')  : t('list_role_admin')}</span>
+                                </li>
                                 {/* If user is admin - no need to show this */}
                                 {!authUser.roles[ROLES.ADMIN] && (
                                     <li className="list-group-item">
