@@ -10,6 +10,7 @@
   "administration_add_content_component_header_add_content": "Add content",
   "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
   "administration_user-list_component_header_users": "Users",
+  "administration_admin_card_component_header_titles": "Titles",
 
   "create_account_h1_header_create_account": "Create account",
   "create_account_h2_header_create_account": "Create account",
@@ -22,6 +23,7 @@
   "settings_lead_settings": "Review and change your provided information.",
 
   "modal_create_account_h2_header_create_account": "Create account",
+  "modal_administration_h2_header_add_title": "Add title",
 
   "header_sign_in": "Sign in",
   "header_already_member": "Already a member?",
@@ -42,11 +44,14 @@
   "btn_create": "Create",
   "btn_send": "Send",
   "btn_change_password": "Change my password",
+  "btn_show_more": "Show more",
 
   "tooltip_sign_out": "Sign out",
   "tooltip_change_language": "Byt språk",
 
   "aria_label_close": "close",
+  "aria_label_show_more_titles": "Show more titles",
+  "aria_label_add_title": "Add title",
 
   "label_email": "Email",
   "label_password": "Password",

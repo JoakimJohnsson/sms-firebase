@@ -3,9 +3,10 @@ import {withFirebase} from "../../Firebase";
 import LoadingComponent from "../../Loading"
 import TitleForm from "./TitleForm";
 import Confirmation from "../../Confirmation";
+import {compose} from 'recompose';
 import * as Icon from "react-bootstrap-icons";
 import {Modal} from "react-bootstrap";
-import {useTranslation} from "react-i18next";
+import {withTranslation, useTranslation} from 'react-i18next';
 
 class TitleBase extends Component {
     constructor(props) {
@@ -65,6 +66,7 @@ class TitleBase extends Component {
 
     render() {
         const { titles, loading } = this.state;
+        const {t} = this.props;
         return (
             <div>
                 {loading && <LoadingComponent />}
@@ -78,8 +80,8 @@ class TitleBase extends Component {
                     <div>There are no titles ...</div>
                 )}
                 {!loading && titles && (
-                    <button className="btn btn__neu btn-primary m-3" aria-label="Load more titles" type="button" onClick={this.onNextPage}>
-                        <Icon.ArrowDown className="fs-4"/> Show more
+                    <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button" onClick={this.onNextPage}>
+                        <Icon.ArrowDown className="fs-4 me-2"/>{t('btn_show_more')}
                     </button>
                 )}
             </div>
@@ -87,11 +89,13 @@ class TitleBase extends Component {
     }
 }
 
-const AdminCardTitle = () => (
+const AdminCardTitle = () => {
+    const {t} = useTranslation();
+    return (
     <div className="col-12 mb-3">
         <div className="card">
             <div className="card-header p-4 d-flex justify-content-between align-items-center">
-                <h3 className="m-0">Titles</h3>
+                <h3 className="m-0">{t('administration_admin_card_component_header_titles')}</h3>
                 <AdminModalTitle />
             </div>
             <div className="card-body">
@@ -99,7 +103,7 @@ const AdminCardTitle = () => (
             </div>
         </div>
     </div>
-);
+)};
 
 const AdminModalTitle = () => {
 
@@ -113,7 +117,7 @@ const AdminModalTitle = () => {
         <Modal show={show} onHide={handleClose}>
 
             <div className="modal-header px-0">
-                <h2 className="modal-title" id="exampleModalLabel">Add title</h2>
+                <h2 className="modal-title" id="exampleModalLabel">{t('modal_administration_h2_header_add_title')}</h2>
                 <button type="button"
                         className="btn"
                         data-bs-dismiss="modal"
@@ -127,7 +131,7 @@ const AdminModalTitle = () => {
                 <TitleForm/>
             </Modal.Body>
         </Modal>
-        <button className="btn" aria-label="Add Title" onClick={handleShow}>
+        <button className="btn" aria-label={t('aria_label_add_title')} onClick={handleShow}>
             <Icon.PlusCircle className="fs-2 me-3"/>
         </button>
     </>
@@ -188,7 +192,7 @@ class TitleListLi extends Component {
                         onChange={this.onChangeEditTitleName}
                     />
                 ) : (
-                    <div><span className="font-weight-bold">{title.name}</span> {title.editedAt && <span>(Edited)</span>}</div>
+                    <div><span className="font-weight-bold">{title.name}</span></div>
                 )}
 
                 <div>
@@ -233,6 +237,9 @@ class TitleListLi extends Component {
     }
 }
 
-const Title = withFirebase(TitleBase);
+const Title = compose(
+    withFirebase,
+    withTranslation()
+)(TitleBase);
 
 export default AdminCardTitle;

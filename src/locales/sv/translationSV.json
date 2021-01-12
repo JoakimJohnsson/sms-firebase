@@ -10,6 +10,8 @@
   "administration_add_content_component_header_add_content": "Lägg till innehåll",
   "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
   "administration_user-list_component_header_users": "Användare",
+  "administration_admin_card_component_header_titles": "Titlar",
+
 
   "create_account_h1_header_create_account": "Skapa konto",
   "create_account_h2_header_create_account": "Skapa konto",
@@ -22,6 +24,7 @@
   "settings_lead_settings": "Kontrollera och ändra din information.",
 
   "modal_create_account_h2_header_create_account": "Skapa konto",
+  "modal_administration_h2_header_add_title": "Lägg till en titel",
 
   "header_sign_in": "Logga in",
   "header_already_member": "Redan medlem?",
@@ -42,11 +45,14 @@
   "btn_create": "Skapa",
   "btn_send": "Skicka",
   "btn_change_password": "Byt mitt lösenord",
+  "btn_show_more": "Visa fler",
 
   "tooltip_sign_out": "Logga ut",
   "tooltip_change_language": "Change language",
 
   "aria_label_close": "Stäng",
+  "aria_label_show_more_titles": "Visa fler titlar",
+  "aria_label_add_title": "Lägg till en titel",
 
   "label_email": "E-post",
   "label_password": "Lösenord",
