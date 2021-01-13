@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {compose} from 'recompose';
 import {withFirebase} from "../../Firebase";
 import * as ROUTES from "../../../constants/routes";
+import {withTranslation} from 'react-i18next';
 
 const INITIAL_STATE = {
     name: '',
@@ -44,10 +45,11 @@ class AddTitleForm extends Component {
         } = this.state;
         const isInvalid =
             name === '';
+        const {t} = this.props;
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="add-title-name" className="form-label">Name</label>
+                    <label htmlFor="add-title-name" className="form-label">{t('label_name')}</label>
                     <input
                         name="name"
                         id="add-title-name"
@@ -59,7 +61,7 @@ class AddTitleForm extends Component {
                 </div>
                 <div className="text-end">
                 <button className="btn btn__neu btn-primary mb-3" disabled={isInvalid} type="submit">
-                    Add
+                    {t('btn_add')}
                 </button>
                 </div>
                 {error && <p>{error.message}</p>}
@@ -70,6 +72,7 @@ class AddTitleForm extends Component {
 
 const TitleForm = compose(
     withRouter,
+    withTranslation(),
     withFirebase,
 )(AddTitleForm);
 

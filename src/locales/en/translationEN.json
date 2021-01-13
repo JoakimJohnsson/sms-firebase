@@ -8,7 +8,7 @@
   "administration_p_statistics_list_users": "Number of users: ",
   "administration_p_statistics_list_titles": "Number of titles: ",
   "administration_add_content_component_header_add_content": "Add content",
-  "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
+  "administration_add_content_component_p_forms": "Forms to add content to database.",
   "administration_user-list_component_header_users": "Users",
   "administration_admin_card_component_header_titles": "Titles",
 
@@ -45,6 +45,7 @@
   "btn_send": "Send",
   "btn_change_password": "Change my password",
   "btn_show_more": "Show more",
+  "btn_add": "Add",
 
   "tooltip_sign_out": "Sign out",
   "tooltip_change_language": "Byt språk",
@@ -57,6 +58,7 @@
   "label_password": "Password",
   "label_new_password": "New password",
   "label_firstname": "First name",
+  "label_name": "Name",
   "label_lastname": "Last name",
   "label_confirm_password": "Confirm password",
   "label_confirm_new_password": "Confirm new password",

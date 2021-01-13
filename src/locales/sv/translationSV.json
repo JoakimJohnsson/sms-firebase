@@ -8,7 +8,7 @@
   "administration_p_statistics_list_users": "Antal användare: ",
   "administration_p_statistics_list_titles": "Antal inlagda titlar: ",
   "administration_add_content_component_header_add_content": "Lägg till innehåll",
-  "administration_add_content_component_p_forms": "TBA - Forms to add content to database.",
+  "administration_add_content_component_p_forms": "Formulär för att ladda upp content till databasen",
   "administration_user-list_component_header_users": "Användare",
   "administration_admin_card_component_header_titles": "Titlar",
 
@@ -46,6 +46,7 @@
   "btn_send": "Skicka",
   "btn_change_password": "Byt mitt lösenord",
   "btn_show_more": "Visa fler",
+  "btn_add": "Lägg till",
 
   "tooltip_sign_out": "Logga ut",
   "tooltip_change_language": "Change language",
@@ -58,6 +59,7 @@
   "label_password": "Lösenord",
   "label_new_password": "Nytt lösenord",
   "label_firstname": "Förnamn",
+  "label_name": "Namn",
   "label_lastname": "Efternamn",
   "label_confirm_password": "Bekräfta lösenord",
   "label_confirm_new_password": "Bekräfta nytt lösenord",

@@ -81,7 +81,7 @@ class TitleBase extends Component {
                 )}
                 {!loading && titles && (
                     <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button" onClick={this.onNextPage}>
-                        <Icon.ArrowDown className="fs-4 me-2"/>{t('btn_show_more')}
+                        <Icon.ArrowDown className="fs-4"/>
                     </button>
                 )}
             </div>
