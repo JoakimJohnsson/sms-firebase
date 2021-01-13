@@ -9,13 +9,15 @@
   "administration_add_content_component_header_add_content": "Lägg till innehåll",
   "administration_add_content_component_p_forms": "Formulär för att ladda upp content till databasen",
   "administration_user-list_component_header_users": "Användare",
-  "administration_admin_card_component_header_titles": "Titlar",
-  "administration_admin_card_component_showing_all_titles": "Visar alla titlar",
+  "administration_title_card_component_header_titles": "Titlar",
+  "administration_title_modal_component_header_add_title": "Lägg till en titel",
+  "administration_admin_card_component_showing_all_titles": "Visar alla titlar.",
 
   "create_account_h1_header_create_account": "Skapa konto",
   "create_account_h2_header_create_account": "Skapa konto",
   "create_account_h2_header_already_member": "Redan medlem?",
   "create_account_lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
+  "create_account_modal_header_create_account": "Skapa konto",
 
   "dashboard_header_dashboard": "Kontrollpanel",
   "dashboard_lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
@@ -23,23 +25,25 @@
   "home_header_welcome": "Välkommen till Svenska Marvelsamlare",
   "home_disclaimer_part_1": "Den här webbappen kan innehålla bilder och information vars copyright ägs av ",
   "home_disclaimer_part_2": " och används utan tillstånd enligt USA's Fair use-doktrin.",
+  "home_modal_header_sign_in": "Logga in",
 
   "settings_header_settings": "Inställningar",
   "settings_header_personal_information": "Personlig information",
   "settings_lead_settings": "Kontrollera och ändra din information.",
 
-  "modal_create_account_h2_header_create_account": "Skapa konto",
-  "modal_administration_h2_header_add_title": "Lägg till en titel",
-  "modal_home_h2_header_sign_in": "Logga in",
-
   "header_reset_password": "Återställ lösenord",
   "header_change_password": "Ändra mitt lösenord",
+
+  "confirmation_are_you_sure": "Är du säker på att du vill ta bort den här titeln?",
+  "confirmation_confirm_delete": "Ta bort!",
+  "confirmation_delete_title": "Ta bort titel",
 
   "navigation_home": "Hem",
   "navigation_create_account": "Skapa konto",
   "navigation_dashboard": "Kontrollpanel",
   "navigation_settings": "Inställningar",
   "navigation_administration": "Administration",
+  "navigation_logged_in_as": "Inloggad som ",
 
   "btn_change_language": "Change language to english",
   "btn_sign_in": "Logga in",

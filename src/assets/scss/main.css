@@ -3314,14 +3314,14 @@ textarea.form-control-lg {
 .card-header {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: whitesmoke;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
   .card-header:first-child {
     border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
 
 .card-footer {
   padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: whitesmoke;
   border-top: 1px solid rgba(0, 0, 0, 0.125); }
   .card-footer:last-child {
     border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
@@ -12627,6 +12627,9 @@ p.small {
   background: #fafafa;
   box-shadow: 11px 11px 22px #d7d7d5, -11px -11px 22px #fff;
   border: 1px solid #f0f0f0; }
+
+.list-group__shaded .list-group-item:nth-child(even) {
+  background-color: whitesmoke; }
 
 /* --------------- 8. LOGO --------------- */
 .sms-logo .sms-logo__image {

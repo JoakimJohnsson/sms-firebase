@@ -112,6 +112,11 @@
 .list-group__neu {
   @include neu__box($gray-100)
 }
+.list-group__shaded {
+  .list-group-item:nth-child(even) {
+    background-color: $gray-200;
+  }
+}
 
 /* --------------- 8. LOGO --------------- */
 .sms-logo {

@@ -21,7 +21,7 @@ const ModalSignIn = () => {
             <Modal show={show} onHide={handleClose}>
 
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">{t('modal_home_h2_header_sign_in')}</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t('home_modal_header_sign_in')}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
@@ -55,7 +55,7 @@ const ModalCreateAccount = () => {
             <Modal show={show} onHide={handleClose}>
 
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">{t('modal_create_account_h2_header_create_account')}</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t('create_account_modal_header_create_account')}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"

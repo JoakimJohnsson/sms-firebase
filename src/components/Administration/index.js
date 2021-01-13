@@ -6,7 +6,7 @@ import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
 import LoadingComponent from "../Loading";
-import AdminCardTitle from "./Title";
+import TitleCard from "./Title";
 
 class AdministrationPage extends Component {
     constructor(props) {
@@ -64,7 +64,7 @@ class AdministrationPage extends Component {
                             {t('administration_lead_administration')}
                         </p>
                         <h2 className="mb-3">{t('administration_header_statistics')}</h2>
-                        <ul className="list-group list-group-flush list-group__neu mb-5">
+                        <ul className="list-group list-group-flush list-group__neu list-group__shaded mb-5">
                             <li className="list-group-item">{t('administration_p_statistics_list_users')}{users.length}</li>
                             <li className="list-group-item">{t('administration_p_statistics_list_titles')}{titles.length}</li>
                         </ul>
@@ -76,7 +76,7 @@ class AdministrationPage extends Component {
                     <div className="col-12">
                         <h2>{t('administration_add_content_component_header_add_content')}</h2>
                         <p>{t('administration_add_content_component_p_forms')}</p>
-                        <AdminCardTitle />
+                        <TitleCard />
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const UserList = ({users}) => {
     const {t} = useTranslation();
     return (
         <div className="col-12">
-            <h2>{t('administration_user-list_component_header_users')}</h2>
+            <h2 className="mb-3">{t('administration_user-list_component_header_users')}</h2>
             <ul className="list-unstyled row">
                 {users.map(user => (
                     <li key={user.uid} className="col-12 col-md-6 col-lg-4 ">

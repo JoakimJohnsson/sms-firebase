@@ -11,8 +11,8 @@ $smsc-warning:    #987f08;
 $smsc-black:      #161c1b;
 $smsc-white:      #ffffff;
 
-$gray-100: darken($smsc-white, 2%);
-$gray-200: darken($smsc-white, 4%);
+$gray-100: darken($smsc-white, 2%); // used as modal/form bg
+$gray-200: darken($smsc-white, 4%); // used as darker modal/form bg
 $gray-300: darken($smsc-white, 6%); // used as border-color
 $gray-400: lighten($smsc-secondary, 67%);
 $gray-500: lighten($smsc-secondary, 65%);
@@ -46,6 +46,8 @@ $navbar-dark-color: $smsc-white;
 $navbar-light-color: $smsc-black;
 $navbar-light-active-color: $smsc-secondary;
 $navbar-dark-active-color: lighten($smsc-secondary, 30%);
+
+$card-cap-bg: $gray-200;
 
 $tooltip-bg: $smsc-secondary;
 

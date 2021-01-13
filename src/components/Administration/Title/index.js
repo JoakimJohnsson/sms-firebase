@@ -78,6 +78,7 @@ class TitleBase extends Component {
                 {titles ? (
                     <TitleListUl
                         titlesList={titles}
+                        t={t}
                         onEditTitleName={this.onEditTitleName}
                         onRemoveTitle={this.onRemoveTitle}
                     />
@@ -104,41 +105,33 @@ class TitleBase extends Component {
 
 }
 
-const AdminCardTitle = () => {
-    const {
-    t
-}
-
-= useTranslation();
-return (
-    <div className="col-12 mb-3">
-        <div className="card">
-            <div className="card-header p-4 d-flex justify-content-between align-items-center">
-                <h3 className="m-0">{t('administration_admin_card_component_header_titles')}</h3>
-                <AdminModalTitle/>
-            </div>
-            <div className="card-body">
-                <Title/>
+const TitleCard = () => {
+    const {t} = useTranslation();
+    return (
+        <div className="col-12 mb-3">
+            <div className="card">
+                <div className="card-header p-4 d-flex justify-content-between align-items-center">
+                    <h3 className="m-0">{t('administration_title_card_component_header_titles')}</h3>
+                    <TitleModal/>
+                </div>
+                <div className="card-body">
+                    <Title/>
+                </div>
             </div>
         </div>
-    </div>
-)
+    )
 };
 
-const AdminModalTitle = () =>
-{
-
+const TitleModal = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const {t} = useTranslation();
-
     return (
         <>
             <Modal show={show} onHide={handleClose}>
-
                 <div className="modal-header px-0">
-                    <h2 className="modal-title" id="exampleModalLabel">{t('modal_administration_h2_header_add_title')}</h2>
+                    <h2 className="modal-title" id="exampleModalLabel">{t('administration_title_modal_component_header_add_title')}</h2>
                     <button type="button"
                             className="btn"
                             data-bs-dismiss="modal"
@@ -147,7 +140,6 @@ const AdminModalTitle = () =>
                         <Icon.X className="fs-1"/>
                     </button>
                 </div>
-
                 <Modal.Body className="px-0">
                     <TitleForm/>
                 </Modal.Body>
@@ -157,13 +149,9 @@ const AdminModalTitle = () =>
             </button>
         </>
     )
-}
-;
+};
 
-const TitleListUl = (
-{
-    titlesList, onEditTitleName, onRemoveTitle
-}
+const TitleListUl = ({titlesList, onEditTitleName, onRemoveTitle, t}
 ) => (
 <ul className="list-group-flush list-group__editable">
     {titlesList.map(title => (
@@ -172,6 +160,7 @@ const TitleListUl = (
             title={title}
             onEditTitleName={onEditTitleName}
             onRemoveTitle={onRemoveTitle}
+            t={t}
         />
     ))}
 </ul>
@@ -206,11 +195,10 @@ class TitleListLi extends Component
         this.setState({editMode: false});
     };
 
-    render()
-    {
+    render() {
         const {title, onRemoveTitle} = this.props;
         const {editMode, editTitleName} = this.state;
-
+        const {t} = this.props;
         return (
             <li className="list-group-item d-flex justify-content-between align-items-center">
 
@@ -232,10 +220,10 @@ class TitleListLi extends Component
                                 onConfirm={() => {
                                     onRemoveTitle(title.uid)
                                 }}
-                                body="Are you sure you want to delete this title?"
-                                confirmText="Confirm delete"
+                                body={t('confirmation_are_you_sure')}
+                                confirmText={t('confirmation_confirm_delete')}
                                 confirmBSStyle={"btn btn__neu btn-primary"}
-                                title="Delete title">
+                                title={t('confirmation_delete_title')}>
                                 <button className={"btn sms-button__list-group-icon"}>
                                     <Icon.X className="fs-3"/>
                                 </button>
@@ -274,4 +262,4 @@ withFirebase,
 withTranslation()
 )(TitleBase);
 
-export default AdminCardTitle;
+export default TitleCard;

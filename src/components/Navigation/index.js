@@ -55,7 +55,7 @@ const HeaderAuth = ({authUser}) => {
                         {initials && (
                             <>
                                 <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-2">{initials}</p>
-                                <p className="d-block d-lg-none text-white fs-5 pb-3 border-bottom">{name}</p>
+                                <p className="d-block d-lg-none text-white pb-3 border-bottom">{t('navigation_logged_in_as')} {name}</p>
                             </>
                         )}
 
@@ -64,9 +64,14 @@ const HeaderAuth = ({authUser}) => {
                         <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={t('navigation_settings')} icon={<Icon.Gear className="fs-5 me-1"/>}
                                                   setExpanded={setExpanded}/>
                         {!!authUser.roles[ROLES.ADMIN] && (
-                            <NavLinkComponentWithIcon link={ROUTES.ADMIN} text={t('navigation_administration')}
-                                                      icon={<Icon.Bug className="fs-5 me-1"/>}
-                                                      setExpanded={setExpanded}/>
+
+                            <NavLink className="nav-link" to={ROUTES.ADMIN}
+                                     exact={true} onClick={() => setExpanded(false)}>
+                                <Icon.Bug className="fs-5 me-1"/>
+                                <span className="d-lg-none d-xl-inline">{t('navigation_administration')}</span>
+                            </NavLink>
+
+
                         )}
                         <div><ChangeLanguageButton t={t}/></div>
                         <div><SignOutButton/></div>

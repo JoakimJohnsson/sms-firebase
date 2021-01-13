@@ -20,7 +20,7 @@ const SettingsPage = () => {
                                 {t('settings_lead_settings')}
                             </p>
                             <h2 className="mb-3">{t('settings_header_personal_information')}</h2>
-                            <ul className="list-group list-group-flush list-group__neu mb-5">
+                            <ul className="list-group list-group-flush list-group__neu list-group__shaded mb-5">
                                 <li className="list-group-item">
                                     {t('list_email')}{authUser.email}
                                 </li>
