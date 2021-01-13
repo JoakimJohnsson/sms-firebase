@@ -6,7 +6,7 @@ import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
 import LoadingComponent from "../Loading";
-import TitleCard from "./Title";
+import Titles from "./Title";
 
 class AdministrationPage extends Component {
     constructor(props) {
@@ -76,7 +76,7 @@ class AdministrationPage extends Component {
                     <div className="col-12">
                         <h2>{t('administration_add_content_component_header_add_content')}</h2>
                         <p>{t('administration_add_content_component_p_forms')}</p>
-                        <TitleCard />
+                        <Titles />
                     </div>
                 </div>
             </div>
