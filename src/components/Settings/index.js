@@ -16,9 +16,10 @@ const SettingsPage = () => {
                     <div className="row">
                         <div className="col-12 col-lg-8">
                             <h1>{t('settings_header_settings')}</h1>
-                            <p className="lead">
+                            <p className="lead mb-5">
                                 {t('settings_lead_settings')}
                             </p>
+                            <h2 className="mb-3">{t('settings_header_personal_information')}</h2>
                             <ul className="list-group list-group-flush list-group__neu mb-5">
                                 <li className="list-group-item">
                                     {t('list_email')}{authUser.email}

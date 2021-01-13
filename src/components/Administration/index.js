@@ -63,8 +63,7 @@ class AdministrationPage extends Component {
                         <p className="lead mb-5">
                             {t('administration_lead_administration')}
                         </p>
-                        <h2>{t('administration_header_statistics')}</h2>
-                        <p>{t('administration_p_statistics')}</p>
+                        <h2 className="mb-3">{t('administration_header_statistics')}</h2>
                         <ul className="list-group list-group-flush list-group__neu mb-5">
                             <li className="list-group-item">{t('administration_p_statistics_list_users')}{users.length}</li>
                             <li className="list-group-item">{t('administration_p_statistics_list_titles')}{titles.length}</li>

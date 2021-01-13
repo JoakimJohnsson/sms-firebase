@@ -4,7 +4,6 @@
   "administration_header_statistics": "Statistik",
   "administration_lead_administration": "Admin-sidan är tillgänglig för alla inloggade Administratörer. Används för att lägga till innehåll i databasen och hålla koll på användare.",
   "administration_p_guides": "TBA - guider för att hjälpa administratörer lägga till information i databasen.",
-  "administration_p_statistics": "Här hittar du lite statistik om innehållet på siten.",
   "administration_p_statistics_list_users": "Antal användare: ",
   "administration_p_statistics_list_titles": "Antal inlagda titlar: ",
   "administration_add_content_component_header_add_content": "Lägg till innehåll",
@@ -26,6 +25,7 @@
   "home_disclaimer_part_2": " och används utan tillstånd enligt USA's Fair use-doktrin.",
 
   "settings_header_settings": "Inställningar",
+  "settings_header_personal_information": "Personlig information",
   "settings_lead_settings": "Kontrollera och ändra din information.",
 
   "modal_create_account_h2_header_create_account": "Skapa konto",

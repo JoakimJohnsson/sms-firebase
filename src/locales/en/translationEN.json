@@ -4,7 +4,6 @@
   "administration_header_statistics": "Statistics",
   "administration_lead_administration": "The Admin Page is accessible by every signed in admin user. Use it to add content to the database and keep track of users.",
   "administration_p_guides": "TBA - guides to help Admins add content to database.",
-  "administration_p_statistics": "Here, you'll find some statistics about the site.",
   "administration_p_statistics_list_users": "Number of users: ",
   "administration_p_statistics_list_titles": "Number of titles: ",
   "administration_add_content_component_header_add_content": "Add content",
@@ -26,6 +25,7 @@
   "home_disclaimer_part_2": " and is used without permission according to the Fair use doctrin of the United States.",
 
   "settings_header_settings": "Settings",
+  "settings_header_personal_information": "Personal information",
   "settings_lead_settings": "Review and change your provided information.",
 
   "modal_create_account_h2_header_create_account": "Create account",

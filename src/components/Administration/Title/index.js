@@ -72,9 +72,6 @@ class TitleBase extends Component {
         const {titles, loading, limit} = this.state;
         const {t} = this.props;
 
-        console.log("limit: ", limit);
-        console.log("lngth: ", titles.length);
-
         return (
             <div>
                 {loading && <LoadingComponent/>}
@@ -90,13 +87,14 @@ class TitleBase extends Component {
                 {!loading && titles && (
                     <>
                         {limit <= titles.length ?
-                            <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
-                                    onClick={this.onNextPage}>
-                                <Icon.ArrowDown className="fs-4"/>
-                            </button>
+                            <div className="text-end">
+                                <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
+                                        onClick={this.onNextPage}>
+                                    <Icon.ArrowDown className="fs-4"/>
+                                </button>
+                            </div>
                             :
-
-                        <div className="alert alert-info">{t('administration_admin_card_component_showing_all_titles')}</div>
+                            <div className="alert alert-info">{t('administration_admin_card_component_showing_all_titles')}</div>
                         }
                     </>
                 )}
