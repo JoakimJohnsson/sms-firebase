@@ -11,6 +11,7 @@
   "administration_add_content_component_p_forms": "Forms to add content to database.",
   "administration_user-list_component_header_users": "Users",
   "administration_admin_card_component_header_titles": "Titles",
+  "administration_admin_card_component_showing_all_titles": "Showing all titles",
 
   "create_account_h1_header_create_account": "Create account",
   "create_account_h2_header_create_account": "Create account",

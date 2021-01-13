@@ -11,6 +11,7 @@
   "administration_add_content_component_p_forms": "Formulär för att ladda upp content till databasen",
   "administration_user-list_component_header_users": "Användare",
   "administration_admin_card_component_header_titles": "Titlar",
+  "administration_admin_card_component_showing_all_titles": "Visar alla titlar",
 
   "create_account_h1_header_create_account": "Skapa konto",
   "create_account_h2_header_create_account": "Skapa konto",

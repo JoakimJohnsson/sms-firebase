@@ -79,7 +79,7 @@ class PasswordForgetFormBase extends Component {
                     </button>
                 </div>
 
-                {error && <p>{error.message}</p>}
+                {error && <p className="alert alert-warning">{error.message}</p>}
             </form>
         );
     }

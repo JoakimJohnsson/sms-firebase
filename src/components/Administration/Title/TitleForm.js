@@ -64,7 +64,7 @@ class AddTitleForm extends Component {
                     {t('btn_add')}
                 </button>
                 </div>
-                {error && <p>{error.message}</p>}
+                {error && <p className="alert alert-warning">{error.message}</p>}
             </form>
         );
     }

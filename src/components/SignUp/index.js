@@ -150,7 +150,7 @@ class SignUpFormBase extends Component {
                         {t('btn_create')}
                     </button>
                 </div>
-                {error && <p>{error.message}</p>}
+                {error && <p className="alert alert-warning">{error.message}</p>}
             </form>
         );
     }

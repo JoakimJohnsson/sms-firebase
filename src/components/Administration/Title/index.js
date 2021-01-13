@@ -17,9 +17,11 @@ class TitleBase extends Component {
             limit: 4,
         };
     }
+
     componentDidMount() {
         this.onListenForTitles()
     }
+
     onListenForTitles() {
         this.setState({loading: true});
         this.props.firebase
@@ -42,20 +44,22 @@ class TitleBase extends Component {
                 }
             });
     }
+
     componentWillUnmount() {
         this.props.firebase.titles().off();
     }
+
     onRemoveTitle = uid => {
         this.props.firebase.title(uid).remove();
     };
     onNextPage = () => {
         this.setState(
-            state => ({ limit: state.limit + 2 }),
+            state => ({limit: state.limit + 2}),
             this.onListenForTitles,
         );
     };
     onEditTitleName = (title, name) => {
-        const { uid, ...titleSnapshot } = title;
+        const {uid, ...titleSnapshot} = title;
 
         this.props.firebase.title(title.uid).set({
             ...titleSnapshot,
@@ -65,11 +69,15 @@ class TitleBase extends Component {
     };
 
     render() {
-        const { titles, loading } = this.state;
+        const {titles, loading, limit} = this.state;
         const {t} = this.props;
+
+        console.log("limit: ", limit);
+        console.log("lngth: ", titles.length);
+
         return (
             <div>
-                {loading && <LoadingComponent />}
+                {loading && <LoadingComponent/>}
                 {titles ? (
                     <TitleListUl
                         titlesList={titles}
@@ -80,32 +88,47 @@ class TitleBase extends Component {
                     <div>There are no titles ...</div>
                 )}
                 {!loading && titles && (
-                    <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button" onClick={this.onNextPage}>
-                        <Icon.ArrowDown className="fs-4"/>
-                    </button>
+                    <>
+                        {limit <= titles.length ?
+                            <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
+                                    onClick={this.onNextPage}>
+                                <Icon.ArrowDown className="fs-4"/>
+                            </button>
+                            :
+
+                        <div className="alert alert-info">{t('administration_admin_card_component_showing_all_titles')}</div>
+                        }
+                    </>
                 )}
             </div>
         );
     }
+
 }
 
 const AdminCardTitle = () => {
-    const {t} = useTranslation();
-    return (
+    const {
+    t
+}
+
+= useTranslation();
+return (
     <div className="col-12 mb-3">
         <div className="card">
             <div className="card-header p-4 d-flex justify-content-between align-items-center">
                 <h3 className="m-0">{t('administration_admin_card_component_header_titles')}</h3>
-                <AdminModalTitle />
+                <AdminModalTitle/>
             </div>
             <div className="card-body">
-                <Title />
+                <Title/>
             </div>
         </div>
     </div>
-)};
+)
+};
 
-const AdminModalTitle = () => {
+const AdminModalTitle = () =>
+{
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -113,45 +136,53 @@ const AdminModalTitle = () => {
     const {t} = useTranslation();
 
     return (
-    <>
-        <Modal show={show} onHide={handleClose}>
+        <>
+            <Modal show={show} onHide={handleClose}>
 
-            <div className="modal-header px-0">
-                <h2 className="modal-title" id="exampleModalLabel">{t('modal_administration_h2_header_add_title')}</h2>
-                <button type="button"
-                        className="btn"
-                        data-bs-dismiss="modal"
-                        aria-label={t('aria_label_close')}
-                        onClick={handleClose}>
-                    <Icon.X className="fs-1"/>
-                </button>
-            </div>
+                <div className="modal-header px-0">
+                    <h2 className="modal-title" id="exampleModalLabel">{t('modal_administration_h2_header_add_title')}</h2>
+                    <button type="button"
+                            className="btn"
+                            data-bs-dismiss="modal"
+                            aria-label={t('aria_label_close')}
+                            onClick={handleClose}>
+                        <Icon.X className="fs-1"/>
+                    </button>
+                </div>
 
-            <Modal.Body className="px-0">
-                <TitleForm/>
-            </Modal.Body>
-        </Modal>
-        <button className="btn" aria-label={t('aria_label_add_title')} onClick={handleShow}>
-            <Icon.PlusCircle className="fs-2 me-3"/>
-        </button>
-    </>
-)};
+                <Modal.Body className="px-0">
+                    <TitleForm/>
+                </Modal.Body>
+            </Modal>
+            <button className="btn" aria-label={t('aria_label_add_title')} onClick={handleShow}>
+                <Icon.PlusCircle className="fs-2 me-3"/>
+            </button>
+        </>
+    )
+}
+;
 
-const TitleListUl = ({ titlesList, onEditTitleName, onRemoveTitle }) => (
-    <ul className="list-group-flush list-group__editable">
-        {titlesList.map(title => (
-            <TitleListLi
-                key={title.uid}
-                title={title}
-                onEditTitleName={onEditTitleName}
-                onRemoveTitle={onRemoveTitle}
-            />
-        ))}
-    </ul>
+const TitleListUl = (
+{
+    titlesList, onEditTitleName, onRemoveTitle
+}
+) => (
+<ul className="list-group-flush list-group__editable">
+    {titlesList.map(title => (
+        <TitleListLi
+            key={title.uid}
+            title={title}
+            onEditTitleName={onEditTitleName}
+            onRemoveTitle={onRemoveTitle}
+        />
+    ))}
+</ul>
 );
 
-class TitleListLi extends Component {
-    constructor(props) {
+class TitleListLi extends Component
+{
+    constructor(props)
+    {
         super(props);
 
         this.state = {
@@ -168,18 +199,19 @@ class TitleListLi extends Component {
     };
 
     onChangeEditTitleName = event => {
-        this.setState({ editTitleName: event.target.value });
+        this.setState({editTitleName: event.target.value});
     };
 
     onSaveEditTitleName = () => {
         this.props.onEditTitleName(this.props.title, this.state.editTitleName);
 
-        this.setState({ editMode: false });
+        this.setState({editMode: false});
     };
 
-    render() {
-        const { title, onRemoveTitle } = this.props;
-        const { editMode, editTitleName } = this.state;
+    render()
+    {
+        const {title, onRemoveTitle} = this.props;
+        const {editMode, editTitleName} = this.state;
 
         return (
             <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -215,7 +247,8 @@ class TitleListLi extends Component {
                     {editMode ? (
                         <div>
                             <span className="mr-2">
-                                <button className="btn sms-button__list-group-icon" onClick={this.onSaveEditTitleName}><Icon.BoxArrowInDown className="fs-5"/></button>
+                                <button className="btn sms-button__list-group-icon" onClick={this.onSaveEditTitleName}><Icon.BoxArrowInDown
+                                    className="fs-5"/></button>
 
                             </span>
                             <button className="btn sms-button__list-group-icon"
@@ -227,7 +260,8 @@ class TitleListLi extends Component {
 
                     ) : (
                         <span>
-                            <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}><Icon.Pencil className="fs-5"/></button>
+                            <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}><Icon.Pencil
+                                className="fs-5"/></button>
 
                     </span>
                     )}
@@ -238,8 +272,8 @@ class TitleListLi extends Component {
 }
 
 const Title = compose(
-    withFirebase,
-    withTranslation()
+withFirebase,
+withTranslation()
 )(TitleBase);
 
 export default AdminCardTitle;
