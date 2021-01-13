@@ -66,9 +66,11 @@ class PasswordChangeForm extends Component {
                         className="form-control"
                     />
                 </div>
-                <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                    {t('btn_change_password')}
-                </button>
+                <div className="text-end">
+                    <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
+                        {t('btn_change_password')}
+                    </button>
+                </div>
 
                 {error && <p>{error.message}</p>}
             </form>

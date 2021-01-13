@@ -73,9 +73,11 @@ class PasswordForgetFormBase extends Component {
                         className="form-control"
                     />
                 </div>
-                <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
-                    {t('btn_send')}
-                </button>
+                <div className="text-end">
+                    <button disabled={isInvalid} type="submit" className="btn btn__neu btn-primary mb-3">
+                        {t('btn_send')}
+                    </button>
+                </div>
 
                 {error && <p>{error.message}</p>}
             </form>
@@ -89,10 +91,11 @@ const PasswordForgetLink = (props) => {
 
     return (
 
-    <p className={props.class}>
-        <Link to={ROUTES.PASSWORD_FORGET}>{t('link_forgot_password')}</Link>
-    </p>
-)};
+        <p className={props.class}>
+            <Link to={ROUTES.PASSWORD_FORGET}>{t('link_forgot_password')}</Link>
+        </p>
+    )
+};
 
 export default PasswordForgetPage;
 
