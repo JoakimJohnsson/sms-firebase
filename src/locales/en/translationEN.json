@@ -14,6 +14,11 @@
 
   "create_account_h1_header_create_account": "Create account",
   "create_account_h2_header_create_account": "Create account",
+  "create_account_h2_header_already_member": "Already a member?",
+  "create_account_lead_create_account": "To be able to use our services, you need to create an account.",
+
+  "dashboard_header_dashboard": "Dashboard",
+  "dashboard_lead_dashboard": "The Dashboard is accessible by every signed in user.",
 
   "home_header_welcome": "Welcome to Svenska Marvelsamlare",
   "home_disclaimer_part_1": "This webb application contains images and information which is owned and copyrighted by ",
@@ -24,10 +29,8 @@
 
   "modal_create_account_h2_header_create_account": "Create account",
   "modal_administration_h2_header_add_title": "Add title",
+  "modal_home_h2_header_sign_in": "Sign in",
 
-  "header_sign_in": "Sign in",
-  "header_already_member": "Already a member?",
-  "header_dashboard": "Dashboard",
   "header_reset_password": "Reset password",
   "header_change_password": "Change my password",
 
@@ -68,9 +71,6 @@
 
   "link_forgot_password": "Forgot password?",
 
-  "lead_create_account": "To be able to use our services, you need to create an account.",
-  "lead_dashboard": "The Dashboard is accessible by every signed in user.",
-
   "list_email": "Email: ",
   "list_firstname": "First name: ",
   "list_lastname": "Last name: ",
@@ -80,5 +80,4 @@
   "list_role": "Role: ",
   "list_role_admin": "Administrator",
   "list_role_not_admin": "User"
-
 }

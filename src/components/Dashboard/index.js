@@ -10,8 +10,8 @@ const DashboardPage = () => {
     <div className="container pt-5">
         <div className="row">
             <div className="col-12 col-lg-8">
-                <h1>{t('header_dashboard')}</h1>
-                <p>{t('lead_dashboard')}</p>
+                <h1>{t('dashboard_header_dashboard')}</h1>
+                <p>{t('dashboard_lead_dashboard')}</p>
             </div>
         </div>
     </div>

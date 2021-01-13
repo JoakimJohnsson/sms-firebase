@@ -12,9 +12,13 @@
   "administration_user-list_component_header_users": "Användare",
   "administration_admin_card_component_header_titles": "Titlar",
 
-
   "create_account_h1_header_create_account": "Skapa konto",
   "create_account_h2_header_create_account": "Skapa konto",
+  "create_account_h2_header_already_member": "Redan medlem?",
+  "create_account_lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
+
+  "dashboard_header_dashboard": "Kontrollpanel",
+  "dashboard_lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
 
   "home_header_welcome": "Välkommen till Svenska Marvelsamlare",
   "home_disclaimer_part_1": "Den här webbappen kan innehålla bilder och information vars copyright ägs av ",
@@ -25,10 +29,8 @@
 
   "modal_create_account_h2_header_create_account": "Skapa konto",
   "modal_administration_h2_header_add_title": "Lägg till en titel",
+  "modal_home_h2_header_sign_in": "Logga in",
 
-  "header_sign_in": "Logga in",
-  "header_already_member": "Redan medlem?",
-  "header_dashboard": "Kontrollpanel",
   "header_reset_password": "Återställ lösenord",
   "header_change_password": "Ändra mitt lösenord",
 
@@ -68,9 +70,6 @@
   "form_email_disclaimer": "Vi kommer aldrig dela din e-post adress med någon annan",
 
   "link_forgot_password": "Glömt lösenord?",
-
-  "lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
-  "lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
 
   "list_email": "E-post: ",
   "list_firstname": "Förnamn: ",
