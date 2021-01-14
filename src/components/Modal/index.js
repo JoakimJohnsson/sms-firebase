@@ -14,7 +14,7 @@ const ModalSignIn = () => {
     return (
         <div className="d-flex flex-column align-items-center">
             <button className="btn btn-primary btn__neu sms-button__cta mb-2" onClick={handleShow}>
-                <Icon.DoorOpen className="fs-2 me-3"/>
+                <Icon.DoorOpen className="fs-2 me-2"/>
                 <span>{t('btn_sign_in')}</span>
             </button>
             <PasswordForgetLink class={'mb-5'}/>
@@ -48,7 +48,7 @@ const ModalCreateAccount = () => {
     return (
         <div className="d-flex flex-column align-items-center">
             <button className="btn btn__neu btn-outline-secondary sms-button__cta mb-5" onClick={handleShow}>
-                <Icon.HandThumbsUp className="fs-2 me-3"/>
+                <Icon.HandThumbsUp className="fs-2 me-2"/>
                 <span>{t('btn_create_account')}</span>
             </button>
 

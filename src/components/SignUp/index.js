@@ -138,7 +138,7 @@ class SignUpFormBase extends Component {
                 <label>
                     {t('label_admin_privileges')}
                     <input
-                        className="ms-2"
+                        className="ms-2 mb-3"
                         name="wantAdminPrivileges"
                         type="checkbox"
                         checked={wantAdminPrivileges}

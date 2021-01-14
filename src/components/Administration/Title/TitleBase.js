@@ -173,7 +173,7 @@ class TitleListLi extends Component {
                                 confirmText={t('confirmation_confirm_delete')}
                                 confirmBSStyle={"btn btn__neu btn-primary"}
                                 title={t('confirmation_delete_title')}>
-                                <button className={"btn sms-button__list-group-icon"}>
+                                <button className={"btn sms-button__list-group-icon text-danger"}>
                                     <Icon.X className="fs-3"/>
                                 </button>
                             </Confirmation>
@@ -182,11 +182,11 @@ class TitleListLi extends Component {
                     {editMode ?
                         <div>
                             <span className="mr-2">
-                                <button className="btn sms-button__list-group-icon" onClick={this.onSaveEditTitleName}>
+                                <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
                                     <Icon.BoxArrowInDown className="fs-5"/>
                                 </button>
                             </span>
-                            <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
+                            <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditMode}>
                                 <Icon.X className="fs-3"/>
                             </button>
                         </div>

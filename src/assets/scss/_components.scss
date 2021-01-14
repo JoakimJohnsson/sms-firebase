@@ -28,7 +28,6 @@
 
 /* --------------- 2. BUTTONS --------------- */
 .sms-button__cta {
-  @extend .btn-lg;
   width: 90%;
   max-width: 25rem;
   min-height: 4rem;
@@ -82,7 +81,13 @@
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     margin-bottom: .5rem;
-    padding: 1rem;
+    padding: 1rem 0;
+    font-size: $sms-font-size__small;
+    @include media-breakpoint-up(sm) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: $sms-font-size__normal;
+    }
     button {
       margin: .5rem 0;
       @include media-breakpoint-up(lg) {

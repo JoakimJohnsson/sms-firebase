@@ -26,8 +26,8 @@ const TitleModal = () => {
                     <TitleForm/>
                 </Modal.Body>
             </Modal>
-            <button className="btn" aria-label={t('aria_label_add_title')} onClick={handleShow}>
-                <Icon.PlusCircle className="fs-2 me-3"/>
+            <button className="btn text-primary" aria-label={t('aria_label_add_title')} onClick={handleShow}>
+                <Icon.PlusCircle className="fs-2"/>
             </button>
         </>
     )

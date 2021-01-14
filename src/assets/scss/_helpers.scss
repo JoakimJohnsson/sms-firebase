@@ -8,17 +8,33 @@
 /* 3. Text colors............... */
 /* 4. Misc...................... */
 
+/* --------------- 1. BODY --------------- */
+body {
+  font-size: $sms-font-size__small;
+  @include media-breakpoint-up(sm) {
+    font-size: $sms-font-size__normal;
+  }
+}
+
 /* --------------- 1. BUTTONS --------------- */
 .btn {
   font-weight: lighter;
-}
-.btn.btn__neu {
-  @include neu__button();
+  font-size: $sms-font-size__small;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $sms-font-size__normal;
+  }
+  &.btn__neu {
+    @include neu__button();
+  }
+  &.btn-outline-secondary {
+    border: 1px solid $secondary;
+  }
 }
 
 /* --------------- 2. FONTS --------------- */
 p.small {
-  font-size: $font-size-sm;
+  font-size: $sms-font-size__small;
 }
 
 /* --------------- 3. TEXT COLORS --------------- */

@@ -95,8 +95,8 @@ const UserList = ({users}) => {
                         <div className="card mb-5">
                             <div className="card-header text-capitalize fs-5 d-flex align-items-center">
                                 {user.firstname} {user.lastname}
-                                {user.wantAdminPrivileges && !user.roles ? <Icon.Award className="fs-5 ms-2 text-warning"/> : ""}
-                                {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ? <Icon.AwardFill className="fs-5 ms-2"/> : ""}
+                                {user.wantAdminPrivileges && !user.roles ? <Icon.Award className="fs-5 ms-2 text-black-50"/> : ""}
+                                {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ? <Icon.AwardFill className="fs-5 ms-2 text-primary"/> : ""}
                             </div>
                             <div className="card-body">
                                 <p className="card-subtitle mb-2 text-muted">{user.uid}</p>

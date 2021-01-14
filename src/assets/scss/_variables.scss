@@ -20,6 +20,8 @@ $gray-600: darken($smsc-white, 65%);
 
 /* ----- Font size ----- */
 $sms-font-size__small: 90%;
+$sms-font-size__normal: 1rem;
+$sms-font-size__large: 110%;
 
 /* ----- Bootstrap overrides ----- */
 $body-color:          $smsc-black;
