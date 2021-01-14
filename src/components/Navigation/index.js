@@ -42,11 +42,11 @@ const HeaderAuth = ({authUser, onTop}) => {
     const [expanded, setExpanded] = useState(false);
     const initials = authUser.firstname ? authUser.firstname.charAt(0).toUpperCase() + authUser.lastname.charAt(0).toUpperCase() : false;
     const name = authUser.firstname ? authUser.firstname + " " + authUser.lastname : false;
-    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom box-shadow";
+    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom navbar__on-scroll-down";
 
     return (
         <header className="container-fluid bg-light px-3">
-            <Navbar bg="light" variant="light" expand="lg" className={navbarClass} expanded={expanded}>
+            <Navbar variant="light" expand="lg" className={navbarClass} expanded={expanded}>
                 <Navbar.Brand>
                     <SmsLogo isLoggedIn={true}/>
                 </Navbar.Brand>
@@ -86,11 +86,11 @@ const HeaderNonAuth = ({onTop}) => {
 
     const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
-    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom box-shadow";
+    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom navbar__on-scroll-down";
 
     return (
         <header className="container-fluid bg-light px-3">
-            <Navbar bg="light" expand="lg" className={navbarClass} expanded={expanded}>
+            <Navbar expand="lg" className={navbarClass} expanded={expanded}>
                 <Navbar.Brand><SmsLogo isLoggedIn={false}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarNonAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                 <Navbar.Collapse id="navbarNonAuthToggler">
@@ -127,7 +127,7 @@ const ChangeLanguageButton = ({t}) => (
             </Tooltip>
         }>
         <button aria-label={t('btn_change_language')}
-                className="btn btn-secondary btn__neu ms-lg-3 d-flex align-items-center justify-content-center"
+                className="btn btn-secondary ms-lg-3 d-flex align-items-center justify-content-center"
                 title={t('btn_change_language')}
                 onClick={changeLanguage()}>
             <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>

@@ -75,6 +75,7 @@
 
 /* --------------- 6. HEADER --------------- */
 .navbar {
+  transition: background-color ease .5s;
   padding-left: 1rem;
   padding-right: 1rem;
   .navbar-nav {
@@ -95,8 +96,13 @@
       }
     }
   }
-  &.box-shadow {
+  background-color: $smsc-white;
+  &.navbar__on-scroll-down {
+    background-color: $primary;
     box-shadow: 2px 2px 6px $border-color;
+    @include media-breakpoint-up(lg) {
+      background-color: $smsc-white;
+    }
   }
   @include media-breakpoint-up(lg) {
     .navbar-nav {
