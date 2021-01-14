@@ -9,7 +9,6 @@ import * as Icon from 'react-bootstrap-icons';
 import {Nav, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import i18n from "../../i18n";
 import {useTranslation} from "react-i18next";
-import SignInForm from "../SignIn";
 
 const HeaderNavigation = () => {
 
@@ -80,6 +79,7 @@ const HeaderAuth = ({authUser, onTop}) => {
             </Navbar>
         </header>
     )
+
 };
 
 const HeaderNonAuth = ({onTop}) => {
