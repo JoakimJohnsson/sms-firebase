@@ -5,6 +5,7 @@ import {withAuthorization} from '../Session';
 import {useTranslation, withTranslation} from 'react-i18next';
 import * as ROLES from '../../constants/roles';
 import * as Icon from "react-bootstrap-icons";
+import {OverlayTrigger, Tooltip} from "react-bootstrap";
 import LoadingComponent from "../Loading";
 import Titles from "./Title";
 
@@ -76,7 +77,7 @@ class AdministrationPage extends Component {
                     <div className="col-12">
                         <h2>{t('administration_add_content_component_header_add_content')}</h2>
                         <p>{t('administration_add_content_component_p_forms')}</p>
-                        <Titles />
+                        <Titles/>
                     </div>
                 </div>
             </div>
@@ -95,8 +96,30 @@ const UserList = ({users}) => {
                         <div className="card mb-5">
                             <div className="card-header text-capitalize fs-5 d-flex align-items-center">
                                 {user.firstname} {user.lastname}
-                                {user.wantAdminPrivileges && !user.roles ? <Icon.Award className="fs-5 ms-2 text-black-50"/> : ""}
-                                {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ? <Icon.AwardFill className="fs-5 ms-2 text-primary"/> : ""}
+                                {user.wantAdminPrivileges && !user.roles ?
+                                    <OverlayTrigger
+                                        key={"bottom"}
+                                        placement={"bottom"}
+                                        overlay={
+                                            <Tooltip id={"tooltip-admin-pending"}>
+                                                {t('tooltip_admin_pending')}
+                                            </Tooltip>
+                                        }>
+                                        <Icon.Award className="fs-5 ms-2 text-black-50 cursor-pointer"/>
+                                    </OverlayTrigger>
+                                    : ""}
+                                {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ?
+                                    <OverlayTrigger
+                                        key={"bottom"}
+                                        placement={"bottom"}
+                                        overlay={
+                                            <Tooltip id={"tooltip-admin-granted"}>
+                                                {t('tooltip_admin_granted')}
+                                            </Tooltip>
+                                        }>
+                                        <Icon.AwardFill className="fs-5 ms-2 text-primary cursor-pointer"/>
+                                    </OverlayTrigger>
+                                    : ""}
                             </div>
                             <div className="card-body">
                                 <p className="card-subtitle mb-2 text-muted">{user.uid}</p>

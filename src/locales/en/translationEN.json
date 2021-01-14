@@ -23,7 +23,6 @@
   "forgot_password_header_fix": "Fix my password!",
   "forgot_password_lead_enter_email": "Enter your submitted email address in this form, and we'll send you information on how to reset your password.",
 
-
   "dashboard_header_dashboard": "Dashboard",
   "dashboard_lead_dashboard": "The Dashboard is accessible by every signed in user.",
 
@@ -63,6 +62,8 @@
 
   "tooltip_sign_out": "Sign out",
   "tooltip_change_language": "Byt språk",
+  "tooltip_admin_pending": "Admin status: Pending",
+  "tooltip_admin_granted": "Admin status: Granted",
 
   "aria_label_close": "close",
   "aria_label_show_more_titles": "Show more titles",
@@ -85,9 +86,9 @@
   "list_email": "Email: ",
   "list_firstname": "First name: ",
   "list_lastname": "Last name: ",
-  "list_admin_pending": "Admin privileges: Pending",
+  "list_admin_pending": "Admin status: Pending",
   "list_admin_unwanted": "I don't want Admin privileges",
-  "list_admin_granted": "Admin privileges: Granted",
+  "list_admin_granted": "Admin status: Granted",
   "list_role": "Role: ",
   "list_role_admin": "Administrator",
   "list_role_not_admin": "User"

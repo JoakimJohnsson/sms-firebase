@@ -62,6 +62,8 @@
 
   "tooltip_sign_out": "Logga ut",
   "tooltip_change_language": "Change language",
+  "tooltip_admin_pending": "Administratör-status: Väntar",
+  "tooltip_admin_granted": "Administratör-status: Beviljad",
 
   "aria_label_close": "Stäng",
   "aria_label_show_more_titles": "Visa fler titlar",
@@ -86,7 +88,7 @@
   "list_lastname": "Efternamn: ",
   "list_admin_pending": "Administratör-status: Väntar",
   "list_admin_unwanted": "Jag vill inte bli administratör",
-  "list_admin_granted": "Administratör-privilegier: Beviljade",
+  "list_admin_granted": "Administratör-status: Beviljad",
   "list_role": "Roll: ",
   "list_role_admin": "Administratör",
   "list_role_not_admin": "Användare"

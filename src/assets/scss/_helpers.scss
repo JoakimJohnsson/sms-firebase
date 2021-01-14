@@ -3,10 +3,11 @@
 @import "variables";
 @import "mixins";
 
-/* 1. Buttons................... */
-/* 2. Fonts..................... */
-/* 3. Text colors............... */
-/* 4. Misc...................... */
+/* 1. Body...................... */
+/* 2. Buttons................... */
+/* 3. Fonts..................... */
+/* 4. Text colors............... */
+/* 5. Misc...................... */
 
 /* --------------- 1. BODY --------------- */
 body {
@@ -16,7 +17,7 @@ body {
   }
 }
 
-/* --------------- 1. BUTTONS --------------- */
+/* --------------- 2. BUTTONS --------------- */
 .btn {
   font-weight: lighter;
   font-size: $sms-font-size__small;
@@ -32,12 +33,12 @@ body {
   }
 }
 
-/* --------------- 2. FONTS --------------- */
+/* --------------- 3. FONTS --------------- */
 p.small {
   font-size: $sms-font-size__small;
 }
 
-/* --------------- 3. TEXT COLORS --------------- */
+/* --------------- 4. TEXT COLORS --------------- */
 .text-black {
   color: $smsc-black !important;
 }
@@ -45,7 +46,7 @@ p.small {
   color: $smsc-white!important;
 }
 
-/* --------------- 4. MISC. --------------- */
+/* --------------- 5. MISC. --------------- */
 .top-spacer {
   height: 58px;
   @include media-breakpoint-up(sm) {
@@ -54,4 +55,7 @@ p.small {
   @include media-breakpoint-up(lg) {
     height: 90px;
   }
+}
+.cursor-pointer {
+  cursor: pointer;
 }
