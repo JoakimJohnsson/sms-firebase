@@ -2,8 +2,8 @@
 
 /* ----- SMS colors ----- */
 // smsc = sms-color
-$smsc-primary:    #A13502;
-$smsc-secondary:  darken($smsc-primary, 15%);
+$smsc-primary:    #f8af1e;
+$smsc-secondary:  #014f74;
 $smsc-danger:     #cb1e12;
 $smsc-success:    #286717;
 $smsc-info:       #086298;
@@ -54,7 +54,7 @@ $tooltip-bg: $smsc-secondary;
 $list-group-bg: $gray-100;
 
 $enable-gradients:            true;
-$headings-color: $primary;
+$headings-color: $secondary;
 
 
 

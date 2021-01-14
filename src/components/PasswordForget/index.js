@@ -7,22 +7,25 @@ import {useTranslation} from "react-i18next";
 import {withTranslation} from 'react-i18next';
 import {compose} from "recompose";
 
-const PasswordForgetPage = () => (
-    <div className="container pt-5">
-        <div className="row">
-            <div className="col-12 col-lg-8">
-                <h1>Forgot password?</h1>
-                <p className="lead mb-5">
-                    Enter your submitted email address in this form, and we'll send you information on how to reset your password.
-                </p>
-                <div className="sms-form-box__neu mb-5">
-                    <h2 className="form-header">Fix my password</h2>
-                    <PasswordForgetForm/>
+const PasswordForgetPage = () => {
+    const {t} = useTranslation();
+    return (
+        <div className="container pt-5">
+            <div className="row">
+                <div className="col-12 col-lg-8">
+                    <h1>{t('forgot_password_header_forgot_password')}</h1>
+                    <p className="lead mb-5">
+                        {t('forgot_password_lead_enter_email')}
+                    </p>
+                    <div className="sms-form-box__neu mb-5">
+                        <h2 className="form-header">{t('forgot_password_header_fix')}</h2>
+                        <PasswordForgetForm/>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    )
+};
 
 const INITIAL_STATE = {
     email: '',

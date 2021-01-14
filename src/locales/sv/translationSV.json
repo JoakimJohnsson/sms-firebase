@@ -19,6 +19,10 @@
   "create_account_lead_create_account": "För att använda våra tjänster måste du skapa ett konto.",
   "create_account_modal_header_create_account": "Skapa konto",
 
+  "forgot_password_header_forgot_password": "Glömt lösenord?",
+  "forgot_password_header_fix": "Återställ mitt lösenord!",
+  "forgot_password_lead_enter_email": "Fyll i din e-post adress i formuläret, så hjälper vi dig återställa lösenordet.",
+
   "dashboard_header_dashboard": "Kontrollpanel",
   "dashboard_lead_dashboard": "Kontrollpanelen är tillgänglig för alla inloggade användare.",
 
@@ -40,6 +44,7 @@
 
   "navigation_home": "Hem",
   "navigation_create_account": "Skapa konto",
+  "navigation_password_forget": "Återställ lösenord",
   "navigation_dashboard": "Kontrollpanel",
   "navigation_settings": "Inställningar",
   "navigation_administration": "Administration",

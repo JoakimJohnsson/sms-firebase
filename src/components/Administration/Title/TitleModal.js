@@ -12,7 +12,7 @@ const TitleModal = () => {
     return (
         <>
             <Modal show={show} onHide={handleClose}>
-                <div className="modal-header px-0">
+                <div className="modal-header">
                     <h2 className="modal-title" id="exampleModalLabel">{t('administration_title_modal_component_header_add_title')}</h2>
                     <button type="button"
                             className="btn"

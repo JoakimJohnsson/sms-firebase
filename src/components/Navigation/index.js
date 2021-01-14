@@ -9,6 +9,7 @@ import * as Icon from 'react-bootstrap-icons';
 import {Nav, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import i18n from "../../i18n";
 import {useTranslation} from "react-i18next";
+import SignInForm from "../SignIn";
 
 const HeaderNavigation = () => {
 
@@ -96,6 +97,7 @@ const HeaderNonAuth = ({onTop}) => {
                     <Nav className="mr-auto">
                         <NavLinkComponent link={ROUTES.HOME} text={t('navigation_home')} isExact={true} setExpanded={setExpanded}/>
                         <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={t('navigation_create_account')} setExpanded={setExpanded}/>
+                        <NavLinkComponent link={ROUTES.PASSWORD_FORGET} text={t('navigation_password_forget')} setExpanded={setExpanded}/>
                         <div><ChangeLanguageButton t={t}/></div>
                     </Nav>
                 </Navbar.Collapse>

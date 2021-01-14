@@ -19,6 +19,11 @@
   "create_account_lead_create_account": "To be able to use our services, you need to create an account.",
   "create_account_modal_header_create_account": "Create account",
 
+  "forgot_password_header_forgot_password": "Forgot password?",
+  "forgot_password_header_fix": "Fix my password!",
+  "forgot_password_lead_enter_email": "Enter your submitted email address in this form, and we'll send you information on how to reset your password.",
+
+
   "dashboard_header_dashboard": "Dashboard",
   "dashboard_lead_dashboard": "The Dashboard is accessible by every signed in user.",
 
@@ -40,6 +45,7 @@
 
   "navigation_home": "Home",
   "navigation_create_account": "Create account",
+  "navigation_password_forget": "Reset password",
   "navigation_dashboard": "Dashboard",
   "navigation_settings": "Settings",
   "navigation_administration": "Administration",
