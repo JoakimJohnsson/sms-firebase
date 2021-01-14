@@ -36,16 +36,17 @@ const HeaderNavigation = () => {
     )
 };
 
-const HeaderAuth = ({authUser}) => {
+const HeaderAuth = ({authUser, onTop}) => {
 
     const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
     const initials = authUser.firstname ? authUser.firstname.charAt(0).toUpperCase() + authUser.lastname.charAt(0).toUpperCase() : false;
     const name = authUser.firstname ? authUser.firstname + " " + authUser.lastname : false;
+    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom box-shadow";
 
     return (
-        <header className="container-fluid bg-dark px-3">
-            <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top border-bottom" expanded={expanded}>
+        <header className="container-fluid bg-light px-3">
+            <Navbar bg="light" variant="light" expand="lg" className={navbarClass} expanded={expanded}>
                 <Navbar.Brand>
                     <SmsLogo isLoggedIn={true}/>
                 </Navbar.Brand>
@@ -54,8 +55,8 @@ const HeaderAuth = ({authUser}) => {
                     <Nav className="mr-auto">
                         {initials && (
                             <>
-                                <p className="d-none d-lg-flex text-white fs-3 border-end align-items-center m-0 pe-3 me-2">{initials}</p>
-                                <p className="d-block d-lg-none text-white pb-3 border-bottom">{t('navigation_logged_in_as')} {name}</p>
+                                <p className="d-none d-lg-flex fs-3 border-end align-items-center m-0 pe-3 me-2">{initials}</p>
+                                <p className="d-block d-lg-none pb-3 border-bottom">{t('navigation_logged_in_as')} {name}</p>
                             </>
                         )}
 
@@ -70,8 +71,6 @@ const HeaderAuth = ({authUser}) => {
                                 <Icon.Bug className="fs-5 me-1"/>
                                 <span className="d-lg-none d-xl-inline">{t('navigation_administration')}</span>
                             </NavLink>
-
-
                         )}
                         <div><ChangeLanguageButton t={t}/></div>
                         <div><SignOutButton/></div>
@@ -86,7 +85,7 @@ const HeaderNonAuth = ({onTop}) => {
 
     const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
-    let navbarClass = onTop ? "fixed-top" : "fixed-top border-bottom";
+    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom box-shadow";
 
     return (
         <header className="container-fluid bg-light px-3">
@@ -126,7 +125,7 @@ const ChangeLanguageButton = ({t}) => (
             </Tooltip>
         }>
         <button aria-label={t('btn_change_language')}
-                className="btn btn-secondary ms-lg-3 d-flex align-items-center justify-content-center"
+                className="btn btn-secondary btn__neu ms-lg-3 d-flex align-items-center justify-content-center"
                 title={t('btn_change_language')}
                 onClick={changeLanguage()}>
             <Icon.Globe2 className="fs-4 me-2 me-lg-0"/>

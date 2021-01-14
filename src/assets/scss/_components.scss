@@ -29,11 +29,10 @@
 /* --------------- 2. BUTTONS --------------- */
 .sms-button__cta {
   @extend .btn-lg;
-  width: 80%;
+  width: 90%;
   max-width: 25rem;
   min-height: 4rem;
   padding: 1rem;
-  border-radius: 45px;
 }
 .sms-button__list-group-icon {
   padding: .5rem;
@@ -91,7 +90,7 @@
       }
     }
   }
-  &.border-bottom {
+  &.box-shadow {
     box-shadow: 2px 2px 6px $border-color;
   }
   @include media-breakpoint-up(lg) {

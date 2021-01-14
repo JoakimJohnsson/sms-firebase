@@ -16,7 +16,7 @@ const SignOutButton = ({ firebase }) => {
                     {t('tooltip_sign_out')}
                 </Tooltip>
             }>
-            <button className="btn btn-primary ms-lg-3" type="button" onClick={firebase.doSignOut} title="Sign out">
+            <button className="btn btn-primary btn__neu ms-lg-3" type="button" onClick={firebase.doSignOut} title="Sign out">
                 <Icon.ArrowRightCircle className="fs-4 me-2 me-lg-0"/>
                 <span className="d-inline d-lg-none">{t('btn_sign_out')}</span>
             </button>
