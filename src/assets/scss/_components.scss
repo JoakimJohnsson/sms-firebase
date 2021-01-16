@@ -34,9 +34,10 @@
   padding: 1rem;
 }
 .sms-button__list-group-icon {
-  padding: .5rem;
-  min-width: 46px;
-  min-height: 46px;
+  padding: 0;
+
+  min-width: 30px;
+  min-height: 30px;
 }
 
 /* --------------- 3. CARDS --------------- */
@@ -111,6 +112,8 @@
   @extend .list-group;
   .list-group-item {
     min-height: 4rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .list-group__neu {

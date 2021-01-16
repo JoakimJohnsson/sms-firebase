@@ -180,7 +180,7 @@ class TitleListLi extends Component {
                         </span>
                     )}
                     {editMode ?
-                        <div>
+                        <>
                             <span className="mr-2">
                                 <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
                                     <Icon.BoxArrowInDown className="fs-5"/>
@@ -189,7 +189,7 @@ class TitleListLi extends Component {
                             <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditMode}>
                                 <Icon.X className="fs-3"/>
                             </button>
-                        </div>
+                        </>
                         :
                         <span>
                             <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
