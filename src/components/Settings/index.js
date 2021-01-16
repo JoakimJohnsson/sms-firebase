@@ -1,13 +1,19 @@
 import React from 'react';
 import {AuthUserContext, withAuthorization} from '../Session';
+import firebase from "firebase";
 import {PasswordForgetForm} from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import * as ROLES from "../../constants/roles";
+import * as LOCALE from "../../constants/locales";
 import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 const SettingsPage = () => {
 
     const {t} = useTranslation();
+    const registerDate = new Date(firebase.auth().currentUser.metadata.creationTime);
+    const registerDateSv = registerDate.toLocaleDateString(LOCALE.SV)
+    const registerDateEn = registerDate.toLocaleDateString(LOCALE.EN)
 
     return (
         <AuthUserContext.Consumer>
@@ -23,6 +29,9 @@ const SettingsPage = () => {
                             <ul className="list-group list-group-flush list-group__neu list-group__shaded mb-5">
                                 <li className="list-group-item">
                                     {t('list_email')}{authUser.email}
+                                </li>
+                                <li className="list-group-item">
+                                    {t('list_register_date')}{i18n.language === "sv" ? registerDateSv:registerDateEn}
                                 </li>
                                 <li className="list-group-item">
                                     {t('list_firstname')}<span className="text-capitalize">{authUser.firstname}</span>

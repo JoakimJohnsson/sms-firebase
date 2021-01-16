@@ -91,5 +91,6 @@
   "list_admin_granted": "Administratör-status: Beviljad",
   "list_role": "Roll: ",
   "list_role_admin": "Administratör",
-  "list_role_not_admin": "Användare"
+  "list_role_not_admin": "Användare",
+  "list_register_date": "Datum för registrering: "
 }

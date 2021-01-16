@@ -91,5 +91,6 @@
   "list_admin_granted": "Admin status: Granted",
   "list_role": "Role: ",
   "list_role_admin": "Administrator",
-  "list_role_not_admin": "User"
+  "list_role_not_admin": "User",
+  "list_register_date": "Register date: "
 }
