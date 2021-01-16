@@ -6,8 +6,8 @@ $smsc-primary:    #f8af1e;
 $smsc-secondary:  #014f74;
 $smsc-danger:     #cb1e12;
 $smsc-success:    #286717;
-$smsc-info:       #086298;
-$smsc-warning:    #987f08;
+$smsc-info:       #f8af1e;
+$smsc-warning:    #014f74;
 $smsc-black:      #161c1b;
 $smsc-white:      #ffffff;
 
@@ -39,8 +39,8 @@ $danger:        $smsc-danger;
 $light:         $smsc-white;
 $dark:          $smsc-black;
 
-$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$headings-font-weight: 600;
+$font-family-sans-serif: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$headings-font-weight: 500;
 
 $navbar-dark-toggler-border-color: transparent;
 $navbar-light-toggler-border-color: transparent;

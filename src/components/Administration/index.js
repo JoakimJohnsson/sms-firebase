@@ -105,7 +105,7 @@ const UserList = ({users}) => {
                                                 {t('tooltip_admin_pending')}
                                             </Tooltip>
                                         }>
-                                        <Icon.Award className="fs-5 ms-2 text-black-50 cursor-pointer"/>
+                                        <Icon.Star className="fs-5 ms-2 text-secondary cursor-pointer"/>
                                     </OverlayTrigger>
                                     : ""}
                                 {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ?
@@ -117,7 +117,7 @@ const UserList = ({users}) => {
                                                 {t('tooltip_admin_granted')}
                                             </Tooltip>
                                         }>
-                                        <Icon.AwardFill className="fs-5 ms-2 text-primary cursor-pointer"/>
+                                        <Icon.StarFill className="fs-5 ms-2 text-primary cursor-pointer"/>
                                     </OverlayTrigger>
                                     : ""}
                             </div>
