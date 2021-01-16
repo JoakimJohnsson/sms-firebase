@@ -11,20 +11,11 @@
 
 /* --------------- 1. BODY --------------- */
 body {
-  font-size: $sms-font-size__small;
-  @include media-breakpoint-up(sm) {
-    font-size: $sms-font-size__normal;
-  }
 }
 
 /* --------------- 2. BUTTONS --------------- */
 .btn {
   font-weight: lighter;
-  font-size: $sms-font-size__small;
-
-  @include media-breakpoint-up(sm) {
-    font-size: $sms-font-size__normal;
-  }
   &.btn__neu {
     @include neu__button();
   }
@@ -34,8 +25,11 @@ body {
 }
 
 /* --------------- 3. FONTS --------------- */
-p.small {
-  font-size: $sms-font-size__small;
+.fs-sms-sm {
+  font-size: $sms-font-size__sm;
+}
+.fs-sms-lg {
+  font-size: $sms-font-size__lg;
 }
 
 /* --------------- 4. TEXT COLORS --------------- */

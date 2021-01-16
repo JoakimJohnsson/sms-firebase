@@ -83,11 +83,9 @@
     overflow-y: auto;
     margin-bottom: .5rem;
     padding: 1rem 0;
-    font-size: $sms-font-size__small;
     @include media-breakpoint-up(sm) {
       padding-left: 1rem;
       padding-right: 1rem;
-      font-size: $sms-font-size__normal;
     }
     button {
       margin: .5rem 0;

@@ -16,7 +16,7 @@ const HomePage = () => {
                     <ModalCreateAccount/>
                     <footer className="d-flex justify-content-center">
                         <div className="col-12 col-lg-8 pt-5">
-                            <p className="small">
+                            <p className="fs-sms-sm">
                                 {t('home_disclaimer_part_1')}
                                 <a href="http://www.marvel.com">MARVEL Entertainment</a>
                                 {t('home_disclaimer_part_2')}
