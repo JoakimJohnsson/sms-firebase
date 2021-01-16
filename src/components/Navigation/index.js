@@ -9,6 +9,7 @@ import * as Icon from 'react-bootstrap-icons';
 import {Nav, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import i18n from "../../i18n";
 import {useTranslation} from "react-i18next";
+import SignInForm from "../SignIn";
 
 const HeaderNavigation = () => {
 
@@ -42,16 +43,16 @@ const HeaderAuth = ({authUser, onTop}) => {
     const [expanded, setExpanded] = useState(false);
     const initials = authUser.firstname ? authUser.firstname.charAt(0).toUpperCase() + authUser.lastname.charAt(0).toUpperCase() : false;
     const name = authUser.firstname ? authUser.firstname + " " + authUser.lastname : false;
-    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom navbar__on-scroll-down";
+    let navbarClass = onTop ? "fixed-top border-bottom p-0" : "fixed-top border-bottom navbar__on-scroll-down p-0";
 
     return (
         <header className="container-fluid bg-light px-3">
             <Navbar variant="light" expand="lg" className={navbarClass} expanded={expanded}>
-                <Navbar.Brand>
+                <Navbar.Brand className={"p-3"}>
                     <SmsLogo isLoggedIn={true}/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
-                <Navbar.Collapse id="navbarAuthToggler">
+                <Navbar.Collapse id="navbarAuthToggler" className={"p-3 border-top border-lg-none"}>
                     <Nav className="mr-auto">
                         {initials && (
                             <>
@@ -86,20 +87,29 @@ const HeaderNonAuth = ({onTop}) => {
 
     const {t} = useTranslation();
     const [expanded, setExpanded] = useState(false);
-    let navbarClass = onTop ? "fixed-top border-bottom" : "fixed-top border-bottom navbar__on-scroll-down";
+    let navbarClass = onTop ? "fixed-top border-bottom p-0" : "fixed-top border-bottom navbar__on-scroll-down p-0";
 
     return (
         <header className="container-fluid bg-light px-3">
             <Navbar expand="lg" className={navbarClass} expanded={expanded}>
-                <Navbar.Brand><SmsLogo isLoggedIn={false}/></Navbar.Brand>
+                <Navbar.Brand className={"p-2 p-lg-3"}>
+                    <SmsLogo isLoggedIn={false}/>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarNonAuthToggler" onClick={() => setExpanded(expanded ? false : "expanded")}/>
-                <Navbar.Collapse id="navbarNonAuthToggler">
+                <Navbar.Collapse id="navbarNonAuthToggler" className={"p-3 border-top border-lg-none"}>
                     <Nav className="mr-auto">
-                        <NavLinkComponent link={ROUTES.HOME} text={t('navigation_home')} isExact={true} setExpanded={setExpanded}/>
-                        <NavLinkComponent link={ROUTES.CREATE_ACCOUNT} text={t('navigation_create_account')} setExpanded={setExpanded}/>
-                        <NavLinkComponent link={ROUTES.PASSWORD_FORGET} text={t('navigation_password_forget')} setExpanded={setExpanded}/>
+                        <NavLinkComponentWithIcon link={ROUTES.HOME} text={t('navigation_home')} isExact={true} setExpanded={setExpanded}
+                                                  icon={<Icon.HouseDoor className="fs-5 me-1"/>}/>
+                        <NavLinkComponentWithIcon link={ROUTES.CREATE_ACCOUNT} text={t('navigation_create_account')} setExpanded={setExpanded}
+                                                  icon={<Icon.HandThumbsUp className="fs-5 me-1"/>}/>
+                        <NavLinkComponentWithIcon link={ROUTES.PASSWORD_FORGET} text={t('navigation_password_forget')} setExpanded={setExpanded}
+                                                  icon={<Icon.QuestionDiamond className="fs-5 me-1"/>}/>
                         <div><ChangeLanguageButton t={t}/></div>
                     </Nav>
+                    <div className="d-lg-none">
+                        <p className="form-header"><Icon.DoorOpen className="fs-5 me-1"/> {t('home_modal_header_sign_in')}</p>
+                        <SignInForm/>
+                    </div>
                 </Navbar.Collapse>
             </Navbar>
         </header>

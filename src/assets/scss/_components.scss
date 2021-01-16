@@ -76,23 +76,19 @@
 /* --------------- 6. HEADER --------------- */
 .navbar {
   transition: background-color ease .5s;
-  padding-left: 1rem;
-  padding-right: 1rem;
   .navbar-nav {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     margin-bottom: .5rem;
-    padding: 1rem 0;
-    @include media-breakpoint-up(sm) {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
     button {
       margin: .5rem 0;
       @include media-breakpoint-up(lg) {
         margin: auto;
       }
     }
+  }
+  .navbar-collapse {
+    background-color: $smsc-white;
   }
   background-color: $smsc-white;
   &.navbar__on-scroll-down {
@@ -129,7 +125,7 @@
 /* --------------- 8. LOGO --------------- */
 .sms-logo {
   .sms-logo__image {
-    width: 30px;
+    width: 35px;
   }
   .sms-logo__text {
     font-weight: lighter;
@@ -140,7 +136,7 @@
   }
   @include media-breakpoint-up(sm) {
     .sms-logo__image {
-      width: 40px;
+      width: 45px;
     }
   }
 }
