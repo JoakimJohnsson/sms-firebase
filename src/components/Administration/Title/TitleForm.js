@@ -4,9 +4,11 @@ import {compose} from 'recompose';
 import {withFirebase} from "../../Firebase";
 import * as ROUTES from "../../../constants/routes";
 import {withTranslation} from 'react-i18next';
+import i18n from "i18next";
 
 const INITIAL_STATE = {
     name: '',
+    startDate: 0,
     error: null
 };
 
@@ -20,6 +22,7 @@ class AddTitleForm extends Component {
     onSubmit = event => {
         this.props.firebase.titles().push({
             name: this.state.name,
+            startDate: this.state.startDate,
             createdAt: this.props.firebase.serverValue.TIMESTAMP,
 
         })
@@ -42,6 +45,7 @@ class AddTitleForm extends Component {
         const {
             name,
             error,
+            startDate,
         } = this.state;
         const isInvalid =
             name === '';
@@ -56,6 +60,18 @@ class AddTitleForm extends Component {
                         value={name}
                         onChange={this.onChange}
                         type="text"
+                        className="form-control"
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="add-start-date" className="form-label">{t('label_startdate')}</label>
+                    <input
+                        name="startDate"
+                        id="add-start-date"
+                        value={startDate}
+                        onChange={this.onChange}
+                        type="date"
+                        lang={i18n.language}
                         className="form-control"
                     />
                 </div>

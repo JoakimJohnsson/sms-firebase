@@ -75,6 +75,7 @@
   "label_firstname": "Förnamn",
   "label_name": "Namn",
   "label_lastname": "Efternamn",
+  "label_startdate": "Startår",
   "label_confirm_password": "Bekräfta lösenord",
   "label_confirm_new_password": "Bekräfta nytt lösenord",
   "label_admin_privileges": "Jag vill hjälpa till genom att bli Administratör",

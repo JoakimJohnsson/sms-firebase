@@ -73,6 +73,7 @@
   "label_password": "Password",
   "label_new_password": "New password",
   "label_firstname": "First name",
+  "label_startdate": "Start year",
   "label_name": "Name",
   "label_lastname": "Last name",
   "label_confirm_password": "Confirm password",
