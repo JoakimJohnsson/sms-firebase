@@ -5,6 +5,7 @@ import Confirmation from "../../Confirmation";
 import {compose} from 'recompose';
 import * as Icon from "react-bootstrap-icons";
 import {withTranslation} from 'react-i18next';
+import {OverlayTrigger, Tooltip} from "react-bootstrap";
 
 class TitleBase extends Component {
     constructor(props) {
@@ -98,10 +99,19 @@ class TitleBase extends Component {
                     <>
                         {limit <= titles.length ?
                             <div className="text-end">
-                                <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
-                                        onClick={this.onNextPage}>
-                                    <Icon.ArrowDown className="fs-4"/>
-                                </button>
+                                <OverlayTrigger
+                                    key={"bottom"}
+                                    placement={"bottom"}
+                                    overlay={
+                                        <Tooltip id={"tooltip-show-more"}>
+                                            {t('aria_label_show_more_titles')}
+                                        </Tooltip>
+                                    }>
+                                    <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
+                                            onClick={this.onNextPage}>
+                                        <Icon.ArrowDown className="fs-4"/>
+                                    </button>
+                                </OverlayTrigger>
                             </div>
                             :
                             <div className="alert alert-info">{t('administration_admin_card_component_showing_all_titles')}</div>
@@ -181,10 +191,11 @@ class TitleListLi extends Component {
         const {t} = this.props;
         return (
             <>
-                <h4 className="text-uppercase d-flex align-items-center">{title.name}
-                <span className="d-none d-sm-inline">| {title.startYear}</span>
-                    {!editMode && (
-                        <span className="mr-2">
+                <h4 className="text-uppercase d-flex align-items-center">
+                    <span>{title.name}</span>
+                    <span className="mx-sm-2 d-none d-sm-inline">|</span>
+                    <span className="d-none d-sm-inline">{title.startYear}</span>
+                    <span className="mr-2">
                             <Confirmation
                                 onConfirm={() => {
                                     onRemoveTitle(title.uid)
@@ -198,7 +209,6 @@ class TitleListLi extends Component {
                                 </button>
                             </Confirmation>
                         </span>
-                    )}
                 </h4>
 
                 <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -210,12 +220,10 @@ class TitleListLi extends Component {
                             onChange={this.onChangeEditTitleName}/>
                         :
                         <div>
-                            <span className="font-weight-bold">{title.name}</span>
+                            <span className="fw-bold">{t('label_name')}: </span><span>{title.name}</span>
                         </div>
                     }
-
                     <div>
-
                         {editMode ?
                             <>
                             <span className="mr-2">
@@ -235,8 +243,6 @@ class TitleListLi extends Component {
                         </span>}
                     </div>
                 </li>
-
-
                 <li className="list-group-item d-flex justify-content-between align-items-center mb-4">
                     {editModeStartYear ?
                         <input
@@ -246,12 +252,9 @@ class TitleListLi extends Component {
                             onChange={this.onChangeEditTitleStartYear}/>
                         :
                         <div>
-                            <span className="font-weight-bold">{title.startYear}</span>
-                        </div>
-                    }
-
+                            <span className="fw-bold">{t('label_startyear')}: </span><span>{title.startYear}</span>
+                        </div>}
                     <div>
-
                         {editModeStartYear ?
                             <>
                             <span className="mr-2">
@@ -271,7 +274,6 @@ class TitleListLi extends Component {
                         </span>}
                     </div>
                 </li>
-
             </>
         );
     }

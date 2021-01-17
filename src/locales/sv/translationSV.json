@@ -75,12 +75,16 @@
   "label_new_password": "Nytt lösenord",
   "label_firstname": "Förnamn",
   "label_name": "Namn",
+  "label_edit": "Redigera",
+  "label_save": "Spara",
+  "label_delete": "Ta bort",
   "label_lastname": "Efternamn",
   "label_startdate": "Startdatum",
   "label_startyear": "Startår",
   "label_confirm_password": "Bekräfta lösenord",
   "label_confirm_new_password": "Bekräfta nytt lösenord",
   "label_admin_privileges": "Jag vill hjälpa till genom att bli Administratör",
+  "label_loading": "Laddar...",
 
   "form_email_disclaimer": "Vi kommer aldrig dela din e-post adress med någon annan",
 

@@ -11,7 +11,9 @@ const HomePage = () => {
         <div className="container text-center pt-5">
             <div className="row">
                 <div className="col-12">
-                    <h1 className="text-uppercase mb-5">{t('home_header_welcome')}</h1>
+                    <h1 className="mb-4">{t('home_header_welcome')}</h1>
+                    <p className="fs-4">Do you collect swedish marvel comics?</p>
+                    <p className="fs-4 mb-5">This app helps you keep track of your collection.</p>
                     <ModalSignIn/>
                     <ModalCreateAccount/>
                     <footer className="d-flex justify-content-center">

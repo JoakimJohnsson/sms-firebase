@@ -12655,7 +12655,8 @@ progress {
   width: 90%;
   max-width: 25rem;
   min-height: 4rem;
-  padding: 1rem; }
+  padding: 1rem;
+  border-radius: 50px; }
 
 .sms-button__list-group-icon {
   padding: 0;

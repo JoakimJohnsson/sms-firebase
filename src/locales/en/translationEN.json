@@ -77,10 +77,14 @@
   "label_startdate": "Start date",
   "label_startyear": "Start year",
   "label_name": "Name",
+  "label_edit": "Edit",
+  "label_save": "Save",
+  "label_delete": "Delete",
   "label_lastname": "Last name",
   "label_confirm_password": "Confirm password",
   "label_confirm_new_password": "Confirm new password",
   "label_admin_privileges": "I want to help out by becoming an Administrator",
+  "label_loading": "Loading...",
 
   "form_email_disclaimer": "We'll never share your email with anyone else",
 

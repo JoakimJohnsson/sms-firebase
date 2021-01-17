@@ -1,9 +1,12 @@
 import React from 'react';
+import {useTranslation} from "react-i18next";
 
-const LoadingComponent = () => (
+const LoadingComponent = () => {
+    const {t} = useTranslation();
+    return (
     <div className="">
-        Loading ...
+        {t('label_loading')}
     </div>
-);
+)};
 
 export default LoadingComponent;
