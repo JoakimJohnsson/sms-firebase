@@ -8,7 +8,7 @@ import i18n from "i18next";
 
 const INITIAL_STATE = {
     name: '',
-    startDate: 0,
+    startYear: null,
     error: null
 };
 
@@ -22,7 +22,7 @@ class AddTitleForm extends Component {
     onSubmit = event => {
         this.props.firebase.titles().push({
             name: this.state.name,
-            startDate: this.state.startDate,
+            startYear: this.state.startYear,
             createdAt: this.props.firebase.serverValue.TIMESTAMP,
 
         })
@@ -45,10 +45,9 @@ class AddTitleForm extends Component {
         const {
             name,
             error,
-            startDate,
+            startYear,
         } = this.state;
-        const isInvalid =
-            name === '';
+        const isInvalid = name === '' || startYear === '';
         const {t} = this.props;
         return (
             <form onSubmit={this.onSubmit}>
@@ -64,13 +63,13 @@ class AddTitleForm extends Component {
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="add-start-date" className="form-label">{t('label_startdate')}</label>
+                    <label htmlFor="add-start-date" className="form-label">{t('label_startyear')}</label>
                     <input
-                        name="startDate"
-                        id="add-start-date"
-                        value={startDate}
+                        name="startYear"
+                        id="add-start-year"
+                        value={startYear}
                         onChange={this.onChange}
-                        type="date"
+                        type="number"
                         lang={i18n.language}
                         className="form-control"
                     />

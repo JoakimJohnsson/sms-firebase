@@ -81,7 +81,7 @@ class TitleBase extends Component {
                         onRemoveTitle={this.onRemoveTitle}
                     />
                 ) : (
-                    <div>There are no titles ...</div>
+                    <div className="alert alert-info">{t('administration_title_card_component_no_titles')}</div>
                 )}
                 {!loading && titles && (
                     <>
@@ -149,8 +149,8 @@ class TitleListLi extends Component {
         const {editMode, editTitleName} = this.state;
         const {t} = this.props;
         return (
+            <div>
             <li className="list-group-item d-flex justify-content-between align-items-center">
-
                 {editMode ?
                     <input
                         className="form-control w-75"
@@ -160,7 +160,8 @@ class TitleListLi extends Component {
                     :
                     <div>
                         <span className="font-weight-bold">{title.name}</span>
-                    </div>}
+                    </div>
+                }
 
                 <div>
                     {!editMode && (
@@ -198,6 +199,10 @@ class TitleListLi extends Component {
                         </span>}
                 </div>
             </li>
+                <li className="list-group-item d-flex justify-content-between align-items-center">
+                    <span className="font-weight-bold">{title.name}</span>
+                </li>
+            </div>
         );
     }
 }

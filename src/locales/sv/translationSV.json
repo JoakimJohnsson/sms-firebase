@@ -10,6 +10,7 @@
   "administration_add_content_component_p_forms": "Formulär för att ladda upp content till databasen",
   "administration_user-list_component_header_users": "Användare",
   "administration_title_card_component_header_titles": "Titlar",
+  "administration_title_card_component_no_titles": "Det finns inga titlar att visa...",
   "administration_title_modal_component_header_add_title": "Lägg till en titel",
   "administration_admin_card_component_showing_all_titles": "Visar alla titlar.",
 
@@ -75,7 +76,8 @@
   "label_firstname": "Förnamn",
   "label_name": "Namn",
   "label_lastname": "Efternamn",
-  "label_startdate": "Startår",
+  "label_startdate": "Startdatum",
+  "label_startyear": "Startår",
   "label_confirm_password": "Bekräfta lösenord",
   "label_confirm_new_password": "Bekräfta nytt lösenord",
   "label_admin_privileges": "Jag vill hjälpa till genom att bli Administratör",
