@@ -191,11 +191,19 @@ class TitleListLi extends Component {
         const {t} = this.props;
         return (
             <>
-                <h4 className="text-uppercase d-flex align-items-center">
+                <div className="fs-5 text-secondary text-uppercase d-flex align-items-center m-0">
                     <span>{title.name}</span>
                     <span className="mx-sm-2 d-none d-sm-inline">|</span>
                     <span className="d-none d-sm-inline">{title.startYear}</span>
-                    <span className="mr-2">
+                    <OverlayTrigger
+                        key={"bottom"}
+                        placement={"bottom"}
+                        overlay={
+                            <Tooltip id={"tooltip-delete-title"}>
+                                {t('tooltip_delete')}
+                            </Tooltip>
+                        }>
+                        <div className="d-inline mr-2">
                             <Confirmation
                                 onConfirm={() => {
                                     onRemoveTitle(title.uid)
@@ -208,8 +216,9 @@ class TitleListLi extends Component {
                                     <Icon.X className="fs-1"/>
                                 </button>
                             </Confirmation>
-                        </span>
-                </h4>
+                        </div>
+                    </OverlayTrigger>
+                </div>
 
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                     {editMode ?
@@ -226,21 +235,39 @@ class TitleListLi extends Component {
                     <div>
                         {editMode ?
                             <>
-                            <span className="mr-2">
-                                <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
-                                    <Icon.BoxArrowInDown className="fs-5"/>
-                                </button>
-                            </span>
+                                <div className="d-inline mr-2">
+                                    <OverlayTrigger
+                                        key={"bottom"}
+                                        placement={"bottom"}
+                                        overlay={
+                                            <Tooltip id={"tooltip-save"}>
+                                                {t('tooltip_save')}
+                                            </Tooltip>
+                                        }>
+                                        <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
+                                            <Icon.BoxArrowInDown className="fs-5"/>
+                                        </button>
+                                    </OverlayTrigger>
+                                </div>
                                 <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditMode}>
                                     <Icon.X className="fs-3"/>
                                 </button>
                             </>
                             :
-                            <span>
-                            <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
-                                <Icon.Pencil className="fs-5"/>
-                            </button>
-                        </span>}
+                            <div className="d-inline">
+                                <OverlayTrigger
+                                    key={"bottom"}
+                                    placement={"bottom"}
+                                    overlay={
+                                        <Tooltip id={"tooltip-edit"}>
+                                            {t('tooltip_edit')}
+                                        </Tooltip>
+                                    }>
+                                    <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
+                                        <Icon.Pencil className="fs-5"/>
+                                    </button>
+                                </OverlayTrigger>
+                            </div>}
                     </div>
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center mb-4">
@@ -257,21 +284,39 @@ class TitleListLi extends Component {
                     <div>
                         {editModeStartYear ?
                             <>
-                            <span className="mr-2">
-                                <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleStartYear}>
-                                    <Icon.BoxArrowInDown className="fs-5"/>
-                                </button>
-                            </span>
+                                <div className="d-inline mr-2">
+                                    <OverlayTrigger
+                                        key={"bottom"}
+                                        placement={"bottom"}
+                                        overlay={
+                                            <Tooltip id={"tooltip-save"}>
+                                                {t('tooltip_save')}
+                                            </Tooltip>
+                                        }>
+                                        <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleStartYear}>
+                                            <Icon.BoxArrowInDown className="fs-5"/>
+                                        </button>
+                                    </OverlayTrigger>
+                                </div>
                                 <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditStartYearMode}>
                                     <Icon.X className="fs-3"/>
                                 </button>
                             </>
                             :
-                            <span>
-                            <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditStartYearMode}>
-                                <Icon.Pencil className="fs-5"/>
-                            </button>
-                        </span>}
+                            <div className="d-inline">
+                                <OverlayTrigger
+                                    key={"bottom"}
+                                    placement={"bottom"}
+                                    overlay={
+                                        <Tooltip id={"tooltip-edit"}>
+                                            {t('tooltip_edit')}
+                                        </Tooltip>
+                                    }>
+                                    <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditStartYearMode}>
+                                        <Icon.Pencil className="fs-5"/>
+                                    </button>
+                                </OverlayTrigger>
+                            </div>}
                     </div>
                 </li>
             </>

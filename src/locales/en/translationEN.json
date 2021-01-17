@@ -65,6 +65,9 @@
   "tooltip_change_language": "Byt språk",
   "tooltip_admin_pending": "Admin status: Pending",
   "tooltip_admin_granted": "Admin status: Granted",
+  "tooltip_edit": "Edit",
+  "tooltip_save": "Save",
+  "tooltip_delete": "Delete",
 
   "aria_label_close": "close",
   "aria_label_show_more_titles": "Show more titles",

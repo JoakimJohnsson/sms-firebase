@@ -65,6 +65,9 @@
   "tooltip_change_language": "Change language",
   "tooltip_admin_pending": "Administratör-status: Väntar",
   "tooltip_admin_granted": "Administratör-status: Beviljad",
+  "tooltip_edit": "Redigera",
+  "tooltip_save": "Spara",
+  "tooltip_delete": "Ta bort",
 
   "aria_label_close": "Stäng",
   "aria_label_show_more_titles": "Visa fler titlar",

@@ -8,7 +8,7 @@ const Titles = () => {
     return (
         <div className="col-12 mb-3">
             <div className="card">
-                <div className="card-header p-4 d-flex justify-content-between align-items-center">
+                <div className="card-header p-3 d-flex justify-content-between align-items-center">
                     <h3 className="m-0">{t('administration_title_card_component_header_titles')}</h3>
                     <TitleModal/>
                 </div>

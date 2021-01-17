@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
-import {Modal} from "react-bootstrap";
+import {Modal, OverlayTrigger, Tooltip} from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import TitleForm from "./TitleForm";
 
@@ -26,9 +26,19 @@ const TitleModal = () => {
                     <TitleForm/>
                 </Modal.Body>
             </Modal>
-            <button className="btn text-primary" aria-label={t('aria_label_add_title')} onClick={handleShow}>
-                <Icon.PlusCircle className="fs-2"/>
-            </button>
+
+            <OverlayTrigger
+                key={"bottom"}
+                placement={"bottom"}
+                overlay={
+                    <Tooltip id={"tooltip-add-title"}>
+                        {t('aria_label_add_title')}
+                    </Tooltip>
+                }>
+                <button className="btn text-primary" aria-label={t('aria_label_add_title')} onClick={handleShow}>
+                    <Icon.PlusCircle className="fs-2"/>
+                </button>
+            </OverlayTrigger>
         </>
     )
 };
