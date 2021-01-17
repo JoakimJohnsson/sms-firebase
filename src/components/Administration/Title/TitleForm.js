@@ -69,7 +69,7 @@ class AddTitleForm extends Component {
                         id="add-start-year"
                         value={startYear}
                         onChange={this.onChange}
-                        type="number"
+                        type="text"
                         lang={i18n.language}
                         className="form-control"
                     />

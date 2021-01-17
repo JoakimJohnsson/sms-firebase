@@ -66,6 +66,16 @@ class TitleBase extends Component {
         });
     };
 
+    onEditTitleStartYear = (title, startYear) => {
+        const {uid, ...titleSnapshot} = title;
+
+        this.props.firebase.title(title.uid).set({
+            ...titleSnapshot,
+            startYear,
+            editedAt: this.props.firebase.serverValue.TIMESTAMP,
+        });
+    };
+
     render() {
         const {titles, loading, limit} = this.state;
         const {t} = this.props;
@@ -78,6 +88,7 @@ class TitleBase extends Component {
                         titlesList={titles}
                         t={t}
                         onEditTitleName={this.onEditTitleName}
+                        onEditTitleStartYear={this.onEditTitleStartYear}
                         onRemoveTitle={this.onRemoveTitle}
                     />
                 ) : (
@@ -103,7 +114,7 @@ class TitleBase extends Component {
 
 }
 
-const TitleListUl = ({titlesList, onEditTitleName, onRemoveTitle, t}
+const TitleListUl = ({titlesList, onEditTitleName, onEditTitleStartYear, onRemoveTitle, t}
 ) => (
     <ul className="list-group-flush list-group__editable">
         {titlesList.map(title => (
@@ -111,6 +122,7 @@ const TitleListUl = ({titlesList, onEditTitleName, onRemoveTitle, t}
                 key={title.uid}
                 title={title}
                 onEditTitleName={onEditTitleName}
+                onEditTitleStartYear={onEditTitleStartYear}
                 onRemoveTitle={onRemoveTitle}
                 t={t}
             />
@@ -124,6 +136,7 @@ class TitleListLi extends Component {
         this.state = {
             editMode: false,
             editTitleName: this.props.title.name,
+            editTitleStartYear: this.props.title.startYear,
         };
     }
 
@@ -134,8 +147,19 @@ class TitleListLi extends Component {
         }));
     };
 
+    onToggleEditStartYearMode = () => {
+        this.setState(state => ({
+            editModeStartYear: !state.editModeStartYear,
+            editTitleStartYear: this.props.title.startYear,
+        }));
+    };
+
     onChangeEditTitleName = event => {
         this.setState({editTitleName: event.target.value});
+    };
+
+    onChangeEditTitleStartYear = event => {
+        this.setState({editTitleStartYear: event.target.value});
     };
 
     onSaveEditTitleName = () => {
@@ -144,26 +168,21 @@ class TitleListLi extends Component {
         this.setState({editMode: false});
     };
 
+    onSaveEditTitleStartYear = () => {
+        this.props.onEditTitleStartYear(this.props.title, this.state.editTitleStartYear);
+
+        this.setState({editModeStartYear: false});
+    };
+
     render() {
         const {title, onRemoveTitle} = this.props;
         const {editMode, editTitleName} = this.state;
+        const {editModeStartYear, editTitleStartYear} = this.state;
         const {t} = this.props;
         return (
-            <div>
-            <li className="list-group-item d-flex justify-content-between align-items-center">
-                {editMode ?
-                    <input
-                        className="form-control w-75"
-                        type="text"
-                        value={editTitleName}
-                        onChange={this.onChangeEditTitleName}/>
-                    :
-                    <div>
-                        <span className="font-weight-bold">{title.name}</span>
-                    </div>
-                }
-
-                <div>
+            <>
+                <h4 className="text-uppercase d-flex align-items-center">{title.name}
+                <span className="d-none d-sm-inline">| {title.startYear}</span>
                     {!editMode && (
                         <span className="mr-2">
                             <Confirmation
@@ -175,34 +194,85 @@ class TitleListLi extends Component {
                                 confirmBSStyle={"btn btn__neu btn-primary"}
                                 title={t('confirmation_delete_title')}>
                                 <button className={"btn sms-button__list-group-icon text-danger"}>
-                                    <Icon.X className="fs-3"/>
+                                    <Icon.X className="fs-1"/>
                                 </button>
                             </Confirmation>
                         </span>
                     )}
+                </h4>
+
+                <li className="list-group-item d-flex justify-content-between align-items-center">
                     {editMode ?
-                        <>
+                        <input
+                            className="form-control w-75"
+                            type="text"
+                            value={editTitleName}
+                            onChange={this.onChangeEditTitleName}/>
+                        :
+                        <div>
+                            <span className="font-weight-bold">{title.name}</span>
+                        </div>
+                    }
+
+                    <div>
+
+                        {editMode ?
+                            <>
                             <span className="mr-2">
                                 <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
                                     <Icon.BoxArrowInDown className="fs-5"/>
                                 </button>
                             </span>
-                            <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditMode}>
-                                <Icon.X className="fs-3"/>
-                            </button>
-                        </>
-                        :
-                        <span>
+                                <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditMode}>
+                                    <Icon.X className="fs-3"/>
+                                </button>
+                            </>
+                            :
+                            <span>
                             <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
                                 <Icon.Pencil className="fs-5"/>
                             </button>
                         </span>}
-                </div>
-            </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span className="font-weight-bold">{title.name}</span>
+                    </div>
                 </li>
-            </div>
+
+
+                <li className="list-group-item d-flex justify-content-between align-items-center mb-4">
+                    {editModeStartYear ?
+                        <input
+                            className="form-control w-75"
+                            type="text"
+                            value={editTitleStartYear}
+                            onChange={this.onChangeEditTitleStartYear}/>
+                        :
+                        <div>
+                            <span className="font-weight-bold">{title.startYear}</span>
+                        </div>
+                    }
+
+                    <div>
+
+                        {editModeStartYear ?
+                            <>
+                            <span className="mr-2">
+                                <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleStartYear}>
+                                    <Icon.BoxArrowInDown className="fs-5"/>
+                                </button>
+                            </span>
+                                <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditStartYearMode}>
+                                    <Icon.X className="fs-3"/>
+                                </button>
+                            </>
+                            :
+                            <span>
+                            <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditStartYearMode}>
+                                <Icon.Pencil className="fs-5"/>
+                            </button>
+                        </span>}
+                    </div>
+                </li>
+
+            </>
         );
     }
 }
