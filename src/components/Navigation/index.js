@@ -61,17 +61,51 @@ const HeaderAuth = ({authUser, onTop}) => {
                             </>
                         )}
 
-                        <NavLinkComponentWithIcon link={ROUTES.DASHBOARD} text={t('navigation_dashboard')} isExact={true}
-                                                  icon={<Icon.Tools className="fs-5 me-1"/>} setExpanded={setExpanded}/>
-                        <NavLinkComponentWithIcon link={ROUTES.SETTINGS} text={t('navigation_settings')} icon={<Icon.Gear className="fs-5 me-1"/>}
-                                                  setExpanded={setExpanded}/>
-                        {!!authUser.roles[ROLES.ADMIN] && (
-
-                            <NavLink className="nav-link" to={ROUTES.ADMIN}
+                        <OverlayTrigger
+                            key={"bottom"}
+                            placement={"bottom"}
+                            overlay={
+                                <Tooltip id={"tooltip-dashboard"} className="d-none d-lg-block d-xl-none">
+                                    {t('navigation_dashboard')}
+                                </Tooltip>
+                            }>
+                            <NavLink className="nav-link" to={ROUTES.DASHBOARD}
                                      exact={true} onClick={() => setExpanded(false)}>
-                                <Icon.Bug className="fs-5 me-1"/>
-                                <span className="d-lg-none d-xl-inline">{t('navigation_administration')}</span>
+                                <Icon.Tools className="fs-5 me-1"/>
+                                <span className="d-lg-none d-xl-inline">{t('navigation_dashboard')}</span>
                             </NavLink>
+                        </OverlayTrigger>
+
+                        <OverlayTrigger
+                            key={"bottom"}
+                            placement={"bottom"}
+                            overlay={
+                                <Tooltip id={"tooltip-settings"} className="d-none d-lg-block d-xl-none">
+                                    {t('navigation_settings')}
+                                </Tooltip>
+                            }>
+                            <NavLink className="nav-link" to={ROUTES.SETTINGS}
+                                     exact={true} onClick={() => setExpanded(false)}>
+                                <Icon.Gear className="fs-5 me-1"/>
+                                <span className="d-lg-none d-xl-inline">{t('navigation_settings')}</span>
+                            </NavLink>
+                        </OverlayTrigger>
+
+                        {!!authUser.roles[ROLES.ADMIN] && (
+                            <OverlayTrigger
+                                key={"bottom"}
+                                placement={"bottom"}
+                                overlay={
+                                    <Tooltip id={"tooltip-administration"} className="d-none d-lg-block d-xl-none">
+                                        {t('navigation_administration')}
+                                    </Tooltip>
+                                }>
+                                <NavLink className="nav-link" to={ROUTES.ADMIN}
+                                         exact={true} onClick={() => setExpanded(false)}>
+                                    <Icon.Bug className="fs-5 me-1"/>
+                                    <span className="d-lg-none d-xl-inline">{t('navigation_administration')}</span>
+                                </NavLink>
+                            </OverlayTrigger>
                         )}
                         <div><ChangeLanguageButton t={t}/></div>
                         <div><SignOutButton/></div>
@@ -148,11 +182,9 @@ const ChangeLanguageButton = ({t}) => (
 
 );
 
-const NavLinkComponent = ({link, text, isExact, setExpanded}) => (
-    <NavLink className="nav-link" to={link} exact={isExact} onClick={() => setExpanded(false)}>{text}</NavLink>
-);
 const NavLinkComponentWithIcon = ({link, text, isExact, icon, setExpanded}) => (
-    <NavLink className="nav-link" to={link} exact={isExact} onClick={() => setExpanded(false)}>{icon} {text}</NavLink>
+    <NavLink className="nav-link" to={link} exact={isExact} onClick={() => setExpanded(false)}>{icon} <span
+        className="d-lg-none d-xl-inline">{text}</span></NavLink>
 );
 
 export default HeaderNavigation;

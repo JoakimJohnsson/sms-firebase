@@ -4,9 +4,10 @@
 // smsc = sms-color
 $smsc-primary:    #f8af1e;
 $smsc-secondary:  #014f74;
+$smsc-tertiary:   darken($smsc-primary, 23%);
 $smsc-danger:     #cb1e12;
 $smsc-success:    #286717;
-$smsc-info:       #f8af1e;
+$smsc-info:       $smsc-tertiary;
 $smsc-warning:    #014f74;
 $smsc-black:      #161c1b;
 $smsc-white:      #ffffff;
@@ -48,6 +49,7 @@ $navbar-dark-color: $smsc-white;
 $navbar-light-color: $smsc-black;
 $navbar-light-active-color: $smsc-secondary;
 $navbar-dark-active-color: lighten($smsc-secondary, 30%);
+$navbar-light-active-color: $smsc-tertiary;
 
 $card-cap-bg: $gray-200;
 

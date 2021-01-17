@@ -37,14 +37,16 @@ class AdministrationPage extends Component {
 
         this.props.firebase.titles().on('value', snapshot => {
             const titlesObject = snapshot.val();
-            const titlesList = Object.keys(titlesObject).map(key => ({
-                ...titlesObject[key],
-                uid: key,
-            }));
-            this.setState({
-                titles: titlesList,
-                loading: false,
-            });
+            if (titlesObject != null) {
+                const titlesList = Object.keys(titlesObject).map(key => ({
+                    ...titlesObject[key],
+                    uid: key,
+                }));
+                this.setState({
+                    titles: titlesList,
+                    loading: false,
+                });
+            }
         });
     }
 
@@ -105,7 +107,7 @@ const UserList = ({users}) => {
                                                 {t('tooltip_admin_pending')}
                                             </Tooltip>
                                         }>
-                                        <Icon.Star className="fs-5 ms-2 text-secondary cursor-pointer"/>
+                                        <Icon.Star className="fs-5 ms-2 text-info cursor-pointer"/>
                                     </OverlayTrigger>
                                     : ""}
                                 {user.roles && user.roles[ROLES.ADMIN] === "ADMIN" ?
