@@ -6,6 +6,7 @@ import {compose} from 'recompose';
 import * as Icon from "react-bootstrap-icons";
 import {withTranslation} from 'react-i18next';
 import {OverlayTrigger, Tooltip} from "react-bootstrap";
+import Alert from "../../Alert";
 
 class TitleBase extends Component {
     constructor(props) {
@@ -93,7 +94,7 @@ class TitleBase extends Component {
                         onRemoveTitle={this.onRemoveTitle}
                     />
                 ) : (
-                    <div className="alert alert-info">{t('administration_title_card_component_no_titles')}</div>
+                    <Alert type={"info"} message={t('administration_title_card_component_no_titles')} icon={<Icon.InfoCircleFill className="fs-3"/>}/>
                 )}
                 {!loading && titles && (
                     <>
@@ -114,7 +115,8 @@ class TitleBase extends Component {
                                 </OverlayTrigger>
                             </div>
                             :
-                            <div className="alert alert-info">{t('administration_admin_card_component_showing_all_titles')}</div>
+                            <Alert type={"info"} message={t('administration_admin_card_component_showing_all_titles')}
+                                   icon={<Icon.InfoCircleFill className="fs-3"/>}/>
                         }
                     </>
                 )}

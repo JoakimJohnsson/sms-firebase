@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import {withFirebase} from '../Firebase';
 import {withTranslation} from 'react-i18next';
 import {compose} from "recompose";
+import * as Icon from "react-bootstrap-icons";
+import Alert from "../Alert";
 
 const INITIAL_STATE = {
     passwordOne: '',
@@ -72,7 +74,9 @@ class PasswordChangeForm extends Component {
                     </button>
                 </div>
 
-                {error && <p className="alert alert-warning">{error.message}</p>}
+                {error &&
+                <Alert type={"warning"} message={error.message} icon={<Icon.ExclamationCircleFill className="fs-3"/>}/>
+                }
             </form>
         );
     }

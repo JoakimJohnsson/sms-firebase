@@ -5,6 +5,8 @@ import {withFirebase} from "../../Firebase";
 import * as ROUTES from "../../../constants/routes";
 import {withTranslation} from 'react-i18next';
 import i18n from "i18next";
+import * as Icon from "react-bootstrap-icons";
+import Alert from "../../Alert";
 
 const INITIAL_STATE = {
     name: '',
@@ -79,7 +81,9 @@ class AddTitleForm extends Component {
                     {t('btn_add')}
                 </button>
                 </div>
-                {error && <p className="alert alert-warning">{error.message}</p>}
+                {error &&
+                <Alert type={"warning"} message={error.message} icon={<Icon.ExclamationCircleFill className="fs-3"/>}/>
+                }
             </form>
         );
     }

@@ -6,6 +6,8 @@ import * as ROUTES from '../../constants/routes';
 import {useTranslation} from "react-i18next";
 import {withTranslation} from 'react-i18next';
 import {compose} from "recompose";
+import * as Icon from "react-bootstrap-icons";
+import Alert from "../Alert";
 
 const PasswordForgetPage = () => {
     const {t} = useTranslation();
@@ -82,7 +84,9 @@ class PasswordForgetFormBase extends Component {
                     </button>
                 </div>
 
-                {error && <p className="alert alert-warning">{error.message}</p>}
+                {error &&
+                <Alert type={"warning"} message={error.message} icon={<Icon.ExclamationCircleFill className="fs-3"/>}/>
+                }
             </form>
         );
     }
