@@ -5,7 +5,6 @@ import Confirmation from "../../Confirmation";
 import {compose} from 'recompose';
 import * as Icon from "react-bootstrap-icons";
 import {withTranslation} from 'react-i18next';
-import {OverlayTrigger, Tooltip} from "react-bootstrap";
 import Alert from "../../Alert";
 
 class TitleBase extends Component {
@@ -100,23 +99,14 @@ class TitleBase extends Component {
                     <>
                         {limit <= titles.length ?
                             <div className="text-end">
-                                <OverlayTrigger
-                                    key={"bottom"}
-                                    placement={"bottom"}
-                                    overlay={
-                                        <Tooltip id={"tooltip-show-more"}>
-                                            {t('aria_label_show_more_titles')}
-                                        </Tooltip>
-                                    }>
-                                    <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
-                                            onClick={this.onNextPage}>
-                                        <Icon.ArrowDown className="fs-4"/>
-                                    </button>
-                                </OverlayTrigger>
+                                <button className="btn btn__neu btn-primary m-3" aria-label={t('aria_label_show_more_titles')} type="button"
+                                        onClick={this.onNextPage}>
+                                    <Icon.ArrowDown className="fs-4"/>
+                                </button>
                             </div>
                             :
                             <Alert type={"info"} message={t('administration_admin_card_component_showing_all_titles')}
-                                   icon={<Icon.InfoCircleFill className="fs-3"/>}/>
+                                     icon={<Icon.InfoCircleFill className="fs-3"/>}/>
                         }
                     </>
                 )}
@@ -197,29 +187,20 @@ class TitleListLi extends Component {
                     <span>{title.name}</span>
                     <span className="mx-sm-2 d-none d-sm-inline">|</span>
                     <span className="d-none d-sm-inline">{title.startYear}</span>
-                    <OverlayTrigger
-                        key={"bottom"}
-                        placement={"bottom"}
-                        overlay={
-                            <Tooltip id={"tooltip-delete-title"}>
-                                {t('tooltip_delete')}
-                            </Tooltip>
-                        }>
-                        <div className="d-inline mr-2">
-                            <Confirmation
-                                onConfirm={() => {
-                                    onRemoveTitle(title.uid)
-                                }}
-                                body={t('confirmation_are_you_sure')}
-                                confirmText={t('confirmation_confirm_delete')}
-                                confirmBSStyle={"btn btn__neu btn-primary"}
-                                title={t('confirmation_delete_title')}>
-                                <button className={"btn sms-button__list-group-icon text-danger"}>
-                                    <Icon.X className="fs-1"/>
-                                </button>
-                            </Confirmation>
-                        </div>
-                    </OverlayTrigger>
+                    <div className="d-inline mr-2">
+                        <Confirmation
+                            onConfirm={() => {
+                                onRemoveTitle(title.uid)
+                            }}
+                            body={t('confirmation_are_you_sure')}
+                            confirmText={t('confirmation_confirm_delete')}
+                            confirmBSStyle={"btn btn__neu btn-primary"}
+                            title={t('confirmation_delete_title')}>
+                            <button className={"btn sms-button__list-group-icon text-danger"}>
+                                <Icon.X className="fs-1"/>
+                            </button>
+                        </Confirmation>
+                    </div>
                 </div>
 
                 <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -238,18 +219,9 @@ class TitleListLi extends Component {
                         {editMode ?
                             <>
                                 <div className="d-inline mr-2">
-                                    <OverlayTrigger
-                                        key={"bottom"}
-                                        placement={"bottom"}
-                                        overlay={
-                                            <Tooltip id={"tooltip-save"}>
-                                                {t('tooltip_save')}
-                                            </Tooltip>
-                                        }>
-                                        <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
-                                            <Icon.BoxArrowInDown className="fs-5"/>
-                                        </button>
-                                    </OverlayTrigger>
+                                    <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleName}>
+                                        <Icon.BoxArrowInDown className="fs-5"/>
+                                    </button>
                                 </div>
                                 <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditMode}>
                                     <Icon.X className="fs-3"/>
@@ -257,18 +229,9 @@ class TitleListLi extends Component {
                             </>
                             :
                             <div className="d-inline">
-                                <OverlayTrigger
-                                    key={"bottom"}
-                                    placement={"bottom"}
-                                    overlay={
-                                        <Tooltip id={"tooltip-edit"}>
-                                            {t('tooltip_edit')}
-                                        </Tooltip>
-                                    }>
-                                    <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
-                                        <Icon.Pencil className="fs-5"/>
-                                    </button>
-                                </OverlayTrigger>
+                                <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditMode}>
+                                    <Icon.Pencil className="fs-5"/>
+                                </button>
                             </div>}
                     </div>
                 </li>
@@ -287,18 +250,9 @@ class TitleListLi extends Component {
                         {editModeStartYear ?
                             <>
                                 <div className="d-inline mr-2">
-                                    <OverlayTrigger
-                                        key={"bottom"}
-                                        placement={"bottom"}
-                                        overlay={
-                                            <Tooltip id={"tooltip-save"}>
-                                                {t('tooltip_save')}
-                                            </Tooltip>
-                                        }>
-                                        <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleStartYear}>
-                                            <Icon.BoxArrowInDown className="fs-5"/>
-                                        </button>
-                                    </OverlayTrigger>
+                                    <button className="btn sms-button__list-group-icon text-success" onClick={this.onSaveEditTitleStartYear}>
+                                        <Icon.BoxArrowInDown className="fs-5"/>
+                                    </button>
                                 </div>
                                 <button className="btn sms-button__list-group-icon text-warning" onClick={this.onToggleEditStartYearMode}>
                                     <Icon.X className="fs-3"/>
@@ -306,18 +260,9 @@ class TitleListLi extends Component {
                             </>
                             :
                             <div className="d-inline">
-                                <OverlayTrigger
-                                    key={"bottom"}
-                                    placement={"bottom"}
-                                    overlay={
-                                        <Tooltip id={"tooltip-edit"}>
-                                            {t('tooltip_edit')}
-                                        </Tooltip>
-                                    }>
-                                    <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditStartYearMode}>
-                                        <Icon.Pencil className="fs-5"/>
-                                    </button>
-                                </OverlayTrigger>
+                                <button className="btn sms-button__list-group-icon" onClick={this.onToggleEditStartYearMode}>
+                                    <Icon.Pencil className="fs-5"/>
+                                </button>
                             </div>}
                     </div>
                 </li>
