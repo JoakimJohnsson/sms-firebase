@@ -12,9 +12,22 @@ const config = {
     appId: "1:244092481021:web:08d2cdef282e98194abd94"
 };
 
+const tbfConfig = {
+    apiKey: "AIzaSyA4yBmSmQ-RLTzroqIYkr9A42VQcl_Zh1Y",
+    authDomain: "thebaseballfield.firebaseapp.com",
+    databaseURL: "https://thebaseballfield.firebaseio.com",
+    projectId: "thebaseballfield",
+    storageBucket: "thebaseballfield.appspot.com",
+    messagingSenderId: "115379456982",
+    appId: "1:115379456982:web:4d0adc5c1a56b0579b7277"
+};
+
+// Set to true if uploading to The Baseball Field & Friends
+const useTbfConfig = false;
+
 class Firebase {
     constructor() {
-        app.initializeApp(config);
+        app.initializeApp(useTbfConfig ? tbfConfig : config);
         this.serverValue = app.database.ServerValue;
         this.auth = app.auth();
         this.db = app.database();
@@ -66,13 +79,15 @@ class Firebase {
             }
         });
 
-    // *** User API ***
+    // *** SMS API ***
     user = uid => this.db.ref(`users/${uid}`);
     users = () => this.db.ref('users');
-    // *** User API ***
+
     title = uid => this.db.ref(`titles/${uid}`);
     titles = () => this.db.ref('titles');
 
+    // *** TBF API ***
 }
 
+export {useTbfConfig};
 export default Firebase;

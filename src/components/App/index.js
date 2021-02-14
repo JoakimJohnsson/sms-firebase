@@ -7,6 +7,7 @@ import SettingsPage from '../Settings';
 import AdministrationPage from '../Administration';
 import DashboardPage from "../Dashboard";
 import HomePage from "../Home";
+import TbfFormsPage from "../TbfForms";
 import CreateAccountPage from "../CreateAccount";
 import {withAuthentication} from '../Session';
 import * as ROUTES from '../../constants/routes';
@@ -22,6 +23,7 @@ const App = () => (
             <Route path={ROUTES.DASHBOARD} component={DashboardPage}/>
             <Route path={ROUTES.SETTINGS} component={SettingsPage}/>
             <Route path={ROUTES.ADMIN} component={AdministrationPage}/>
+            <Route path={ROUTES.TBF_UPLOAD} component={TbfFormsPage}/>
         </>
     </Router>
 );

@@ -10,6 +10,7 @@ import {Nav, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import i18n from "../../i18n";
 import {useTranslation} from "react-i18next";
 import SignInForm from "../SignIn";
+import {useTbfConfig} from "../Firebase/firebase";
 
 const HeaderNavigation = () => {
 
@@ -114,7 +115,6 @@ const HeaderAuth = ({authUser, onTop}) => {
             </Navbar>
         </header>
     )
-
 };
 
 const HeaderNonAuth = ({onTop}) => {
@@ -137,7 +137,15 @@ const HeaderNonAuth = ({onTop}) => {
                         <NavLinkComponentWithIcon link={ROUTES.CREATE_ACCOUNT} text={t('navigation_create_account')} setExpanded={setExpanded}
                                                   icon={<Icon.HandThumbsUp className="fs-5 me-1"/>}/>
                         <NavLinkComponentWithIcon link={ROUTES.PASSWORD_FORGET} text={t('navigation_password_forget')} setExpanded={setExpanded}
-                                                  icon={<Icon.QuestionDiamond className="fs-5 me-1"/>}/>
+                                                  icon={<Icon.ChatDots className="fs-5 me-1"/>}/>
+
+                        {useTbfConfig ?
+                            <NavLinkComponentWithIcon link={ROUTES.TBF_UPLOAD} text={"TBF"} setExpanded={setExpanded}
+                                                      icon={<Icon.MusicPlayer className="fs-5 me-1"/>}/>
+                        :
+                        ""
+                        }
+
                         <div><ChangeLanguageButton t={t}/></div>
                     </Nav>
                     <div className="d-lg-none">
